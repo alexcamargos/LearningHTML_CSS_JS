@@ -74,7 +74,7 @@ body {
     height: 100%;
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
-    left: 0;
+    left: 60%;
 }
 
 .title {
@@ -173,6 +173,25 @@ body {
     padding: 0 10px;
 }
 
+.form-forgot-password {
+    margin: 10px 0;
+}
+
+.form-forgot-password a {
+    color: #34495e;
+    font-size: 14px;
+    margin: 15px 0;
+}
+
+.form-forgot-password a:hover {
+    color: #24495e;
+    font-size: 14px;
+    margin: 15px 0;
+}
+
+.form-forgot-password:first-letter {
+    text-transform: capitalize;
+}
 
 
 /* *************** SOCIAL MEDIA *************** */
@@ -213,11 +232,19 @@ body {
 
 
 /* *************** FIRST CONTENT *************** */
-.first-content {}
+.first-content {
+    display: none;
+}
 
 
 
 /* *************** SECOND CONTENT *************** */
 .second-content {
-    display: none;
+    flex-direction: row-reverse;
+}
+
+
+
+.content-before-left-60 {
+    left: 60%;
 }
