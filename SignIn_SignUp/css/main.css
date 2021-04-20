@@ -13,3 +13,211 @@
 #
 # -------------------------------------------------------------------------------------------------
 */
+
+/* *************** IMPORT ROBOTO FROM GOOGLE FONTS LIBRARY *************** */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+
+
+/* *************** BASE STYLES *************** */
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #7f8c8d;
+    background-color: rgb(243, 243, 243);
+}
+
+.text-align-center {
+    text-align: center;
+}
+
+.text-color-green {
+    color: #58af9b;
+}
+
+.text-color-white {
+    color: #fff;
+}
+
+.text-first-letter-capitalize:first-letter {
+    text-transform: capitalize;
+}
+
+/* *************** BASE STYLES *************** */
+
+
+/* *************** WRAPPER *************** */
+#wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    min-width: 100vh;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    width: 960px;
+    height: 50%;
+    border-radius: 15px;
+    background-color: #fff;
+    margin: 15px;
+}
+
+.content:before {
+    content: "";
+    position: absolute;
+    background-color: #58af9b;
+    width: 40%;
+    height: 100%;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    left: 0;
+}
+
+.title {
+    font-size: 28px;
+    font-weight: 700;
+    text-transform: capitalize;
+}
+
+.description {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 30px;
+    width: 60%;
+}
+
+
+/* *************** COLUMN *************** */
+.message-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40%;
+    z-index: 10;
+}
+
+.form-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 60%;
+    height: 100%;
+}
+
+
+/* *************** FORM *************** */
+.form {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+}
+
+.form input {
+    height: 40px;
+    width: 100%;
+    border: none;
+    background-color: #ecf0f1;
+}
+
+.form-label-input {
+    display: flex;
+    align-items: center;
+    background-color: #ecf0f1;
+    margin: 8px;
+}
+
+.btn {
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 150px;
+    align-self: center;
+    border: none;
+    padding: 10px 50px;
+    border-radius: 15px;
+    margin-top: 1rem;
+}
+
+.btn-message-column {
+    background-color: transparent;
+    border: 1px solid #fff;
+    transition: background-color .5s;
+}
+
+.btn-message-column:hover {
+    background-color: #fff;
+    color: #58af9b;
+}
+
+.btn-form-column {
+    background-color: #58af9b;
+    border: 1px solid #58af9b;
+    transition: background-color .5s;
+}
+
+.btn-form-column:hover {
+    background-color: #fff;
+    border: 1px solid #58af9b;
+    color: #58af9b;
+}
+
+.form-icon-modify {
+    color: #7f8c8d;
+    padding: 0 10px;
+}
+
+
+
+/* *************** SOCIAL MEDIA *************** */
+.social-media {
+    margin: 1rem 0;
+    margin-left: 10px;
+}
+
+.social-media-list {
+    display: flex;
+}
+
+.social-media-link:not(:first-child) {
+    margin-left: 10px;
+}
+
+.social-media-link .social-media-item {
+    transition: background-color .5s;
+}
+
+.social-media-link:hover .social-media-item {
+    color: #fff;
+    background-color: #58af9b;
+    border-color: #58af9b;
+}
+
+.social-media-item {
+    width: 35px;
+    height: 35px;
+    border: 1px solid #bdc3c7;
+    border-radius: 50%;
+    line-height: 35px;
+    text-align: center;
+    color: #95a5a6;
+}
+
+
+
+
+/* *************** FIRST CONTENT *************** */
+.first-content {}
+
+
+
+/* *************** SECOND CONTENT *************** */
+.second-content {
+    display: none;
+}
