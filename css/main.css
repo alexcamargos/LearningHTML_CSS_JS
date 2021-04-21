@@ -74,7 +74,7 @@ body {
     height: 100%;
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
-    left: 60%;
+    left: 0;
 }
 
 .title {
@@ -107,6 +107,26 @@ body {
     justify-content: center;
     width: 60%;
     height: 100%;
+}
+
+
+/* *************** FIRST CONTENT *************** */
+.first-content .form-column {
+    z-index: 11;
+}
+
+
+/* *************** SECOND CONTENT *************** */
+.second-content {
+    flex-direction: row-reverse;
+}
+
+.second-content .message-column {
+    z-index: -1;
+}
+
+.second-content .form-column {
+    z-index: -1;
 }
 
 
@@ -229,22 +249,54 @@ body {
 }
 
 
-
-
-/* *************** FIRST CONTENT *************** */
-.first-content {
-    display: none;
+/* *************** SIGN IN JS *************** */
+.sign-in-js .first-content .message-column {
+    z-index: -1;
 }
 
-
-
-/* *************** SECOND CONTENT *************** */
-.second-content {
-    flex-direction: row-reverse;
+.sign-in-js .second-content .form-column {
+    z-index: 11;
 }
 
+.sign-in-js .second-content .message-column {
+    z-index: 13;
+}
 
-
-.content-before-left-60 {
+.sign-in-js .content:before {
     left: 60%;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    z-index: 12;
+}
+
+.sign-in-js .first-content .form-column {
+    z-index: -1;
+    position: relative;
+}
+
+
+/* *************** SIGN UP JS *************** */
+.sign-up-js .content:before {
+    animation: slideout 1.3s;
+    z-index: 12;
+}
+
+.sign-up-js .second-content .message-column,
+.sign-up-js .second-content .form-column {
+    z-index: -1;
+}
+
+.sign-up-js .first-content .form-column {
+    z-index: 11;
+}
+
+.sign-up-js .first-content .message-column {
+    z-index: 13;
+}
+
+.sign-up-js .second-content .form-column {
+    position: relative;
+    z-index: -1;
 }

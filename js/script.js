@@ -20,10 +20,10 @@ var btn_signup = document.querySelector("#signup");
 
 var body = document.querySelector("body");
 
-btn_sigin.addEventListener("click", function () {
-    body.className = "sign-in-js"
+btn_signin.addEventListener("click", function () {
+    body.className = "sign-in-js";
 });
 
 btn_signup.addEventListener("click", function () {
-    body.className = "sign-up-js"
+    body.className = "sign-up-js";
 });
