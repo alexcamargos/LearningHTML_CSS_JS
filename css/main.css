@@ -41,6 +41,14 @@ body {
     text-transform: capitalize;
 }
 
+footer {
+    margin-top: -150px;
+}
+
+footer a {
+    color: #34495e;
+    text-decoration: none;
+}
 /* *************** BASE STYLES *************** */
 
 
