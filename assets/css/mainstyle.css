@@ -1,0 +1,509 @@
+/*
+# -------------------------------------------------------------------------------------------------
+#
+# Name: mainstyle.css
+# Version: 0.5
+#
+# Summary: Recriando a página inicial do Instagram usando Flex Container.
+#          O Flex Container é a tag que envolve os itens flex, ao indicar display: flex, 
+#          essa tag passa a ser um Flex Container.
+#
+# Author: Alexsander Lopes Camargos
+# Author-email: alcamargos@vivaldi.net
+#
+# License: MIT
+#
+# -------------------------------------------------------------------------------------------------
+*/
+
+
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@500;700&family=Roboto:wght@300;400;500&display=swap');
+
+
+/* *************** BASE STYLES *************** */
+:root {
+    /* colors */
+    --background-color: #1d252c;
+    --title-color: #026fff;
+    --text-color: #000;
+    --focus-text-color: #fff;
+
+    /* fonts */
+    --title-font: 'Roboto', serif;
+    --text-font: 'Lora', serif;
+
+    --font-big-size: 32px;
+    --font-medium-size: 24px;
+    --font-small-size: 18px;
+}
+
+body {
+    font-family: var(--text-font);
+    background-color: var(--focus-text-color);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--title-font);
+}
+
+h1 {
+    font-size: var(--font-big-size);
+}
+
+h2 {
+    font-size: var(--font-medium-size);
+}
+
+h3 {
+    font-size: var(--font-small-size);
+}
+
+.text-blue {
+    color: var(--title-color);
+}
+
+
+/* Styling for this page is organized from top to bottom of what is shown on the page. */
+
+
+/* *************** HEADER STYLES *************** */
+#header {
+    background-color: var(--background-color);
+    color: var(--focus-text-color);
+    padding: 0 32px;
+}
+
+#header .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+}
+
+#header .header-content #menu {
+    display: flex;
+}
+
+#header .header-content img {
+    height: 100px;
+    padding: 10px 0;
+}
+
+#header .header-content #menu ol {
+    display: flex;
+    gap: 50px;
+    list-style: none;
+    font-family: var(--title-font);
+    color: var(--focus-text-color);
+}
+
+#header .header-content #menu ol li {
+    text-transform: uppercase;
+}
+
+#header .header-content #menu ol li a {
+    color: var(--focus-text-color);
+    text-decoration: none;
+    padding: 0px 10px;
+    font-size: 20px;
+    font-weight: 700;
+    transition: 0.5s;
+}
+
+#header .header-content #menu ol li a:hover {
+    color: var(--title-color);
+    border-bottom: 3px solid var(--title-color);
+}
+
+
+/* *************** FULL PAGE WRAPPER STYLES *************** */
+#wrapper {
+    position: relative;
+    margin: 0 auto;
+    max-width: 1440px;
+    min-width: 256px;
+    padding: 0 50px;
+    zoom: 1;
+}
+
+/* *************** SECTION ABOUT STYLES *************** */
+#main #about {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 50px;
+}
+
+#main #about .about-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    align-content: center;
+}
+
+#main #about .hello-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    align-content: center;
+}
+
+#main #about .hello-content img {
+    height: 330px;
+}
+
+#main #about .about-content .frontend-definition p {
+    font-size: 16px;
+    line-height: 24px
+}
+
+
+/* *************** SECTION PROJECTS STYLES *************** */
+#main #projects {
+    padding-bottom: 50px;
+}
+
+#main #projects .projects-content {
+    display: flex;
+    justify-content: center;
+}
+
+#main #projects h2 {
+    color: var(--title-color);
+    text-transform: uppercase;
+    padding-bottom: 10px;
+    border-bottom: 4px solid var(--background-color);
+}
+
+#main #projects .project {
+    display: flex;
+    background: white;
+    box-shadow: 0px 2px 4px rgb(0 0 0 / 20%);
+    border-radius: 5px;
+    margin-bottom: 15px;
+    padding: 20px;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#main #projects .project-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    align-content: center;
+    gap: 10px;
+}
+
+#main #projects .project-item .project-title {
+    width: 60%;
+}
+
+#main #projects .project-item .project-image-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    width: 40%;
+    margin: 0;
+    padding: 0;
+}
+
+#main #projects .project-item .project-image-wrapper img {
+    width: 340px;
+}
+
+#main #projects .project-title h4 {
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+#main #projects .project-title h5 {
+    font-size: 14px;
+    text-transform: uppercase;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+#main #projects .project-content .project-description {
+    font-family: var(--text-font);
+}
+
+
+/* *************** SECTION CONTACTS STYLES *************** */
+#main #contacts {
+    height: 150px;
+    padding-bottom: 50px;
+}
+
+#main #contacts h2 {
+    color: var(--title-color);
+    text-transform: uppercase;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    border-bottom: 4px solid var(--background-color);
+}
+
+/* *************** SOCIAL MEDIA LINKS STYLES *************** */
+#main .social-media {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    height: auto;
+}
+
+#main .social-media-link {
+    display: inline-block;
+    width: 64px;
+    height: 64px;
+    background-size: 64px 64px;
+    background-repeat: no-repeat;
+    transition: 0.8s;
+}
+
+#main .social-media-link:hover {
+    padding-bottom: 5px;
+    border-bottom: 3.5px solid var(--text-color);
+}
+
+#main .social-media-link.github {
+    background-image: url("/assets/img/social/github.svg");
+}
+
+#main .social-media-link.linkedin {
+    background-image: url("/assets/img/social/linkedin.svg");
+}
+
+#main .social-media-link.twitter {
+    background-image: url("/assets/img/social/twitter.svg");
+}
+
+
+#main .social-media-link.facebook {
+    background-image: url("/assets/img/social/facebook.svg");
+}
+
+#main .social-media-link.instagram {
+    background-image: url("/assets/img/social/instagram.svg");
+}
+
+
+/* *************** FOOTER STYLES *************** */
+#footer {
+    background-color: var(--background-color);
+    color: var(--focus-text-color);
+    padding-top: 50px;
+}
+
+#footer .footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+}
+
+
+/* *************** MEDIA QUERIES *************** */
+@media (max-width: 1000px) {
+    #main #projects .project-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        align-content: center;
+        gap: 10px;
+        flex-direction: column;
+    }
+
+    #main #projects .project-item .project-title {
+        width: auto;
+    }
+
+    #main #projects .project-item .project-image-wrapper {
+        width: auto;
+    }
+
+    #main #projects .project {
+        width: 100%;
+    }
+}
+
+
+@media (max-width: 960px) {
+    #main #about .hello {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        align-content: center;
+    }
+}
+
+
+@media (max-width: 730px) {
+
+    #header .header-content #menu ol {
+        gap: 20px;
+    }
+
+    #main #about .about-content {
+        flex-direction: column;
+    }
+
+}
+
+
+@media (max-width: 650px) {
+    :root {
+        --font-big-size: 28px;
+        --font-medium-size: 20px;
+        --font-small-size: 14px;
+    }
+
+    #header .header-content #menu ol {
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    #wrapper {
+        min-width: auto;
+    }
+
+    #main #contacts {
+        height: 650px;
+    }
+
+    #main .social-media {
+        display: flex;
+        gap: 20px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #main .social-media-link {
+        width: 100px;
+        height: 100px;
+        background-size: 100px 100px;
+    }
+}
+
+
+@media (max-width: 450px) {
+    :root {
+        --font-big-size: 22px;
+        --font-medium-size: 18px;
+        --font-small-size: 14px;
+    }
+
+    #header .header-content img {
+        height: 70px;
+    }
+
+    #header .header-content #menu ol {
+        gap: 10px;
+    }
+
+    #main #projects .project-item .project-image-wrapper img {
+        width: 240px;
+    }
+}
+
+
+@media (max-width: 400px) {
+    #header .header-content img {
+        height: 60px;
+    }
+
+    #header .header-content #menu ol {
+        gap: 5px;
+    }
+
+    #main #about picture {
+        display: none;
+    }
+
+    #main #projects .project-item .project-image-wrapper img {
+        width: 200px;
+    }
+
+    #main .social-media-link {
+        width: 80px;
+        height: 80px;
+        background-size: 80px 80px;
+    }
+
+    #main #contacts {
+        height: 550px;
+    }
+}
+
+
+@media (max-width: 400px) {
+    #main #projects .project-item .project-image-wrapper {
+        display: none;
+    }
+
+    #header .header-content img {
+        height: 50px;
+    }
+
+    #main #contacts {
+        height: auto;
+    }
+
+    #main .social-media-link {
+        color: var(--text-color);
+        font-size: var(--font-big-size);
+        font-family: var(--title-font);
+        width: auto;
+        height: auto;
+        background-size: auto;
+    }
+
+
+    #main .social-media-link.github {
+        background-image: none;
+    }
+
+    #main .social-media-link.github::before {
+        content: "GitHub";
+    }
+
+    #main .social-media-link.linkedin {
+        background-image: none;
+    }
+
+    #main .social-media-link.linkedin::before {
+        content: "LinkedIn";
+    }
+
+
+    #main .social-media-link.twitter {
+        background-image: none;
+    }
+
+    #main .social-media-link.twitter::before {
+        content: "Twitter";
+    }
+
+    #main .social-media-link.facebook {
+        background-image: none;
+    }
+
+    #main .social-media-link.facebook::before {
+        content: "Facebook";
+    }
+
+    #main .social-media-link.instagram {
+        background-image: none;
+    }
+
+    #main .social-media-link.instagram::before {
+        content: "Instagram";
+    }
+}
