@@ -193,10 +193,52 @@ h3 {
 
 #main #projects .project-wrapper {
     display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    align-content: flex-start;
+    gap: 10px;
+}
+
+#main #projects .project-item,
+.project-links-itens {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+}
+
+#main #projects .project-item .project-links-itens {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: flex-start;
+    align-content: center;
+}
+
+#main #projects .project-item .project-links-itens img {
+    height: 32px;
+}
+
+#main #projects .project-item .project-link {
+    display: flex;
+    display: flex;
     align-items: center;
     justify-content: space-between;
     align-content: center;
-    gap: 10px;
+    gap: 20px;
+}
+
+#main #projects .project-item .project-link a {
+    color: var(--title-color);
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 0.5;
+}
+
+#main #projects .project-item .project-link a:hover {
+    text-decoration: underline;
 }
 
 #main #projects .project-item .project-title {
@@ -311,7 +353,7 @@ h3 {
 
 /* *************** MEDIA QUERIES *************** */
 @media (max-width: 1000px) {
-    #main #projects .project-wrapper {
+    #main #projects .project-item {
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -390,6 +432,10 @@ h3 {
         height: 100px;
         background-size: 100px 100px;
     }
+
+    #main #projects .project-item .project-links-itens {
+    flex-direction: column;
+    }
 }
 
 
@@ -444,6 +490,11 @@ h3 {
 
 
 @media (max-width: 400px) {
+
+    #main #projects .project-item .project-links-itens img {
+        display: none;
+    }
+    
     #main #projects .project-item .project-image-wrapper {
         display: none;
     }

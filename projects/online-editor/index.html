@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Simples Online Web Editor</title>
+
+    <script src="/assets/main.js"></script>
+
+    <link rel="stylesheet" href="/assets/main.css">
+
+</head>
+
+<body>
+
+    <main>
+        <div class="wrapper">
+
+            <textarea name="editor" id="editor" onkeyup="refresh()" placeholder="Escreve seu código aqui..."></textarea>
+
+            <iframe id="viewer" frameborder="0"></iframe>
+        </div>
+    </main>
+
+</body>
+
+</html>
