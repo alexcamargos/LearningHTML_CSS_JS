@@ -142,3 +142,7 @@ a:hover {
 .back_top:hover {
     color: rgba(255, 184, 108, 1);
 }
+
+.footer-copy p {
+    text-align: left;
+}
