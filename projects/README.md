@@ -11,6 +11,9 @@ Para ser um desenvolvedor front-end é necessário familiarizar-se com lógica d
 [**Very Simple Generic Website**](https://github.com/alexcamargos/LearningHTML_CSS_JS/tree/master/projects/personal-website)
 : Simple website developed in HTML and CSS in order to exercise the basic concepts of marshalling and web styling.
 
+**Nokia 3310 Snake**
+: A simple clone of the Nokia 3310 Snake developed into a simple grid with HTML5 technology, CSS3 and JavaScript.
+
 
 
 

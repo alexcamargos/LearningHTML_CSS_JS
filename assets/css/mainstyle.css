@@ -169,7 +169,9 @@ h3 {
 
 #main #projects .projects-content {
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    gap: 20px;
 }
 
 #main #projects h2 {
