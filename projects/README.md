@@ -11,10 +11,11 @@ Para ser um desenvolvedor front-end é necessário familiarizar-se com lógica d
 [**Very Simple Generic Website**](https://github.com/alexcamargos/LearningHTML_CSS_JS/tree/master/projects/personal-website)
 : Simple website developed in HTML and CSS in order to exercise the basic concepts of marshalling and web styling.
 
-**Nokia 3310 Snake**
+**[Nokia 3310 Snake](https://github.com/alexcamargos/LearningHTML_CSS_JS/tree/master/projects/nokia3310-snake)**
 : A simple clone of the Nokia 3310 Snake developed into a simple grid with HTML5 technology, CSS3 and JavaScript.
 
-
+[**JavaScript Simples Slideshow**](https://github.com/alexcamargos/LearningHTML_CSS_JS/tree/master/projects/simplesslideshow)
+: Apresentação de slides feita com HTML5, CSS3 e JavaScript.
 
 
 ## Tecnologias Utilizadas
