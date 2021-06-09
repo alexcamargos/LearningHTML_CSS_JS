@@ -1,0 +1,327 @@
+/*
+# -------------------------------------------------------------------------------------------------
+#
+# Name: main.css
+# Version: 0.0.1
+#
+# Summary: 
+#         
+#
+# Author: Alexsander Lopes Camargos
+# Author-email: alcamargos@vivaldi.net
+#
+# License: MIT
+#
+# -------------------------------------------------------------------------------------------------
+*/
+
+
+@import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&family=Ubuntu:wght@500;700&display=swap');
+
+
+:root {
+    --color-1: #F2561D;
+    --color-2: #FFBFA8;
+    --color-3: #F2A488;
+    --color-4: #3CA691;
+    --color-5: #88F2DD;
+    --calor-6: #fff;
+
+    --color-4-dark: #236154;
+
+
+
+    --title-font: 'Ubuntu', sans-serif;
+
+    --default-font: 'Oxygen', sans-serif;
+
+    --site-width: 980px;
+    --min-viewport-size: 320;
+    --max-viewport-size: 1920;
+
+    --menu-total-borders-x: 0px;
+    --menu-total-borders-y: 0px;
+
+    --transition-duration: 700ms;
+
+}
+
+body {
+    font-family: var(--default-font);
+}
+
+
+
+p {
+    margin-bottom: 20px;
+}
+
+a {
+    color: var(--color-2);
+    text-decoration: none;
+    transition: var(--transition-duration);
+}
+
+a:hover {
+    font-weight: bold;
+}
+
+.delivery__status_not-available {
+    color: var(--color-1)
+}
+
+.delivery__status-available {
+    color: var(--color-4-dark)
+}
+
+
+
+.button-default {
+    margin-bottom: 0;
+    font-weight: normal;
+    text-align: center;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    padding: 8px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    border-radius: 4px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    color: #fff;
+    background-color: #424242;
+    border-color: #424242;
+    width: 100%;
+}
+
+
+.page-header {
+    background-color: var(--color-4);
+}
+
+.navigation-bar__itens {
+    display: flex;
+    gap: 80px;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    padding: 5px 80px;
+    margin: 0;
+}
+
+
+.navigation-bar__itens a {
+    padding: 0 10px;
+    text-decoration: none;
+    font-family: var(--title-font);
+    color: var(--calor-6);
+}
+
+
+.conteudo {
+    color: #777;
+    background-color: #eee;
+    padding: 40px 80px;
+}
+
+.title {
+    position: absolute;
+    width: 100%;
+    top: 0;
+}
+
+.title-caption {
+    position: absolute;
+    bottom: 0;
+    background-color: #23615388;
+    padding: 0 80px;
+}
+
+.title-caption p {
+    color: var(--calor-6);
+}
+
+.h2-title {
+    text-transform: uppercase;
+    color: var(--calor-6);
+    text-align: center;
+    padding: 20px;
+    font-size: 70px;
+    letter-spacing: 5px;
+    text-shadow: 3px 1px 1px rgba(150, 150, 150, 0.9);
+}
+
+.hero {
+    width: 100vw;
+    height: 100vh;
+}
+
+.hero_background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+}
+
+.pictures__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+
+.logo-img {
+    height: 300px;
+    object-fit: cover;
+    object-position: 50% 50%;
+}
+
+.scroll-indicator {
+    position: relative;
+    width: 48px;
+    align-self: flex-end;
+}
+
+
+.social-media__wrapper {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    padding-left: 20px;
+    padding-top: 35vh;
+}
+
+.social-media__itens {
+    position: relative;
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    background-size: 32px 32px;
+    background-repeat: no-repeat;
+    z-index: 10;
+}
+
+.social-media__instagram {
+    background-image: url('../img/social_media/instagram.svg');
+}
+
+.social-media__twitter {
+    background-image: url('../img/social_media/twitter.svg');
+}
+
+.social-media__youtube {
+    background-image: url('../img/social_media/youtube.svg');
+}
+
+.social-media__facebook {
+    background-image: url('../img/social_media/facebook.svg');
+}
+
+
+
+.product-list {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+.product-caption,
+.product-title,
+.product-price__wrapper,
+.product-delivery__status,
+.h5-product-delivery__status {
+    margin: 0;
+    padding: 5px 0;
+}
+
+
+.product-list + .product-list {
+    margin-right: 1px solid var(--color-5);
+}
+
+.product-image__wrapper {
+    width: 100%;
+    height: 100%;
+}
+
+
+.product-image__box img {
+    max-height: 344px;
+    width: 300px;
+}
+
+.product-cell {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    margin: 80px 40px;
+}
+
+
+/* Create the parallax scrolling effect */
+
+.downhill-sennes,
+.enduro-and-ebike {
+    position: relative;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.downhill-sennes-bg {
+    background-image: url('../img/downhill-sennes-bg.jpg');
+}
+
+.enduro-and-ebike-bg {
+    background-image: url('../img/enduro-and-ebike.jpg');
+}
+
+
+footer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #424242;
+    color: var(--calor-6);
+    width: 100%;
+    padding: 20px 0;
+}
+
+.footnote-vat {
+    border-bottom: 1px solid var(--color-1);
+}
+
+footer p {
+    margin: 0;
+    padding: 0 80px;
+}
+
+
+
+/* Turn off parallax scrolling for all tablets and phones. Increase/decrease the pixels if needed */
+@media only screen and (max-device-width: 1366px) {
+    .parallax {
+        background-attachment: scroll;
+    }
+}
