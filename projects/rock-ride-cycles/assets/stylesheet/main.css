@@ -20,58 +20,61 @@
 
 
 :root {
-    --color-1: #F2561D;
-    --color-2: #FFBFA8;
-    --color-3: #F2A488;
-    --color-4: #3CA691;
-    --color-5: #88F2DD;
-    --calor-6: #fff;
-
-    --color-4-dark: #236154;
-
-
+    /* ---- COLOR PALETTE ---- */
+    --milky-way: #f8f8fb;
+    --tangerine: #ff6a3d;
+    --tangerine-dark: #d45028;
+    --midnight: #1a2238;
+    --twilight: #29375b;
+    --twilight-transparency: rgba(41, 55, 91, 0.55);
+    --daffodil: #f9db6d;
+    --lavender: #9daaf2;
+    --lavender-transparency: rgba(156, 169, 242, 0.33);
+    --iris: #3b4ca8;
+    --border-gray: #e8ecef;
+    --border-gray-dark: #797e89;
 
     --title-font: 'Ubuntu', sans-serif;
-
-    --default-font: 'Oxygen', sans-serif;
+    --body-font: 'Oxygen', sans-serif;
 
     --site-width: 980px;
     --min-viewport-size: 320;
     --max-viewport-size: 1920;
-
     --menu-total-borders-x: 0px;
     --menu-total-borders-y: 0px;
 
     --transition-duration: 700ms;
-
+    --transition: all var(--transition-duration) ease;
 }
 
 body {
-    font-family: var(--default-font);
+    font-family: var(--body-font);
+    background-color: var(--milky-way);
 }
 
 
-
-p {
-    margin-bottom: 20px;
-}
 
 a {
-    color: var(--color-2);
+    color: var(--tangerine);
     text-decoration: none;
-    transition: var(--transition-duration);
+    transition: var(--transition);
 }
 
 a:hover {
-    font-weight: bold;
+    color: var(--tangerine-dark)
 }
 
+
 .delivery__status_not-available {
-    color: var(--color-1)
+    color: var(--daffodil)
 }
 
 .delivery__status-available {
-    color: var(--color-4-dark)
+    color: var(--iris)
+}
+
+.product-estimated__delivery {
+    color: var(--iris)
 }
 
 
@@ -94,15 +97,19 @@ a:hover {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    color: #fff;
-    background-color: #424242;
-    border-color: #424242;
+    color: var(--tangerine);
+    background-color: var(--midnight);
+    border-color: var(--border-gray);
     width: 100%;
+}
+
+.button-default:hover {
+    color: var(--tangerine-dark);
 }
 
 
 .page-header {
-    background-color: var(--color-4);
+    background-color: var(--midnight);
 }
 
 .navigation-bar__itens {
@@ -120,13 +127,17 @@ a:hover {
     padding: 0 10px;
     text-decoration: none;
     font-family: var(--title-font);
-    color: var(--calor-6);
+    color: var(--iris);
+    transition: var(--transition);
+}
+
+.navigation-bar__itens a:hover {
+    color: var(--tangerine-dark);
 }
 
 
-.conteudo {
-    color: #777;
-    background-color: #eee;
+.abount {
+    color: var(--twilight);
     padding: 40px 80px;
 }
 
@@ -139,22 +150,22 @@ a:hover {
 .title-caption {
     position: absolute;
     bottom: 0;
-    background-color: #23615388;
+    background-color: var(--twilight-transparency);
     padding: 0 80px;
 }
 
 .title-caption p {
-    color: var(--calor-6);
+    color: var(--milky-way);
 }
 
 .h2-title {
     text-transform: uppercase;
-    color: var(--calor-6);
+    color: var(--milky-way);
     text-align: center;
     padding: 20px;
     font-size: 70px;
     letter-spacing: 5px;
-    text-shadow: 3px 1px 1px rgba(150, 150, 150, 0.9);
+    text-shadow: 3px 1px 1px var(--twilight-transparency);
 }
 
 .hero {
@@ -235,26 +246,34 @@ a:hover {
 
 .product-list {
     display: flex;
-    gap: 20px;
     align-items: center;
     justify-content: center;
     align-content: center;
     flex-wrap: wrap;
 }
 
+.product-wrapper {
+    border: 1px solid var(--border-gray);
+    border-radius: 10px;
+    margin: 10px;
+    transition: var(--transition);
+}
+
+.product-wrapper:hover {
+    background-color: var(--lavender-transparency);
+    border-color: var(--border-gray-dark);
+}
+
 .product-caption,
 .product-title,
 .product-price__wrapper,
 .product-delivery__status,
-.h5-product-delivery__status {
+.h5-product-delivery__status,
+.product-estimated__delivery {
     margin: 0;
     padding: 5px 0;
 }
 
-
-.product-list + .product-list {
-    margin-right: 1px solid var(--color-5);
-}
 
 .product-image__wrapper {
     width: 100%;
@@ -302,14 +321,16 @@ footer {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    background-color: #424242;
-    color: var(--calor-6);
+    background-color: var(--midnight);
     width: 100%;
     padding: 20px 0;
+    color: var(--milky-way)
 }
 
 .footnote-vat {
-    border-bottom: 1px solid var(--color-1);
+    color: var(--lavender);
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border-gray);
 }
 
 footer p {
