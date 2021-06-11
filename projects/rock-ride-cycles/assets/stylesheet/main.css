@@ -45,6 +45,11 @@
 
     --transition-duration: 700ms;
     --transition: all var(--transition-duration) ease;
+
+    --instagram-gb: url('../img/social_media/instagram.svg');
+    --twitter-bg: url('../img/social_media/twitter.svg');
+    --youtube-bg: url('../img/social_media/youtube.svg');
+    --facebook-bg: url('../img/social_media/facebook.svg');
 }
 
 body {
@@ -227,21 +232,31 @@ a:hover {
 }
 
 .social-media__instagram {
-    background-image: url('../img/social_media/instagram.svg');
+    background-image: var(--facebook-bg);
 }
 
 .social-media__twitter {
-    background-image: url('../img/social_media/twitter.svg');
+    background-image: var(--twitter-bg);
 }
 
 .social-media__youtube {
-    background-image: url('../img/social_media/youtube.svg');
+    background-image: var(--youtube-bg);
 }
 
 .social-media__facebook {
-    background-image: url('../img/social_media/facebook.svg');
+    background-image: var(--facebook-bg);
 }
 
+.social-media__instagram:hover,
+.social-media__instagram:focus,
+.social-media__twitter:hover,
+.social-media__twitter:focus,
+.social-media__youtube:hover,
+.social-media__youtube:focus,
+.social-media__facebook:hover,
+.social-media__facebook:focus {
+    filter: invert(59%) sepia(63%) saturate(6619%) hue-rotate(348deg) brightness(88%) contrast(87%);
+}
 
 
 .product-list {
