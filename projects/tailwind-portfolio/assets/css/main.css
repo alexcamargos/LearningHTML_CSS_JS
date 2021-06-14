@@ -1,0 +1,170 @@
+/*
+# -------------------------------------------------------------------------------------------------
+#
+# Name: main.css
+# Version: 0.0.1
+#
+# Summary: alexcamargos.github.io
+#          My Personal Portfolio.
+#
+# Author: Alexsander Lopes Camargos
+# Author-email: alcamargos@vivaldi.net
+#
+# License: MIT
+#
+# -------------------------------------------------------------------------------------------------
+*/
+
+
+/* Google Fonts - https://fonts.google.com | Roboto - Designed by Christian Robertson */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700;900&display=swap');
+
+
+/* ./your-css-folder/styles.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root {
+    --text-opacity: 1;
+    --text-dark: rgba(31, 41, 55, var(--text-opacity));
+    --text-light: rgba(255, 255, 255, var(--text-opacity));
+}
+
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #CBD5E0;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #2D3748;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #718096;
+}
+
+
+
+#hero {
+    background-color: rgba(20, 20, 20, 0.77);
+    background-image: url("../img/bg.jpg");
+    background-size: cover;
+    background-blend-mode: hue;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    font-family: var(--page-font);
+    height: 100vh;
+}
+
+
+/* *************** WAVING HAND ANIMATION *************** */
+.waving-hand {
+    display: inline-block;
+    animation-name: waving-hand-animation;
+    /* Change to speed up or slow down */
+    animation-duration: 2.5s;
+    /* Never stop waving */
+    animation-iteration-count: infinite;
+    /* Pivot around the bottom-left palm */
+    transform-origin: 70% 70%;
+}
+
+@keyframes waving-hand-animation {
+    0% {
+        transform: rotate(0.0deg)
+    }
+
+    10% {
+        transform: rotate(14.0deg)
+    }
+
+    20% {
+        transform: rotate(-8.0deg)
+    }
+
+    30% {
+        transform: rotate(14.0deg)
+    }
+
+    40% {
+        transform: rotate(-4.0deg)
+    }
+
+    50% {
+        transform: rotate(10.0deg)
+    }
+
+    60% {
+        transform: rotate(-5.0deg)
+    }
+
+    70% {
+        transform: rotate(0.0deg)
+    }
+
+    100% {
+        transform: rotate(0.0deg)
+    }
+}
+
+/* *************** END OF - WAVING HAND ANIMATION *************** */
+
+
+h2 {
+    position: relative;
+}
+
+h2::before {
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    width: 400px;
+    height: 3px;
+    transform: translateX(-50%);
+}
+
+#aboutme::before {
+    background: var(--text-dark);
+}
+
+#myservices::before {
+    background: var(--text-light);
+}
+
+#myskills::before {
+    background: var(--text-dark);
+}
+
+
+h2::after {
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    font-size: 20px;
+    color: rgba(79, 70, 229, 1);
+    padding: 5px;
+    transform: translateX(-50%);
+}
+
+#aboutme::after {
+    content: "who i am";
+    background: var(--text-light);
+}
+
+#myservices::after {
+    content: "what i provide";
+    background: var(--text-dark);
+}
+
+#myskills::after {
+    content: "what i know";
+    background: var(--text-light);
+}
