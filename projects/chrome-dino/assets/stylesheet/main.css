@@ -1,0 +1,74 @@
+body {
+    background-color: #fafafa;
+    background-image: url('../img/bg.jpg');
+    background-position: top;
+}
+
+.no-display {
+    display: none;
+}
+
+.display {
+    display: flex;
+}
+
+
+.wrapper {
+    position: absolute;
+    width: 80vw;
+    height: 200px;
+    margin: auto;
+    border: 1px solid #333;
+    background-image: url('../img/desert.png');
+    background-position: center;
+    background-size: 525px 200px;
+    background-repeat: repeat-x;
+    margin-top: 25%;
+    animation: backgroundSlider 600s infinite linear;
+}
+
+@keyframes backgroundSlider {
+    from {
+        background-position: 70000%;
+    }
+    to {
+        background-position: 0%;
+    }
+}
+
+
+
+.dino {
+    position: absolute;
+    bottom: 0;
+    width: 60px;
+    height: 60px;
+    background-image: url('../img/dino.png');
+}
+
+.cactus {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    bottom: 0;
+    background-image: url('../img/cactus.png');
+}
+
+.game-control {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+}
+
+.start-game {
+    border: 1px solid #000;
+    cursor: pointer;
+    box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
+}
+
+.game-over {
+    text-align: center;
+    color: #000;
+    text-shadow: 0 -1px 4px #eee, 0 -2px 10px #ff0, 0 -10px 20px #ff8000, 0 -18px 40px #F00;
+}
