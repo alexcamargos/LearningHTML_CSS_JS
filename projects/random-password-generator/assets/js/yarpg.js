@@ -1,5 +1,7 @@
 const alertBox = document.getElementById('alert-box');
 const yarpg = document.getElementById('yarpg');
+const lengthValue = document.getElementById('length_value');
+const passwordLength = document.getElementById('password-length');
 
 
 const digits = '0123456789';
@@ -9,6 +11,15 @@ const ascii_uppercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 const ascii_letters = ascii_lowercase + ascii_uppercase;
 const punctuation = '!\"#$ %&\'()*+,-./:;<=>?@[\\]^_`{|}~';
 const printable = digits + ascii_letters + punctuation;
+
+
+function changePasswordLengthValue() {
+    updatePasswordLengthValue(lengthValue, passwordLength);
+}
+
+function updatePasswordLengthValue(element, value) {
+    element.innerHTML = value.value;
+}
 
 
 function getPassword(passwordLength, characters) {
@@ -30,6 +41,10 @@ function passwordGenerator(passwordLength, allPrintable = true, onlyNumbers = fa
     yarpg.value = getPassword(16, printable);
 
 }
+
+
+
+
 
 function copyPassword() {
 

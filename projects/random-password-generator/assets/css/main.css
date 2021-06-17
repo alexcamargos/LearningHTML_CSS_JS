@@ -111,3 +111,48 @@ h1 {
     color: #f8f8f8;
     font-size: 28px;
 } */
+
+.config {
+    width: 40%;
+    min-width: 450px;
+    background-color: #1c1e21;
+    padding: 80px 30px;
+    border-radius: 8px;
+    box-shadow: 0 15px 20px rgb(0 0 0 / 15%);
+    margin-top: 60px;
+    color: rgba(255, 255, 255, 1);
+}
+
+.password-config {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    align-content: center;
+    width: 100%;
+}
+
+.password-length__content {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+}
+
+.password-length__content input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 85%;
+    height: 3.5px;
+    background-color: #e2e2e2;
+    border-radius: 3.5px;
+}
+
+.label-password__length {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+}
