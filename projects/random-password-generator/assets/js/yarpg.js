@@ -5,11 +5,12 @@ const passwordLength = document.getElementById('password-length');
 
 
 const digits = '0123456789';
+const punctuation = '!\"#$ %&\'()*+,-./:;<=>?@[\\]^_`{|}~';
 
 const ascii_lowercase = 'abcdefghijklmnopqrstuvwxyz';
 const ascii_uppercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+
 const ascii_letters = ascii_lowercase + ascii_uppercase;
-const punctuation = '!\"#$ %&\'()*+,-./:;<=>?@[\\]^_`{|}~';
 const printable = digits + ascii_letters + punctuation;
 
 
@@ -30,25 +31,48 @@ function getPassword(passwordLength, characters) {
         password += characters.substring(randomNumber, randomNumber + 1);
     }
 
-    console.log(password);
-
     return password;
 }
 
 
-function passwordGenerator(passwordLength, allPrintable = true, onlyNumbers = false, onlyLetters = false, onlyPunctuation = false) {
+function passwordGenerator() {
+    let hasUppercase = document.getElementById('ascii_uppercase');
+    let hasLowercase = document.getElementById('ascii_lowercase');
+    let hasDigits = document.getElementById('digits');
+    let hasPunctuation = document.getElementById('punctuation');
 
-    yarpg.value = getPassword(16, printable);
 
+    if (!hasPunctuation.checked) {
+        yarpg.value = getPassword(passwordLength.value, ascii_letters + digits);
+
+    } else if (!hasDigits.checked) {
+        yarpg.value = getPassword(passwordLength.value, ascii_letters + punctuation);
+
+    } else if (!hasLowercase.checked) {
+        yarpg.value = getPassword(passwordLength.value, ascii_uppercase + digits + punctuation);
+
+    } else if (!hasUppercase.checked) {
+        yarpg.value = getPassword(passwordLength.value, ascii_lowercase + digits + punctuation);
+
+    } else if (!hasPunctuation.checked, !hasDigits.checked) {
+        yarpg.value = getPassword(passwordLength.value, ascii_letters);
+
+    } else if (!hasUppercase.checked, !hasLowercase.checked) {
+        yarpg.value = getPassword(passwordLength.value, digits + punctuation);
+
+    } else if (!hasUppercase.checked, !hasPunctuation.checked) {
+        yarpg.value = getPassword(passwordLength.value, ascii_lowercase + digits);
+
+    } else {
+        yarpg.value = getPassword(passwordLength.value, printable);
+    }
 }
-
-
-
 
 
 function copyPassword() {
 
     let generateButton = document.querySelector('.btn-generate');
+    let showNewPassword = document.getElementById('new-password')
 
     // Select the text field.
     yarpg.select();
@@ -58,10 +82,12 @@ function copyPassword() {
     // Copy the text inside the text field.
     document.execCommand("copy");
 
-    // alertBox.classList.toggle('active');
+    showNewPassword.innerHTML = yarpg.value;
 
-    // setTimeout(function () {
-    //     alertBox.classList.toggle('active')
-    // }, 900);
+    alertBox.classList.toggle('alert-box__hidden');
+
+    setTimeout(function () {
+        alertBox.classList.toggle('alert-box__hidden')
+    }, 900);
 
 }

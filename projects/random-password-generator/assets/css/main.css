@@ -3,8 +3,10 @@
 :root {
     --password-font: 'Source Code Pro', monospace;
     --default-font: 'Ubuntu', sans-serif;
-    --background-color: #f8f8f8;
+    --light-color: #f8f8f8;
+    --dark-color: #1c1e21;
 }
+
 
 * {
     margin: 0;
@@ -12,14 +14,15 @@
     box-sizing: border-box;
 }
 
+
 body {
-    background-color: var(--background-color);
+    background-color: var(--light-color);
     font-family: var(--default-font);
 }
 
 h1 {
     font-size: 38px;
-    color: #333;
+    color: var(--dark-color);
 }
 
 #wrapper {
@@ -53,8 +56,8 @@ h1 {
     font-family: var(--password-font);
     letter-spacing: 5px;
     box-sizing: border-box;
-    border-radius: 8px;
-    color: #333;
+    border-radius: 10px;
+    color: var(--dark-color);
     box-shadow: -4px -4px 10px rgba(255, 255, 255, 1),
         inset 4px 4px 10px rgba(0, 0, 0, 0.05),
         inset -4px -4px 10px rgba(255, 255, 255, 1),
@@ -68,14 +71,14 @@ h1 {
 }
 
 .btn-copy:hover {
-    opacity: 1;
+    filter: invert(42%) sepia(93%) saturate(2087%) hue-rotate(90deg) brightness(126%) contrast(112%);
 }
 
 .btn-generate {
     position: relative;
     cursor: pointer;
-    color: #fff;
-    background-color: #333;
+    color: var(--light-color);
+    background-color: var(--dark-color);
     font-size: 32px;
     display: inline-block;
     padding: 10px 15px;
@@ -88,15 +91,16 @@ h1 {
     box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.3), -3px 3px 3px 3px rgba(0, 0, 0, 0.3);
 }
 
-.alert-box:active {
+
+.alert-box__hidden {
+    visibility: hidden;
+}
+
+.alert-box {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-
-/* .alert-box {
-    display: none;
     position: absolute;
     gap: 60px;
     background-color: #333;
@@ -105,12 +109,11 @@ h1 {
     width: 100vw;
 }
 
-
-
 #alert-box h1 {
-    color: #f8f8f8;
+    color: var(--light-color);
     font-size: 28px;
-} */
+}
+
 
 .config {
     width: 40%;
@@ -120,7 +123,7 @@ h1 {
     border-radius: 8px;
     box-shadow: 0 15px 20px rgb(0 0 0 / 15%);
     margin-top: 60px;
-    color: rgba(255, 255, 255, 1);
+    color: var(--light-color);
 }
 
 .password-config {
@@ -141,18 +144,17 @@ h1 {
 }
 
 .password-length__content input[type="range"] {
-    -webkit-appearance: none;
     appearance: none;
     width: 85%;
     height: 3.5px;
-    background-color: #e2e2e2;
+    background-color: var(--light-color);
     border-radius: 3.5px;
 }
 
 .label-password__length {
-    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     align-content: center;
+    width: 100%;
 }
