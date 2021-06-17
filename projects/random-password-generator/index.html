@@ -21,7 +21,7 @@
             <input type="text" name="yarpg" id="yarpg" placeholder="" readonly>
 
             <picture>
-                <img class="btn-copy" src="assets/img/copy.svg" alt="Copy button" srcset="">
+                <img class="btn-copy" src="assets/img/copy.svg" alt="Copy button" srcset="" onclick="copyPassword();">
             </picture>
 
         </div>
@@ -29,7 +29,10 @@
         <div class="btn-generate" onclick="passwordGenerator();">GENERATE</div>
 
 
-        <div id="alert-box"></div>
+        <!-- <div id="alert-box" class="alert-box">
+            <h1>Yet Another Random Password Generator - YARPG</h1>
+            <p>"New passaword Copied: <span id="new-password"></span>"</p>
+        </div> -->
     </div>
 
     <script src="assets/js/yarpg.js"></script>
