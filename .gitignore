@@ -391,3 +391,6 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+
+# Parcel a Blazing fast, zero configuration web application bundler.
+.parcel-cache/*
