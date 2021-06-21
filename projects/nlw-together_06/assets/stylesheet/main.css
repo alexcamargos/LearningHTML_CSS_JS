@@ -1,0 +1,81 @@
+/*
+# -------------------------------------------------------------------------------------------------
+#
+# Name: main.css
+# Version: 0.0.1
+#
+# Summary: NLW/Together #06
+#         
+#
+# Author: Alexsander Lopes Camargos
+# Author-email: alcamargos@vivaldi.net
+#
+# License: MIT
+#
+# -------------------------------------------------------------------------------------------------
+*/
+
+/*
+Google Fonts - https://fonts.google.com
+DM Sans - Designed by Colophon Foundry, Jonny Pinhorn, Indian Type Foundry.
+Poppins - Designed by Indian Type Foundry, Jonny Pinhorn.
+*/
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Poppins:wght@400;500;700&display=swap');
+
+/* *************** VARIABLES *************** */
+:root {
+    --header-height: 4.5rem;
+
+    /* COLORS */
+    --hue: 159;
+
+    /* HSL COLOR MODE */
+    --base-color: hsl(var(--hue) 36% 57%);
+    --base-color-second: hsl(var(--hue) 65% 88%);
+    --base-color-alt: hsl(var(--hue) 57% 53%);
+    --title-color: hsl(var(--hue) 41% 10%);
+    --text-color: hsl(0 0% 46%);
+    --text-color-light: hsl(0 0% 98%);
+    --body-color: hsl(0 0% 98%);
+
+    /* LAYOUT */
+    --default-margin: 1.5rem;
+
+    /* FONTS */
+    --base-font: 'DM Sans', sans-serif;
+    --highlight-font: 'Poppins', sans-serif;
+}
+
+/* *************** BASE STYLES *************** */
+body {
+    font: 400 1rem var(--base-font);
+    color: var(--text-color);
+    background: var(--body-color);
+    -webkit-font-smoothing: antialiased;
+}
+
+h1 {
+    font: 700 1.875rem var(--highlight-font);
+    color: var(--title-color);
+    -webkit-font-smoothing: auto;
+}
+
+.container {
+    margin: 0 var(--default-margin);
+}
+
+.button {
+    background-color: var(--base-color);
+    color: var(--text-color-light);
+    height: 3.5rem;
+    display: inline-flex;
+    align-items: center;
+    padding: 0 2rem;
+    border-radius: 0.25rem;
+    font: 500 1rem var(--base-color);
+    transition: background 0.3s;
+}
+
+.button:hover {
+    background-color: var(--base-color-alt);
+}
