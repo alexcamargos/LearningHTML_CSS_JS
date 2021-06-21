@@ -64,6 +64,11 @@ h1 {
     margin: 0 var(--default-margin);
 }
 
+.grid {
+    display: grid;
+    gap: 2rem;
+}
+
 .button {
     background-color: var(--base-color);
     color: var(--text-color-light);
@@ -73,7 +78,7 @@ h1 {
     padding: 0 2rem;
     border-radius: 0.25rem;
     font: 500 1rem var(--base-color);
-    transition: background 0.3s;
+    transition: background 0.5s;
 }
 
 .button:hover {
@@ -88,4 +93,49 @@ h1 {
         hsla(var(--hue), 36%, 57%, 1) 0%,
         hsla(var(--hue), 65%, 88%, 0.34) 100%
     );
+}
+
+/* *************** HOME STYLES *************** */
+#home {
+    overflow: hidden;
+}
+
+#home .container {
+    margin: 0;
+}
+
+#home picture {
+    position: relative;
+}
+
+#home picture::before {
+    content: '';
+    height: 100%;
+    width: 100%;
+    background: var(--base-color-second);
+    position: absolute;
+    bottom: 16.7%;
+    z-index: 0;
+    border-bottom-right-radius: 0.5rem;
+}
+
+.home-imagem {
+    position: relative;
+    right: 2.93rem;
+    width: 100%;
+    border-top-right-radius: 0.25rem;
+    border-bottom-right-radius: 0.5rem;
+}
+
+.main__content {
+    margin: var(--default-margin);
+    text-align: center;
+}
+
+.main__content h1 {
+    margin-bottom: 1rem;
+}
+
+.main__content p {
+    margin-bottom: 2rem;
 }
