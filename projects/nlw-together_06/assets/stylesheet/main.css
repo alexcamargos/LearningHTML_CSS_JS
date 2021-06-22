@@ -44,6 +44,10 @@ Poppins - Designed by Indian Type Foundry, Jonny Pinhorn.
     /* FONTS */
     --base-font: 'DM Sans', sans-serif;
     --highlight-font: 'Poppins', sans-serif;
+
+    /* SHADOW */
+    --base-shadow-color: rgba(0, 0, 0, 0.15);
+    --default-shadow: 0 0 12px var(--base-shadow-color);
 }
 
 /* *************** BASE STYLES *************** */
@@ -93,13 +97,19 @@ main {
     background-color: var(--base-color-alt);
 }
 
+.toggle {
+    color: var(--base-color);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
 .dividing-line {
     height: 1px;
     width: 100%;
     background: linear-gradient(
         270deg,
-        hsla(var(--hue), 36%, 57%, 1) 0%,
-        hsla(var(--hue), 65%, 88%, 0.34) 100%
+        hsla(var(--hue), 36%, 57%, 1),
+        hsla(var(--hue), 65%, 88%, 0.34)
     );
 }
 
@@ -108,7 +118,7 @@ main {
     display: flex;
     position: fixed;
     height: var(--header-height);
-    margin-bottom: 1px solid #e4e4e4;
+    border-bottom: 1px solid var(--base-color-second);
     top: 0;
     left: 0;
     z-index: 100;
@@ -116,8 +126,12 @@ main {
     width: 100%;
 }
 
+#header.scroll {
+    box-shadow: var(--default-shadow);
+}
+
 .logo {
-    font-size: 700 1.31rem var(--highlight-font);
+    font: 700 1.31rem var(--highlight-font);
     color: var(--title-color);
 }
 
@@ -138,7 +152,7 @@ main {
     opacity: 0;
     visibility: hidden;
     top: -20rem;
-    transition: .3s;
+    transition: 0.3s;
 }
 
 nav.show .menu-bar {
@@ -157,6 +171,21 @@ nav.show .menu-bar {
 nav.show .menu-bar ul {
     display: grid;
     gap: 4rem;
+}
+
+nav .icon-close {
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+    top: -1.5rem;
+    right: 1.5rem;
+    transition: 0.5s;
+}
+
+nav.show .icon-close {
+    visibility: visible;
+    opacity: 1;
+    top: 1.5rem;
 }
 
 .menu-bar ul {
