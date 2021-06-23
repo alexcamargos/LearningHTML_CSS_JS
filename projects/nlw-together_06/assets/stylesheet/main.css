@@ -38,6 +38,8 @@ Poppins - Designed by Indian Type Foundry, Jonny Pinhorn.
     --text-color-light: hsl(0 0% 98%);
     --body-color: hsl(0 0% 98%);
 
+    --light-background: #fff;
+
     /* LAYOUT */
     --default-margin: 1.5rem;
 
@@ -283,7 +285,7 @@ nav.show .icon-close {
 
 /* *************** ABOUT STYLES *************** */
 #about {
-    background-color: #fff;
+    background-color: var(--light-background);
 }
 
 #about .container {
@@ -334,4 +336,54 @@ nav.show .icon-close {
 .services-card__title {
     font-size: 1.5rem;
     margin-bottom: 0.75rem;
+}
+
+/* *************** TESTIMONIALS STYLES *************** */
+#testimonials {
+    background-color: var(--light-background);
+}
+
+#testimonials .container {
+    margin: 0;
+}
+
+#testimonials header {
+    margin: var(--default-margin);
+}
+
+#testimonials blockquote {
+    padding: 2rem;
+    box-shadow: var(--default-shadow);
+    border-radius: 0.25rem;
+}
+
+#testimonials blockquote p {
+    position: relative;
+    text-indent: 1.875rem;
+    margin-bottom: 1.5rem;
+    color: var(--title-color);
+    text-align: center;
+}
+
+#testimonials blockquote p span {
+    position: absolute;
+    font: 700 2.5rem var(--highlight-font);
+    color: var(--base-color);
+    top: -1rem;
+    left: -2.125rem;
+}
+
+#testimonials cite {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    align-content: center;
+    gap: 0.5rem;
+}
+
+#testimonials cite img {
+    width: 2rem;
+    height: 2rem;
+    object-fit: cover;
+    clip-path: circle();
 }
