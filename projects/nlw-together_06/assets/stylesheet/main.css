@@ -62,7 +62,8 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-h1, h2 {
+h1,
+h2 {
     font: 700 1.875rem var(--highlight-font);
     color: var(--title-color);
     -webkit-font-smoothing: auto;
@@ -107,13 +108,23 @@ section {
     cursor: pointer;
 }
 
-.dividing-line {
+.dividing-line__right {
     height: 1px;
     width: 100%;
     background: linear-gradient(
         270deg,
         hsla(var(--hue), 36%, 57%, 1),
         hsla(var(--hue), 65%, 88%, 0.34)
+    );
+}
+
+.dividing-line__left {
+    height: 1px;
+    width: 100%;
+    background: linear-gradient(
+        270deg,
+        hsla(var(--hue), 65%, 88%, 0.34),
+        hsla(var(--hue), 36%, 57%, 1)
     );
 }
 
@@ -302,4 +313,25 @@ nav.show .icon-close {
 
 .about__content {
     margin: var(--default-margin);
+}
+
+/* *************** SERVICES STYLES *************** */
+.card {
+    padding: 3.625rem 2rem;
+    box-shadow: var(--default-shadow);
+    border-bottom: 0.25rem solid var(--base-color);
+    border-radius: 0.25rem 0;
+    text-align: center;
+}
+
+.card i {
+    display: block;
+    margin-bottom: 1.5rem;
+    font-size: 5rem;
+    color: var(--base-color);
+}
+
+.services-card__title {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
 }
