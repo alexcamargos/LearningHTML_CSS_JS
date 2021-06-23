@@ -62,7 +62,7 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-h1 {
+h1, h2 {
     font: 700 1.875rem var(--highlight-font);
     color: var(--title-color);
     -webkit-font-smoothing: auto;
@@ -70,6 +70,10 @@ h1 {
 
 main {
     margin-top: calc(var(--header-height) + 2rem);
+}
+
+section {
+    padding: 5rem 0;
 }
 
 .container {
@@ -264,4 +268,38 @@ nav.show .icon-close {
 
 .main__content p {
     margin-bottom: 2rem;
+}
+
+/* *************** ABOUT STYLES *************** */
+#about {
+    background-color: #fff;
+}
+
+#about .container {
+    margin: 0;
+}
+
+#about picture {
+    position: relative;
+}
+
+#about picture::before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: var(--base-color-second);
+    top: -10%;
+    left: -25%;
+    z-index: 0;
+    border-top-right-radius: 0.5rem;
+}
+
+.about__imagem {
+    position: relative;
+    width: 100%;
+}
+
+.about__content {
+    margin: var(--default-margin);
 }
