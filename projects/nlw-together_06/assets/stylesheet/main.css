@@ -387,3 +387,133 @@ nav.show .icon-close {
     object-fit: cover;
     clip-path: circle();
 }
+
+/* *************** CONTACT STYLES *************** */
+#contact .grid {
+    grid: 4rem;
+}
+
+#contact header p {
+    margin-bottom: 2rem;
+}
+
+#contact .button i,
+#contact ul li i {
+    font-size: 1.5rem;
+    margin-right: 0.625rem;
+}
+
+#contact ul.grid {
+    gap: 2rem;
+}
+
+#contact ul li {
+    display: flex;
+    align-items: center;
+}
+
+#contact ul li i {
+    color: var(--base-color);
+}
+
+/* *************** CONTACT STYLES *************** */
+footer {
+    background-color: var(--base-color);
+    padding-top: 5rem;
+}
+
+footer .logo span {
+    color: var(--text-color-light);
+}
+
+footer .brand .logo {
+    text-decoration: none;
+}
+
+footer .brand p {
+    color: var(--text-color-light);
+    margin-bottom: 0.75rem;
+}
+
+footer i {
+    font-size: 1.5rem;
+    color: var(--text-color-light);
+}
+
+footer .social ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    align-content: center;
+    padding: 0;
+}
+
+footer .social ul li {
+    list-style: none;
+}
+
+footer .social ul li a {
+    text-decoration: none;
+}
+
+footer .social ul li i {
+    transition: 0.5s;
+}
+
+footer .social ul li i:hover {
+    color: var(--base-color-second);
+    transform: translateY(-8px);
+}
+
+footer .copyright {
+    margin: var(--default-margin);
+    color: var(--text-color-light);
+    text-align: center;
+    padding-top: 2rem;
+    margin: 0;
+}
+
+footer .copyright p {
+    margin: 0;
+    padding-bottom: 1rem;
+}
+
+footer .copyright a {
+    text-decoration: none;
+    color: var(--title-color);
+}
+
+footer .copyright .neverstoplearning {
+    display: -moz-box;
+    display: flex;
+    -moz-box-align: end;
+    align-items: flex-end;
+    justify-content: center;
+    align-content: flex-end;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 46px;
+    text-align: center;
+    background-repeat: repeat;
+    background-size: 100%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
+    background-image: -webkit-gradient(
+        linear,
+        left top,
+        right top,
+        from(#9570e9),
+        color-stop(52.6%, #4763ff),
+        to(#04d361)
+    );
+    background-image: -webkit-linear-gradient(
+        left,
+        #9570e9,
+        #4763ff 52.6%,
+        #04d361
+    );
+    background-image: linear-gradient(90deg, #9570e9, #4763ff 52.6%, #04d361);
+}
