@@ -98,6 +98,12 @@ section {
     border-radius: 0.25rem;
     font: 500 1rem var(--base-color);
     transition: background 0.5s;
+    text-decoration: none;
+}
+
+.button i {
+    margin-right: 0.625rem;
+    font-size: 1.5rem;
 }
 
 .button:hover {
@@ -391,6 +397,13 @@ nav.show .icon-close {
 /* *************** CONTACT STYLES *************** */
 #contact .grid {
     grid: 4rem;
+}
+#contact header {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
 }
 
 #contact header p {
