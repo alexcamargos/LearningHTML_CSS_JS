@@ -1,4 +1,4 @@
-# Project Name
+# NLW/Together - Origin #6
 
 Site corporativo de um salão de beleza fictício, situado na cidade de São Paulo, desenvolvido durante o evento [NLW/Together - Origin #6](https://nextlevelweek.com), ocorrido de 20 a 28 de junho de 2021, ofertado pela [Rocketseat](https://rocketseat.com.br) utilizando as tecnológias [HTML5](www.w3.org/TR/html5/), [CSS3](https://www.w3.org/TR/css3-roadmap/) e [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript).
 
