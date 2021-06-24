@@ -26,7 +26,6 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
-
 .icon-haircut:before {
     content: '\e900';
 }
@@ -41,6 +40,15 @@
 }
 .icon-cross:before {
     content: '\ea0f';
+}
+.icon-plus:before {
+    content: '\ea0a';
+}
+.icon-quotes-left:before {
+    content: '\e977';
+}
+.icon-circle-up:before {
+    content: '\ea41';
 }
 .icon-whatsapp:before {
     content: '\ea93';
