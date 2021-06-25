@@ -406,6 +406,16 @@ nav.show .icon-close {
     color: var(--base-color);
 }
 
+.services-packages ul {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+}
+
+.services-packages ul li {
+    list-style: none;
+}
+
 .services-card__title {
     font-size: 1.5rem;
     margin-bottom: 0.75rem;
@@ -602,7 +612,7 @@ footer .copyright .neverstoplearning {
 }
 
 /* *************** MEDIA QUERIES *************** */
-/* ***** EXTRA LARGE DEVICES: +1200px ***** */
+/* ***** EXTRA LARGE DEVICES: +960px ***** */
 @media (min-width: 960px) {
     section {
         padding: 10rem 0;
@@ -679,6 +689,10 @@ footer .copyright .neverstoplearning {
         align-content: flex-start;
     }
 
+    .services-packages__cards {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
     .cards {
         grid-template-columns: 1fr 1fr 1fr;
     }
@@ -700,7 +714,7 @@ footer .copyright .neverstoplearning {
     }
 
     footer {
-        padding: 3.75rem 0;
+        padding-top: 3.75rem;
     }
 
     footer .container {
