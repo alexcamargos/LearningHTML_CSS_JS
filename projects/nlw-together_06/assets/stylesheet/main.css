@@ -47,6 +47,9 @@ Poppins - Designed by Indian Type Foundry, Jonny Pinhorn.
     --base-font: 'DM Sans', sans-serif;
     --highlight-font: 'Poppins', sans-serif;
 
+    --title-font-size: 1.875rem;
+    --subtitle-font-size: 1rem;
+
     /* SHADOW */
     --base-shadow-color: rgba(0, 0, 0, 0.15);
     --default-shadow: 0 0 12px var(--base-shadow-color);
@@ -66,7 +69,7 @@ body {
 
 h1,
 h2 {
-    font: 700 1.875rem var(--highlight-font);
+    font: 700 var(--title-font-size) var(--highlight-font);
     color: var(--title-color);
     -webkit-font-smoothing: auto;
 }
@@ -364,6 +367,10 @@ nav.show .icon-close {
     position: relative;
 }
 
+#services .services-subtitle {
+    font-size: var(--subtitle-font-size);
+}
+
 .services-video__background {
     right: 0;
     bottom: 0;
@@ -614,6 +621,11 @@ footer .copyright .neverstoplearning {
 /* *************** MEDIA QUERIES *************** */
 /* ***** EXTRA LARGE DEVICES: +960px ***** */
 @media (min-width: 960px) {
+    :root {
+        --title-font-size: 2.25rem;
+        --subtitle-font-size: 1.125rem;
+    }
+
     section {
         padding: 10rem 0;
     }
