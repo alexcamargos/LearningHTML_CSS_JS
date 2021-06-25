@@ -27,7 +27,7 @@ Poppins - Designed by Indian Type Foundry, Jonny Pinhorn.
     --header-height: 4.5rem;
 
     /* COLORS */
-    --hue: 159;
+    --hue: 321.4;
 
     /* HSL COLOR MODE */
     --base-color: hsl(var(--hue) 36% 57%);
@@ -359,6 +359,22 @@ nav.show .icon-close {
 }
 
 /* *************** SERVICES STYLES *************** */
+
+#services header {
+    position: relative;
+}
+
+.services-video__background {
+    right: 0;
+    bottom: 0;
+    min-width: 40vw;
+    min-height: auto;
+    width: 100% !important;
+    height: auto !important;
+    background-size: cover;
+    overflow: hidden;
+}
+
 .card {
     padding: 3.625rem 2rem;
     box-shadow: var(--default-shadow);
@@ -653,6 +669,14 @@ footer .copyright .neverstoplearning {
     #about .container {
         margin: 0 auto;
         grid-auto-flow: column;
+    }
+
+    #services header {
+        display: flex;
+        grid-auto-flow: column;
+        align-items: flex-start;
+        justify-content: space-between;
+        align-content: flex-start;
     }
 
     .cards {
