@@ -257,7 +257,8 @@ nav.show .icon-close {
     transition: color 0.5s;
 }
 
-.menu-bar a:hover {
+.menu-bar a:hover,
+.menu-bar a.active {
     color: var(--base-color);
 }
 
@@ -272,7 +273,8 @@ nav.show .icon-close {
     transition: width 0.5s;
 }
 
-.menu-bar a:hover::after {
+.menu-bar a:hover::after,
+.menu-bar a.active:after {
     width: 100%;
 }
 
