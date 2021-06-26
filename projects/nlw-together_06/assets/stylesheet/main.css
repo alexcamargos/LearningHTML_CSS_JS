@@ -2,7 +2,7 @@
 # -------------------------------------------------------------------------------------------------
 #
 # Name: main.css
-# Version: 0.0.1
+# Version: 0.0.2
 #
 # Summary: NLW/Together - Origin #6
 #         
@@ -191,7 +191,16 @@ section {
 }
 
 #header.scroll {
+    background-color: var(--base-color);
     box-shadow: var(--default-shadow);
+}
+
+#header.scroll .logo span {
+    color: var(--light-background);
+}
+
+#header.scroll .icon-menu {
+    color: var(--light-background);
 }
 
 #navbar {
@@ -773,6 +782,19 @@ footer .copyright .neverstoplearning {
     nav .menu-bar ul {
         display: flex;
         gap: 2rem;
+    }
+
+    #header.scroll .menu-bar a:hover,
+    #header.scroll .menu-bar a.active {
+        color: var(--light-background);
+    }
+
+    #header.scroll .menu-bar a::after {
+        background-color: var(--light-background);
+    }
+
+    #header.scroll nav .menu-bar ul li a {
+        color: var(--title-color);
     }
 
     nav .menu-bar ul li a {
