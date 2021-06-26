@@ -304,6 +304,10 @@ nav.show .icon-close {
     border-bottom-right-radius: 0.5rem;
 }
 
+#home picture:hover::before {
+    background: var(--base-color);
+}
+
 .home-imagem {
     position: relative;
     right: 2.93rem;
@@ -336,11 +340,11 @@ nav.show .icon-close {
 
 #about picture {
     position: relative;
-    border-top-right-radius: 0.5rem;
 }
 
 #about picture img {
     border-top-right-radius: 0.5rem;
+    border-bottom-right-radius: 0.25rem;
 }
 
 #about picture::before {
@@ -353,6 +357,10 @@ nav.show .icon-close {
     left: -10%;
     z-index: 0;
     border-top-right-radius: 0.5rem;
+}
+
+#about picture:hover::before {
+    background: var(--base-color);
 }
 
 .about__imagem {
