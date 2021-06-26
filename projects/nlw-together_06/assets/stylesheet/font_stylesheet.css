@@ -1,3 +1,20 @@
+/*
+# -------------------------------------------------------------------------------------------------
+#
+# Name: font_stylesheet.css
+# Version: 0.0.1
+#
+# Summary: NLW/Together - Origin #6
+#         
+#
+# Author: Alexsander Lopes Camargos
+# Author-email: alcamargos@vivaldi.net
+#
+# License: MIT
+#
+# -------------------------------------------------------------------------------------------------
+*/
+
 @font-face {
     font-family: 'nlw-together';
     src: url('../fonts/nlw-together.eot?obgped');

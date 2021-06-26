@@ -1,3 +1,20 @@
+/*
+# -------------------------------------------------------------------------------------------------
+#
+# Name: swiper.js
+# Version: 0.0.1
+#
+# Summary: NLW/Together - Origin #6
+#         
+#
+# Author: Alexsander Lopes Camargos
+# Author-email: alcamargos@vivaldi.net
+#
+# License: MIT
+#
+# -------------------------------------------------------------------------------------------------
+*/
+
 // Initialize Swiper JS
 const swiper = new Swiper('.swiper-container', {
     slidesPerView: 1,

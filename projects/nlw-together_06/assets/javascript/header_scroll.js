@@ -1,7 +1,21 @@
+/*
+# -------------------------------------------------------------------------------------------------
+#
+# Name: header_scroll.js
+# Version: 0.0.1
+#
+# Summary: NLW/Together - Origin #6
+#         
+#
+# Author: Alexsander Lopes Camargos
+# Author-email: alcamargos@vivaldi.net
+#
+# License: MIT
+#
+# -------------------------------------------------------------------------------------------------
+*/
+
 const header = document.querySelector('#header');
-
-console.log(header);
-
 const navHeight = header.offsetHeight;
 
 window.addEventListener('scroll', function () {
@@ -10,4 +24,4 @@ window.addEventListener('scroll', function () {
     } else {
         header.classList.remove('scroll');
     }
-})
+});

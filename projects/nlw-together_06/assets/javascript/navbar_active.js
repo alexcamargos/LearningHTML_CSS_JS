@@ -1,3 +1,20 @@
+/*
+# -------------------------------------------------------------------------------------------------
+#
+# Name: navbar_active.js
+# Version: 0.0.1
+#
+# Summary: NLW/Together - Origin #6
+#         
+#
+# Author: Alexsander Lopes Camargos
+# Author-email: alcamargos@vivaldi.net
+#
+# License: MIT
+#
+# -------------------------------------------------------------------------------------------------
+*/
+
 const sections = document.querySelectorAll('main section[id]');
 
 function activateSection() {
@@ -10,8 +27,6 @@ function activateSection() {
 
         const checkpointStart = checkpoint >= sectionTop;
         const checkpointEnd = checkpoint <= sectionTop + sectionHeight;
-
-        console.log(document.querySelector('.menu-bar ul li a[href*=' + sectionId + ']'))
 
         if (checkpointStart && checkpointEnd) {
             document

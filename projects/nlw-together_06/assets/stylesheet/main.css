@@ -4,7 +4,7 @@
 # Name: main.css
 # Version: 0.0.1
 #
-# Summary: NLW/Together #06
+# Summary: NLW/Together - Origin #6
 #         
 #
 # Author: Alexsander Lopes Camargos
@@ -754,13 +754,11 @@ footer .copyright .neverstoplearning {
 
 /* ***** EXTRA LARGE DEVICES: +960px ***** */
 @media (min-width: 768px) {
-
-
     .card .button {
         visibility: hidden;
         transition: visibility 0.3s;
     }
-    
+
     .card:hover .button {
         visibility: visible;
     }
