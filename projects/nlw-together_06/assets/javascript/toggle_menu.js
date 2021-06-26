@@ -2,6 +2,9 @@
 const navBar = document.querySelector('#header nav');
 const toggle = document.querySelectorAll('nav .toggle');
 
+console.log(navBar);
+console.log(toggle);
+
 for (const element of toggle) {
     element.addEventListener('click', function () {
         navBar.classList.toggle('show');

@@ -206,6 +206,7 @@ section {
 .menu-bar {
     opacity: 0;
     visibility: hidden;
+    display: none;
     top: -20rem;
     transition: 0.3s;
 }
@@ -447,7 +448,7 @@ nav.show .icon-close {
     padding: 2rem;
     box-shadow: var(--default-shadow);
     border-radius: 0.25rem;
-    margin: .77rem;
+    margin: 0.77rem;
 }
 
 #testimonials blockquote p {
@@ -489,7 +490,7 @@ nav.show .icon-close {
 
 .swiper-slide {
     height: auto;
-    padding-bottom: .5rem;
+    padding-bottom: 0.5rem;
 }
 
 .swiper-pagination-bullet {
@@ -505,7 +506,6 @@ nav.show .icon-close {
 .swiper-button-prev {
     color: var(--base-color);
 }
-
 
 /* *************** CONTACT STYLES *************** */
 #contact .grid {
@@ -672,30 +672,6 @@ footer .copyright .neverstoplearning {
         margin-right: auto;
     }
 
-    nav .menu-bar {
-        opacity: 1;
-        visibility: visible;
-        top: 0;
-    }
-
-    nav .menu-bar ul {
-        display: flex;
-        gap: 2rem;
-    }
-
-    nav .menu-bar ul li a {
-        font: 400 1rem var(--highlight-font);
-        -webkit-font-smoothing: auto;
-    }
-
-    nav .icon-menu {
-        display: none;
-    }
-
-    .menu-bar a::after {
-        bottom: -0.75rem;
-    }
-
     main {
         margin-top: var(--header-height);
     }
@@ -770,5 +746,33 @@ footer .copyright .neverstoplearning {
 
     footer i {
         font-size: 2.25rem;
+    }
+}
+
+/* ***** EXTRA LARGE DEVICES: +960px ***** */
+@media (min-width: 768px) {
+    nav .menu-bar {
+        opacity: 1;
+        visibility: visible;
+        top: 0;
+        display: grid;
+    }
+
+    nav .menu-bar ul {
+        display: flex;
+        gap: 2rem;
+    }
+
+    nav .menu-bar ul li a {
+        font: 400 1rem var(--highlight-font);
+        -webkit-font-smoothing: auto;
+    }
+
+    nav .icon-menu {
+        display: none;
+    }
+
+    .menu-bar a::after {
+        bottom: -0.75rem;
     }
 }
