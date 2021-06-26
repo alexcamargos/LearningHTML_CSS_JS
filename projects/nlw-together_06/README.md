@@ -18,7 +18,8 @@ Para quem está começando do zero ou tem menos de 6 meses de estudo em programa
 
 ## View Project in Execution
 
-You can check this website on this [link](https://learning-webdev.netlify.app/projects/nlw-together_06/).
+-   Base layout created in Figma [link](https://www.figma.com/file/uEsSwtVF6njZ7dd3KTK6KN/NLW-6-Mission-Origin?node-id=0%3A1)
+-   You can check this website on this [link](https://learning-webdev.netlify.app/projects/nlw-together_06/).
 
 ## Technologies
 
