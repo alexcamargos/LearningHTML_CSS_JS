@@ -401,11 +401,6 @@ nav.show .icon-close {
 }
 
 .card .button {
-    visibility: hidden;
-    transition: visibility 0.3s;
-}
-
-.card:hover .button {
     visibility: visible;
 }
 
@@ -718,7 +713,7 @@ footer .copyright .neverstoplearning {
         grid-template-columns: 1fr 1fr 1fr 1fr;
     }
 
-    .cards {
+    .services-cards {
         grid-template-columns: 1fr 1fr 1fr;
     }
 
@@ -759,6 +754,17 @@ footer .copyright .neverstoplearning {
 
 /* ***** EXTRA LARGE DEVICES: +960px ***** */
 @media (min-width: 768px) {
+
+
+    .card .button {
+        visibility: hidden;
+        transition: visibility 0.3s;
+    }
+    
+    .card:hover .button {
+        visibility: visible;
+    }
+
     nav .menu-bar {
         opacity: 1;
         visibility: visible;
