@@ -133,6 +133,9 @@ h1 {
 .cities_nameHolder {
     height: 45vh;
     width: 90%;
+    max-width: 350px;
     background-color: var(--cities-nameHolder-background-color);
     font: var(--font-default);
+    overflow-y: scroll;
+    padding: 10px;
 }
