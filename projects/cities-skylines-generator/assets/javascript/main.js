@@ -1,3 +1,9 @@
+
+
+function randomSelect(element) {
+    return element[Math.floor(Math.random() * element.length)];
+}
+
 function generateTownName() {
     let prefix = [
         'County',
@@ -51,8 +57,8 @@ function generateTownName() {
         'Waverly',
     ];
 
-    let randomPrefix = prefix[Math.floor(Math.random() * prefix.length)];
-    let randomTownName = townName[Math.floor(Math.random() * townName.length)];
+    let randomPrefix = randomSelect(prefix);
+    let randomTownName = randomSelect(townName);
 
     return `${randomPrefix} ${randomTownName} <br />`;
 }
