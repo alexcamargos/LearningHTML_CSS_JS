@@ -19,20 +19,31 @@
 
 :root {
     --font: 'Roboto', sans-serif;
+    --color-white: #fff;
+    --color-blue: #3c86f9;
 }
 
 body {
     font-family: var(--font);
     min-height: 400px;
-    color: white;
+    color: var(--var(--color-white));
     background-color: #060b37;
-
     background-position: center bottom;
     background-repeat: no-repeat;
 }
+
 h1,
 h2 {
-    color: #3c86f9;
+    color: var(--color-blue);
+}
+
+a {
+    color: var(--var(--color-white));
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
 }
 
 header {
@@ -69,18 +80,25 @@ button {
     padding: 0.888rem;
     border: none;
     border-radius: 10px;
-    background-color: #3c86f9;
+    background-color: var(--color-blue);
     font-size: 1.111rem;
     text-transform: uppercase;
-    color: #fff;
+    color: var(--var(--color-white));
     font-weight: bold;
+    cursor: pointer;
+    transition: 0.5s ease;
+}
+
+button:hover {
+    background-color: #3c84f9d0;
+    font-weight: bolder;
 }
 
 .blue-line {
     margin: 0 auto;
     width: 80%;
     height: 1px;
-    background-color: #3c86f9;
+    background-color: var(--color-blue);
     box-shadow: 0 1px 5px 0.1px rgb(49 185 255 / 46%);
 }
 
@@ -91,13 +109,13 @@ button {
 }
 
 .page-title {
-    color: #ffffff;
+    color: var(--var(--color-white));
     margin: 0 0 5px;
     font-size: 2rem;
 }
 
 .page-subtitle {
-    color: #ffffff;
+    color: var(--var(--color-white));
     margin-top: 5px;
 }
 
@@ -119,8 +137,8 @@ button {
     align-content: center;
 }
 
-input[type='range'] {
-    color: #182131;
+.range-select {
+    color: var(--var(--color-white));
 }
 
 footer .copyright p {
