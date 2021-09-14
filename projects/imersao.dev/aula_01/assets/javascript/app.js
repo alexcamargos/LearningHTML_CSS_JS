@@ -34,19 +34,20 @@ function updateNoteValue(element, value) {
     element.innerHTML = parseFloat(value.value);
 }
 
-function changeNoteValue1() {
-    updateNoteValue(note01Value, note01);
-}
-function changeNoteValue2() {
-    updateNoteValue(note02Value, note02);
-}
-
-function changeNoteValue3() {
-    updateNoteValue(note03Value, note03);
-}
-
-function changeNoteValue4() {
-    updateNoteValue(note04Value, note04);
+function changeNoteValue(rangeID) {
+    switch (rangeID) {
+        case 'note01':
+            updateNoteValue(note01Value, note01);
+            break;
+        case 'note02':
+            updateNoteValue(note02Value, note02);
+            break;
+        case 'note03':
+            updateNoteValue(note03Value, note03);
+            break;
+        case 'note04':
+            updateNoteValue(note04Value, note04);
+    }
 }
 
 function media() {
