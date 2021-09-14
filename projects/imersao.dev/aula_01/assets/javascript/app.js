@@ -59,9 +59,8 @@ function media() {
 
     mediaText.innerHTML = `Média Final: ${media.toFixed(1)}`;
 
-    if (media >= 7) {
-        message.innerHTML = 'Parabéns você foi aprovado!';
-    } else {
-        message.innerHTML = 'Infelizmente você não foi aprovado!';
-    }
+    message.innerHTML =
+        media >= 7
+            ? 'Parabéns você foi aprovado!'
+            : 'Infelizmente você não foi aprovado!';
 }
