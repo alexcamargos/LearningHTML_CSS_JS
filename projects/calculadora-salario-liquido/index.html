@@ -39,22 +39,179 @@
             Calculadora de Salário Líquido - Salário bruto x Salário Líquido
         </title>
 
+        <!-- tailwindcss v2.2.19 -->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"
+            integrity="sha512-wnea99uKIC3TJF7v4eKk4Y+lMz2Mklv18+r4na2Gn1abDRPPOeef95xTzdwGD9e6zXJBteMIhZ1+68QC5byJZw=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+
         <link rel="stylesheet" href="assets/stylesheet/main.css" />
     </head>
 
     <body>
         <div id="main-page">
             <div class="container">
-                <header>
+                <header class="topo border-2 bg-slate-800">
+                    <div class="container flex">
+                        <div class="logo flex-none">
+                            <img
+                                src="assets/img/calculator.png"
+                                alt="Calculator"
+                                srcset=""
+                            />
+                        </div>
+                        <div class="title flex-1 w-64 align-middle">
+                            <h1 class="text-4xl">
+                                Calculadora de Salário Líquido
+                            </h1>
+                        </div>
 
+                        <div class="logo flex-1 w-32">
+                            <img src="assets/img/sal_liquido.png" alt="" />
+                        </div>
+                    </div>
                 </header>
 
-                <main>
+                <main class="main">
+                    <div class="container">
+                        <div class="sub-container">
+                            <h1>
+                                Calculadora de Salário Líquido - Salário bruto x
+                                Salário Líquido
+                            </h1>
+                            <p>
+                                Quem é assalariado sabe da diferença relevante
+                                que existe entre o salário bruto, aquele
+                                registrado na carteira de trabalho, e quanto
+                                você recebe na prática. Esta calculadora do
+                                Valor Investe vai te ajudar a saber quanto você
+                                vai receber por mês, após a cobrança do Imposto
+                                de Renda Retido na Fonte, desconto da
+                                contribuição ao INSS, previdência privada,
+                                pensão alimentícia etc. Basta informar o salário
+                                bruto mensal e as demais informações e clicar em
+                                "calcular".
+                            </p>
 
+                            <div
+                                class="container-inputs grid grid-cols-3 gap-4"
+                            >
+                                <div class="inputs input-salario input-salb">
+                                    <p>Salário bruto</p>
+                                    <div class="input-field">
+                                        <input
+                                            placeholder="R$"
+                                            id="salario"
+                                            type="text"
+                                            inputmode="numeric"
+                                            value="0"
+                                        />
+                                    </div>
+                                </div>
+
+                                <div class="inputs input-salario">
+                                    <p>Dependentes</p>
+                                    <div class="input-field quantity">
+                                        <input
+                                            type="number"
+                                            id="dependentes"
+                                            value="0"
+                                            min="0"
+                                        />
+                                        <div class="quantity-nav">
+                                            <div
+                                                class="quantity-button quantity-up"
+                                            ></div>
+                                            <div
+                                                class="quantity-button quantity-down"
+                                            ></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="inputs input-salario input-pensao">
+                                    <p>Pensão alimentícia</p>
+                                    <div class="input-field">
+                                        <input
+                                            placeholder="R$"
+                                            id="pensao"
+                                            type="text"
+                                            inputmode="numeric"
+                                            value="0"
+                                        />
+                                    </div>
+                                </div>
+
+                                <div
+                                    class="inputs input-salario input-previdencia"
+                                >
+                                    <p>Previdência privada</p>
+                                    <div class="input-field">
+                                        <input
+                                            placeholder="R$"
+                                            id="previdencia"
+                                            type="text"
+                                            inputmode="numeric"
+                                            value="0"
+                                        />
+                                    </div>
+                                </div>
+
+                                <div class="inputs input-salario input-outros">
+                                    <p>Outros descontos*</p>
+                                    <div class="input-field">
+                                        <input
+                                            placeholder="R$"
+                                            id="outros"
+                                            type="text"
+                                            inputmode="numeric"
+                                            value="0"
+                                        />
+                                    </div>
+                                </div>
+
+                                <div class="inputs input-salario div-btn-calc">
+                                    <p>­</p>
+                                    <div class="input-field">
+                                        <span
+                                            id="btn-calcular"
+                                            class="calcular"
+                                        >
+                                            Calcular
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                class="h-5 w-5"
+                                                viewBox="0 0 20 20"
+                                                fill="currentColor"
+                                            >
+                                                <path
+                                                    fill-rule="evenodd"
+                                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 1.414L10.586 9H7a1 1 0 100 2h3.586l-1.293 1.293a1 1 0 101.414 1.414l3-3a1 1 0 000-1.414z"
+                                                    clip-rule="evenodd"
+                                                />
+                                            </svg>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </main>
 
-                <footer>
-                  
+                <footer class="footer">
+                    <p>
+                        Nota: *parcelas de plano de saúde, vale alimentação e/ou
+                        refeição descontados em folha etc.
+                    </p>
+                    <p>
+                        <a
+                            href="https://www.gov.br/inss/pt-br/saiba-mais/seus-direitos-e-deveres/calculo-da-guia-da-previdencia-social-gps/tabela-de-contribuicao-mensal/tabela-de-contribuicao-mensal"
+                            >Tabela de contribuição previdenciária</a
+                        >
+                    </p>
                 </footer>
             </div>
         </div>
