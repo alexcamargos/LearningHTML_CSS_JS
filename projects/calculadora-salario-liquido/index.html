@@ -52,24 +52,28 @@
     </head>
 
     <body>
-        <div id="main-page">
-            <div class="container">
-                <header class="topo border-2 bg-slate-800">
-                    <div class="container flex">
-                        <div class="logo flex-none">
+        <div id="main-page" class="font-sans bg-white">
+            <div
+                class="container flex flex-col mx-auto max-w-screen-md m-8 space-y-10"
+            >
+                <header
+                    class="topo flex flex-col justify-center items-center bg-gray-800 border-b-4 border-indigo-600 p-2 drop-shadow-md"
+                >
+                    <div class="container flex place-content-between">
+                        <div class="logo flex-none w-14 h-14">
                             <img
                                 src="assets/img/calculator.png"
                                 alt="Calculator"
                                 srcset=""
                             />
                         </div>
-                        <div class="title flex-1 w-64 align-middle">
-                            <h1 class="text-4xl">
+                        <div class="title grow place-self-end">
+                            <h1 class="text-4xl text-white">
                                 Calculadora de Salário Líquido
                             </h1>
                         </div>
 
-                        <div class="logo flex-1 w-32">
+                        <div class="flex-none w-14 h-14">
                             <img src="assets/img/sal_liquido.png" alt="" />
                         </div>
                     </div>
@@ -77,12 +81,14 @@
 
                 <main class="main">
                     <div class="container">
-                        <div class="sub-container">
-                            <h1>
+                        <div
+                            class="sub-container flex flex-col space-y-10 justify-center"
+                        >
+                            <h1 class="text-2xl">
                                 Calculadora de Salário Líquido - Salário bruto x
                                 Salário Líquido
                             </h1>
-                            <p>
+                            <p class="text-center">
                                 Quem é assalariado sabe da diferença relevante
                                 que existe entre o salário bruto, aquele
                                 registrado na carteira de trabalho, e quanto
@@ -107,7 +113,7 @@
                                             id="salario"
                                             type="text"
                                             inputmode="numeric"
-                                            value="0"
+                                            value="1212"
                                         />
                                     </div>
                                 </div>
@@ -173,17 +179,17 @@
                                     </div>
                                 </div>
 
-                                <div class="inputs input-salario div-btn-calc">
+                                <div class="inputs input-salario div-btn-calc text-center">
                                     <p>­</p>
-                                    <div class="input-field">
+                                    <div class="input-field cursor-pointer">
                                         <span
                                             id="btn-calcular"
                                             class="calcular"
                                         >
                                             Calcular
                                             <svg
+                                                id="calcular"
                                                 xmlns="http://www.w3.org/2000/svg"
-                                                class="h-5 w-5"
                                                 viewBox="0 0 20 20"
                                                 fill="currentColor"
                                             >
