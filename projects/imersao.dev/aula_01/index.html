@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="description" content="Page Description Goes Here." />
+        <meta name="author" content="Alexsander Lopes Camargos" />
+
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <title>AULA 1: VARIÁVEIS, OPERAÇÕES E MÉDIA</title>
+
+        <!-- normalize.css v8.0.1 | github.com/necolas/normalize.css -->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+            integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+
+        <link rel="stylesheet" href="assets/stylesheet/main.css" />
+    </head>
+
+    <body>
+        <div class="container">
+            <header>
+                <picture>
+                    <img src="assets/img/logo-conversor-de-moedas.png" alt="" />
+                </picture>
+
+                <div class="page-title">Calculadora de média</div>
+            </header>
+
+            <main>
+                <div class="page-subtitle">
+                    <h1>
+                        Descubra qual a sua média de nota de todas as provas!
+                    </h1>
+                </div>
+
+                <div class="blue-line"></div>
+
+                <div class="insert-notes">
+                    <label for="note01">
+                        <h2>
+                            Nota 01:
+                            <span id="note01-value" class="range-select"
+                                >0</span
+                            >
+                        </h2>
+                        <input
+                            type="range"
+                            name="note01"
+                            id="note01"
+                            min="0"
+                            max="10"
+                            step="0.1"
+                            value="0"
+                            oninput="changeNoteValue('note01');"
+                        />
+                    </label>
+
+                    <label for="note02">
+                        <h2>
+                            Nota 02:
+                            <span id="note02-value" class="range-select"
+                                >0</span
+                            >
+                        </h2>
+                        <input
+                            type="range"
+                            name="note02"
+                            id="note02"
+                            min="0"
+                            max="10"
+                            step="0.1"
+                            value="0"
+                            oninput="changeNoteValue('note02');"
+                        />
+                    </label>
+
+                    <label for="note03">
+                        <h2>
+                            Nota 03:
+                            <span id="note03-value" class="range-select"
+                                >0</span
+                            >
+                        </h2>
+                        <input
+                            type="range"
+                            name="note03"
+                            id="note03"
+                            min="0"
+                            max="10"
+                            step="0.1"
+                            value="0"
+                            oninput="changeNoteValue('note03');"
+                        />
+                    </label>
+
+                    <label for="note04">
+                        <h2>
+                            Nota 04:
+                            <span id="note04-value" class="range-select"
+                                >0</span
+                            >
+                        </h2>
+                        <input
+                            type="range"
+                            name="note04"
+                            id="note04"
+                            min="0"
+                            max="10"
+                            step="0.1"
+                            value="0"
+                            oninput="changeNoteValue('note04');"
+                        />
+                    </label>
+                </div>
+
+                <button onclick="media();">Calcular</button>
+
+                <div class="blue-line"></div>
+
+                <div class="result-wrrapper">
+                    <h3 id="media">&nbsp;</h3>
+                    <h2 id="message">&nbsp;</h2>
+                </div>
+            </main>
+
+            <footer class="footer">
+                <div class="copyright">
+                    <p>
+                        Created with ❤️ by
+                        <a
+                            href="https://github.com/alexcamargos"
+                            target="_blank"
+                        >
+                            Alexsander Lopes Camargos
+                        </a>
+                        in
+                        <a href="https://imersao.dev">
+                            <img
+                                src="assets/img/logo-imersao_dev.svg"
+                                class="page-logo"
+                                alt="Imersão Dev"
+                            />
+                        </a>
+                    </p>
+                </div>
+            </footer>
+        </div>
+
+        <a href="https://alura.com.br/" target="_blank">
+            <img
+                src="https://www.alura.com.br/assets/img/home/alura-logo.svg"
+                alt=""
+                class="alura-logo"
+            />
+        </a>
+
+        <script src="assets/javascript/app.js"></script>
+    </body>
+</html>

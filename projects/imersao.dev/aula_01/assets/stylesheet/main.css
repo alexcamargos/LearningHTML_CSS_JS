@@ -1,0 +1,148 @@
+/*
+# -------------------------------------------------------------------------------------------------
+#
+# Name: main.css
+# Version: 0.0.1
+#
+# Summary: IMERSÃO DEV_
+#          AULA 1: VARIÁVEIS, OPERAÇÕES E MÉDIA
+#
+# Author: Alexsander Lopes Camargos
+# Author-email: alcamargos@vivaldi.net
+#
+# License: MIT
+#
+# -------------------------------------------------------------------------------------------------
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+:root {
+    --font: 'Roboto', sans-serif;
+    --color-white: #fff;
+    --color-blue: #3c86f9;
+}
+
+body {
+    font-family: var(--font);
+    min-height: 400px;
+    color: var(--var(--color-white));
+    background-color: #060b37;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+}
+
+h1,
+h2 {
+    color: var(--color-blue);
+}
+
+a {
+    color: var(--var(--color-white));
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    align-content: center;
+    gap: 1rem;
+}
+
+header img {
+    width: 72px;
+    height: 72px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    height: 60vh;
+    max-width: auto;
+    background-image: linear-gradient(to top, #182131 84%, #09286b 196%);
+}
+
+footer {
+    text-align: center;
+}
+
+button {
+    width: 30%;
+    margin: auto;
+    padding: 0.888rem;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--color-blue);
+    font-size: 1.111rem;
+    text-transform: uppercase;
+    color: var(--var(--color-white));
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.5s ease;
+}
+
+button:hover {
+    background-color: #3c84f9d0;
+    font-weight: bolder;
+}
+
+.blue-line {
+    margin: 0 auto;
+    width: 80%;
+    height: 1px;
+    background-color: var(--color-blue);
+    box-shadow: 0 1px 5px 0.1px rgb(49 185 255 / 46%);
+}
+
+.container {
+    text-align: center;
+    padding: 20px;
+    height: 80vh;
+}
+
+.page-title {
+    color: var(--var(--color-white));
+    margin: 0 0 5px;
+    font-size: 2rem;
+}
+
+.page-subtitle {
+    color: var(--var(--color-white));
+    margin-top: 5px;
+}
+
+.page-logo {
+    width: 8.125rem;
+}
+
+.alura-logo {
+    width: 40px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.insert-notes {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    align-content: center;
+}
+
+.range-select {
+    color: var(--var(--color-white));
+}
+
+footer .copyright p {
+    display: inline-flex;
+    gap: 0.5rem;
+    align-items: center;
+}
