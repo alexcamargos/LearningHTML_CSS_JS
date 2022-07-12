@@ -1,0 +1,141 @@
+/*
+# -------------------------------------------------------------------------------------------------
+#
+# Name: main.css
+# Version: 0.0.1
+#
+# Summary:
+#
+#
+# Author: Alexsander Lopes Camargos
+# Author-email: alcamargos@vivaldi.net
+#
+# License: MIT
+#
+# -------------------------------------------------------------------------------------------------
+*/
+
+:root {
+    --font-default: 'Montserrat', sans-serif;
+    --font-title: 'Space Grotesk', sans-serif;
+
+    --color-green-dark: #006432;
+    --color-green-middle: #16b700;
+    --color-green-light: #32eb19;
+    --color-white: #fff;
+    --color-black-666: rgba(0, 0, 0, 0.666);
+
+    --content-background-color: #141e3280;
+    --cities-nameHolder-background-color: #757d6f;
+}
+
+body {
+    font-family: var(--font-default);
+}
+
+h1 {
+    font-family: var(--font-title);
+}
+
+.button {
+    height: 46px;
+    padding: 5px 15px;
+    z-index: 1;
+    text-decoration: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    position: relative;
+    cursor: pointer;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    max-width: 210px;
+    min-width: 150px;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 18px;
+    border: 3px solid transparent;
+    border-radius: 16px;
+    transition: all 0.5s ease-in-out;
+}
+
+.button:after {
+    content: '';
+    position: absolute;
+    left: -3px;
+    width: 100%;
+    bottom: -1px;
+    height: 100%;
+    border-radius: 16px;
+    border: 3px solid var(--color-green-dark);
+    border-top: 0;
+}
+
+.button.green {
+    color: var(--color-green-dark);
+    border: 3px solid var(--color-green-dark);
+    background: linear-gradient(
+        var(--color-green-light),
+        var(--color-green-middle),
+        var(--color-green-light)
+    );
+}
+
+.button:hover,
+.button:active {
+    border-color: var(--color-green-dark);
+    color: #123042;
+    background: linear-gradient(
+        var(--color-green-middle),
+        var(--color-green-light),
+        var(--color-green-middle)
+    );
+}
+
+.wrapper {
+    display: flex;
+    background: url(../img/cities_skylines_bg.jpg) center center/cover;
+    background-color: var(--color-black-666);
+    background-blend-mode: color;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.content {
+    height: 80vh;
+    width: 80vw;
+    background-color: var(--content-background-color);
+    background-blend-mode: color;
+}
+
+.content_wrapper {
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.content_wrapper h1 {
+    font-size: 1.5em;
+    line-height: 20px;
+    text-align: center;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--color-white);
+}
+
+.cities_nameHolder {
+    height: 45vh;
+    width: 90%;
+    max-width: 350px;
+    background-color: var(--cities-nameHolder-background-color);
+    font: var(--font-default);
+    overflow-y: scroll;
+    padding: 10px;
+}
