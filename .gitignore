@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ### Git ###
 # Created by git for backups. To disable backups in Git:
 # $ git config --global mergetool.keepBackup false
@@ -93,6 +94,8 @@ Temporary Items
 .idea/**/dynamic.xml
 .idea/**/uiDesigner.xml
 .idea/**/dbnavigator.xml
+=======
+>>>>>>> spotify
 
 # Gradle
 .idea/**/gradle.xml
@@ -369,6 +372,10 @@ pip-selfcheck.json
 
 ### Windows ###
 # Windows thumbnail cache files
+<<<<<<< HEAD
+=======
+Thumbs.db
+>>>>>>> spotify
 Thumbs.db:encryptable
 ehthumbs.db
 ehthumbs_vista.db
@@ -392,5 +399,55 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
+<<<<<<< HEAD
 # Parcel a Blazing fast, zero configuration web application bundler.
 .parcel-cache/*
+=======
+
+### Linux ###
+*~
+
+# temporary files which can be created if a process still has a handle open of a deleted file
+.fuse_hidden*
+
+# KDE directory preferences
+.directory
+
+# Linux trash folder which might appear on any partition or disk
+.Trash-*
+
+# .nfs files are created when an open file is removed but is still being accessed
+.nfs*
+
+
+### Vim ###
+# Swap
+[._]*.s[a-v][a-z]
+!*.svg  # comment out if you don't need vector files
+[._]*.sw[a-p]
+[._]s[a-rt-v][a-z]
+[._]ss[a-gi-z]
+[._]sw[a-p]
+
+# Session
+Session.vim
+Sessionx.vim
+
+# Temporary
+.netrwhist
+# Auto-generated tag files
+tags
+# Persistent undo
+[._]*.un~
+
+
+### vscode ###
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+
+
+>>>>>>> spotify

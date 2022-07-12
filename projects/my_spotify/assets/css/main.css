@@ -1,0 +1,263 @@
+/*
+# -------------------------------------------------------------------------------------------------
+#
+# Name: main.css
+# Version: 0.0.1
+#
+# Summary: Create Spotify Landing Page
+#
+# Author: Alexsander Lopes Camargos
+# Author-email: alcamargos@vivaldi.net
+#
+# License: MIT
+#
+# -------------------------------------------------------------------------------------------------
+*/
+
+/* *************** IMPORT ROBOTO FROM GOOGLE FONTS LIBRARY *************** */
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+/* *************** GLOBAL VARIABLES *************** */
+:root {
+  --default-green: #1db954;
+  --light-green: #1ed760;
+  --text-gray: #919496;
+  --default-light: #ffffff;
+  --default-dark: #191414;
+  --transition-effect: all 400ms ease;
+}
+
+/* *************** BASE STYLES *************** */
+body {
+  font-family: "Roboto", sans-serif;
+  color: var(--default-light);
+  font-weight: 500;
+}
+
+.logo {
+  height: 40px;
+  width: auto;
+}
+
+.btn-get {
+  background-color: var(--default-green);
+  color: var(--default-light);
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 25px;
+  letter-spacing: 1px;
+
+  border: none;
+  border-radius: 30px;
+  padding: 14px 32px;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: var(--transition-effect);
+}
+
+.btn-get:hover {
+  background-color: var(--light-green);
+  padding: 14px 38px;
+}
+
+/* *************** NAVIGATION BAR *************** */
+#navbar {
+  display: flex;
+  background-color: var(--default-dark);
+  color: var(--default-light);
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+#navbar .navbar-wrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  padding: 15px 0;
+}
+
+#navbar .navbar-wrapper .navbar-itens-content .navbar-items {
+  display: flex;
+  justify-content: space-between;
+}
+
+#navbar .navbar-wrapper .navbar-itens-content .navbar-items .navbar-item {
+  font-weight: 700;
+  list-style: none;
+  padding: 0 20px;
+  text-transform: capitalize;
+}
+
+#navbar .navbar-wrapper .navbar-itens-content .navbar-items li:nth-child(4) {
+  border-left: 2px solid var(--default-light);
+}
+
+#navbar .navbar-wrapper .navbar-itens-content .navbar-items:first-letter {
+  text-transform: uppercase;
+}
+
+/* *************** SHOWCASE *************** */
+#showcase {
+  display: flex;
+  color: var(--default-light);
+  background-color: rgba(0, 0, 0, 0.45);
+  background: url("../img/showcase_3.jpg") center center/cover;
+  background-blend-mode: color;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+#showcase .showcase-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#showcase .showcase-wrapper h1 {
+  color: var(--default-green);
+  font-size: 100px;
+  font-weight: 700;
+  margin: 0;
+  padding: 0;
+}
+
+#showcase .showcase-wrapper h1::first-letter {
+  text-transform: uppercase;
+}
+
+#showcase .showcase-wrapper h2 {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+/* *************** FOOTER *************** */
+#footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--default-dark);
+  color: var(--default-light);
+  width: 100%;
+  height: 100%;
+}
+
+#footer .footer-wrapper {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: baseline;
+  margin-top: 60px;
+  width: 80%;
+}
+
+#footer .footer-wrapper .footer-menu {
+  list-style: none;
+  text-transform: capitalize;
+}
+
+#footer .footer-wrapper .footer-menu .footer-menu-items {
+  padding: 3px 0 15px;
+}
+
+#footer .footer-wrapper .footer-socials {
+  display: flex;
+  justify-content: space-between;
+}
+
+#footer .footer-wrapper .footer-socials a {
+  color: var(--default-light);
+  transition: var(--transition-effect);
+}
+
+#footer .footer-wrapper .footer-socials a:hover {
+  color: var(--light-green);
+}
+
+#footer .footer-wrapper .footer-menu p {
+  color: #919496;
+}
+
+#footer .footer-wrapper .footer-socials i {
+  font-size: 44px;
+  padding: 0 15px;
+}
+
+#footer .footer-information-wrapper {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  font-size: smaller;
+  width: 90%;
+}
+
+#footer .footer-information-wrapper .footer-legal {
+  font-weight: 200;
+  font-size: small;
+  color: var(--text-gray);
+  width: 80%;
+}
+
+#footer .footer-information-wrapper .footer-legal .footer-legal-items {
+  display: flex;
+  align-content: flex-end;
+  list-style: none;
+  justify-content: space-evenly;
+}
+
+#footer
+  .footer-information-wrapper
+  .footer-legal
+  .footer-legal-items
+  .footer-legal-item {
+  text-transform: capitalize;
+  text-align: center;
+}
+
+#footer .footer-information-wrapper .footer-country-copyright-wrapper {
+  display: flex;
+  flex-direction: column;
+  float: right;
+  color: var(--text-gray);
+  font-size: small;
+}
+
+#footer
+  .footer-information-wrapper
+  .footer-country-copyright-wrapper
+  .footer-country {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+#footer
+  .footer-information-wrapper
+  .footer-country-copyright-wrapper
+  .footer-country
+  p {
+  margin-left: 5px;
+}
+
+/* *************** CREATED WITH *************** */
+#created-with {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--text-gray);
+  background-color: black;
+  width: auto;
+  padding-top: 20px;
+}
+
+#created-with a {
+  color: var(--text-gray);
+  text-decoration: none;
+}
+
+#created-with a:hover {
+  color: var(--text-gray);
+  text-decoration: underline;
+}
