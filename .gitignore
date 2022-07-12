@@ -420,6 +420,7 @@ $RECYCLE.BIN/
 .nfs*
 
 
+<<<<<<< HEAD
 ### Vim ###
 # Swap
 [._]*.s[a-v][a-z]
@@ -449,5 +450,11 @@ tags
 !.vscode/extensions.json
 *.code-workspace
 
+=======
+### Sass ###
+.sass-cache/
+
+
+>>>>>>> signin-signup
 
 >>>>>>> spotify

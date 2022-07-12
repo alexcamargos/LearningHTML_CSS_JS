@@ -1,0 +1,626 @@
+/*
+# -------------------------------------------------------------------------------------------------
+#
+# Name: main.css
+# Version: 0.0.1
+#
+# Summary: Sign In / Sign Up
+#
+# Author: Alexsander Lopes Camargos
+# Author-email: alcamargos@vivaldi.net
+#
+# License: MIT
+#
+# -------------------------------------------------------------------------------------------------
+*/
+
+/* *************** IMPORT ROBOTO FROM GOOGLE FONTS LIBRARY *************** */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+
+
+/* *************** BASE STYLES *************** */
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #7f8c8d;
+    background-color: rgb(243, 243, 243);
+}
+
+.text-align-center {
+    text-align: center;
+}
+
+.text-color-green {
+    color: #58af9b;
+}
+
+.text-color-white {
+    color: #fff;
+}
+
+.text-first-letter-capitalize:first-letter {
+    text-transform: capitalize;
+}
+
+footer {
+    margin-top: -150px;
+}
+
+footer a {
+    color: #34495e;
+    text-decoration: none;
+}
+
+/* *************** BASE STYLES *************** */
+
+
+/* *************** WRAPPER *************** */
+#wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    min-width: 100vh;
+    background: linear-gradient(180deg, rgba(245, 245, 245, 1) 100%, rgba(157, 157, 157, 1) 100%, rgba(245, 245, 245, 1) 100%);
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    width: 960px;
+    height: 50%;
+    border-radius: 15px;
+    background-color: #fff;
+    margin: 15px;
+}
+
+.content:before {
+    content: "";
+    position: absolute;
+    background: linear-gradient(180deg, rgba(88, 175, 155, 1) 100%, rgba(62, 122, 115, 1) 100%, rgba(62, 122, 115, 1) 100%);
+
+    width: 40%;
+    height: 100%;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    left: 0;
+}
+
+.title {
+    font-size: 28px;
+    font-weight: 700;
+    text-transform: capitalize;
+}
+
+.description {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 30px;
+    width: 60%;
+}
+
+
+/* *************** COLUMN *************** */
+.message-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 40%;
+    z-index: 10;
+}
+
+.form-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 60%;
+    height: 100%;
+}
+
+
+/* *************** FIRST CONTENT *************** */
+.first-content .form-column {
+    z-index: 11;
+}
+
+
+/* *************** SECOND CONTENT *************** */
+.second-content {
+    flex-direction: row-reverse;
+}
+
+.second-content .message-column {
+    z-index: -1;
+}
+
+.second-content .form-column {
+    z-index: -1;
+}
+
+
+/* *************** FORM *************** */
+.form {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+}
+
+.form input {
+    height: 40px;
+    width: 100%;
+    border: none;
+    background-color: #ecf0f1;
+}
+
+.form-label-input {
+    display: flex;
+    align-items: center;
+    background-color: #ecf0f1;
+    margin: 8px;
+}
+
+.btn {
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 150px;
+    align-self: center;
+    border: none;
+    padding: 10px 50px;
+    border-radius: 15px;
+    margin-top: 1rem;
+}
+
+.btn-message-column {
+    background-color: transparent;
+    border: 1px solid #fff;
+    transition: background-color .5s;
+}
+
+.btn-message-column:hover {
+    background-color: #fff;
+    color: #58af9b;
+}
+
+.btn-form-column {
+    background-color: #58af9b;
+    border: 1px solid #58af9b;
+    transition: background-color .5s;
+}
+
+.btn-form-column:hover {
+    background-color: #fff;
+    border: 1px solid #58af9b;
+    color: #58af9b;
+}
+
+.form-icon-modify {
+    color: #7f8c8d;
+    padding: 0 10px;
+}
+
+.form-forgot-password {
+    margin: 10px 0;
+}
+
+.form-forgot-password a {
+    color: #34495e;
+    font-size: 14px;
+    margin: 15px 0;
+}
+
+.form-forgot-password a:hover {
+    color: #24495e;
+    font-size: 14px;
+    margin: 15px 0;
+}
+
+.form-forgot-password:first-letter {
+    text-transform: capitalize;
+}
+
+
+/* *************** SOCIAL MEDIA *************** */
+.social-media {
+    margin: 1rem 0;
+    margin-left: 10px;
+}
+
+.social-media-list {
+    display: flex;
+}
+
+.social-media-link:not(:first-child) {
+    margin-left: 10px;
+}
+
+.social-media-link .social-media-item {
+    transition: background-color .5s;
+}
+
+.social-media-link:hover .social-media-item {
+    color: #fff;
+    background-color: #58af9b;
+    border-color: #58af9b;
+}
+
+.social-media-item {
+    width: 35px;
+    height: 35px;
+    border: 1px solid #bdc3c7;
+    border-radius: 50%;
+    line-height: 35px;
+    text-align: center;
+    color: #95a5a6;
+}
+
+
+/* *************** SIGN IN JS *************** */
+.sign-in-js .first-content .message-column {
+    z-index: -1;
+}
+
+.sign-in-js .second-content .form-column {
+    z-index: 11;
+}
+
+.sign-in-js .second-content .message-column {
+    z-index: 13;
+}
+
+.sign-in-js .content:before {
+    left: 60%;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    animation: slide-left 1.3s;
+    z-index: 12;
+}
+
+.sign-in-js .first-content .form-column {
+    z-index: -1;
+    position: relative;
+    animation: left-shift 1.3s;
+}
+
+
+/* *************** SIGN UP JS *************** */
+.sign-up-js .second-content .message-column,
+.sign-up-js .second-content .form-column {
+    z-index: -1;
+}
+
+.sign-up-js .first-content .form-column {
+    z-index: 11;
+}
+
+.sign-up-js .first-content .message-column {
+    z-index: 13;
+}
+
+.sign-up-js .content:before {
+    animation: slide-right 1.3s;
+    z-index: 12;
+}
+
+.sign-up-js .second-content .form-column {
+    position: relative;
+    z-index: -1;
+    animation: right-shift 1.3s;
+}
+
+
+/* *************** CSS Animations *************** */
+/* *************** LEFT SHIFT *************** */
+@keyframes left-shift {
+
+    from {
+        left: 0;
+        opacity: 1;
+        z-index: 12;
+    }
+
+    25% {
+        left: -80px;
+        opacity: .5;
+    }
+
+    50% {
+        left: -100px;
+        opacity: .2;
+    }
+
+    to {
+        left: -110px;
+        opacity: 0;
+        z-index: -1;
+    }
+}
+
+
+/* *************** RIGHT SHIFT *************** */
+@keyframes right-shift {
+
+    from {
+        left: 0;
+        z-index: 12;
+    }
+
+    25% {
+        left: 80px;
+    }
+
+    50% {
+        left: 100px;
+    }
+
+    to {
+        left: 110px;
+        z-index: -1;
+    }
+}
+
+/* *************** SLIDE LEFT *************** */
+@keyframes slide-left {
+
+    from {
+        left: 0;
+        width: 40%;
+    }
+
+    25% {
+        left: 5%;
+        width: 50%;
+    }
+
+    50% {
+        left: 25%;
+        width: 60%;
+    }
+
+    75% {
+        left: 45%;
+        width: 50%;
+    }
+
+    to {
+        left: 60%;
+        width: 40%;
+    }
+}
+
+
+/* *************** SLIDE RIGHT *************** */
+@keyframes slide-right {
+
+    from {
+        left: 60%;
+        width: 40%;
+    }
+
+    25% {
+        left: 45%;
+        width: 50%;
+    }
+
+    50% {
+        left: 25%;
+        width: 60%;
+    }
+
+    75% {
+        left: 5%;
+        width: 50%;
+    }
+
+    to {
+        left: 0;
+        width: 40%;
+    }
+}
+
+/* *************** CSS Animations *************** */
+
+
+/* *************** MEDIA QUERIES *************** */
+
+/* *************** MEDIA QUERIES - MAX-WIDTH: 950PX *************** */
+@media screen and (max-width: 950px) {
+    .content {
+        width: 100%;
+        height: 100%;
+    }
+
+    .content:before {
+        width: 100%;
+        height: 40%;
+        top: 0;
+        border-radius: 0;
+    }
+
+    .first-content,
+    .second-content {
+        flex-direction: column;
+        justify-content: space-around;
+    }
+
+    .message-column,
+    .form-column {
+        width: 100%;
+        height: 100%;
+    }
+
+    .form {
+        width: 60%;
+    }
+
+    footer {
+        margin-top: 20px;
+    }
+
+    .sign-in-js .content:before {
+        top: 60%;
+        left: 0;
+        border-radius: 0;
+    }
+
+    .sign-in-js .second-content .form-column {
+        order: 1;
+    }
+
+    .sign-in-js .second-content .message-column {
+        order: 2;
+    }
+
+
+    /* *************** CSS Animations *************** */
+
+    /* *************** LEFT SHIFT *************** */
+    @keyframes left-shift {
+
+        from {
+            top: 0;
+            opacity: 1;
+            z-index: 15;
+        }
+
+        25% {
+            top: -80px;
+            opacity: .5;
+        }
+
+        50% {
+            top: -100px;
+            opacity: .2;
+        }
+
+        to {
+            top: -110px;
+            opacity: 0;
+            z-index: -1;
+        }
+    }
+
+
+    /* *************** RIGHT SHIFT *************** */
+    @keyframes right-shift {
+
+        from {
+            top: 0;
+            z-index: 12;
+        }
+
+        25% {
+            top: 80px;
+        }
+
+        50% {
+            top: 100px;
+        }
+
+        to {
+            top: 110px;
+            z-index: -1;
+        }
+    }
+
+    /* *************** SLIDE LEFT *************** */
+    @keyframes slide-left {
+
+        from {
+            top: 0;
+            height: 40%;
+        }
+
+        25% {
+            top: 5%;
+            height: 50%;
+        }
+
+        50% {
+            top: 25%;
+            height: 60%;
+        }
+
+        75% {
+            top: 45%;
+            height: 50%;
+        }
+
+        to {
+            top: 60%;
+            height: 40%;
+        }
+    }
+
+
+    /* *************** SLIDE RIGHT *************** */
+    @keyframes slide-right {
+
+        from {
+            top: 60%;
+            height: 40%;
+        }
+
+        25% {
+            top: 45%;
+            height: 50%;
+        }
+
+        50% {
+            top: 25%;
+            height: 60%;
+        }
+
+        75% {
+            top: 5%;
+            height: 50%;
+        }
+
+        to {
+            top: 0;
+            height: 40%;
+        }
+    }
+
+    /* *************** CSS Animations *************** */
+    /* *************** MEDIA QUERIES - MAX-WIDTH: 950PX *************** */
+
+
+    /* *************** MEDIA QUERIES - MAX-WIDTH: 700px *************** */
+    @media screen and (max-width: 700px) {
+        .form {
+            width: 80%;
+        }
+    }
+
+    /* *************** MEDIA QUERIES - MAX-WIDTH: 700px *************** */
+
+    /* *************** MEDIA QUERIES - MAX-WIDTH: 500px *************** */
+    @media screen and (max-width: 500px) {
+        .form {
+            width: 90%;
+        }
+    }
+
+    /* *************** MEDIA QUERIES - MAX-WIDTH: 500px *************** */
+
+
+    /* *************** MEDIA QUERIES - MAX-WIDTH: 425px *************** */
+    @media screen and (max-width: 400px) {
+        .form {
+            width: 100%;
+        }
+    }
+
+    /* *************** MEDIA QUERIES - MAX-WIDTH: 425px *************** */
+}
+
+/* *************** MEDIA QUERIES *************** */
