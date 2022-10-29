@@ -1,0 +1,27 @@
+{
+    "name": "library",
+    "version": "0.0.1",
+    "description": "A book collection manager, where you can add, remove, and update books, in other words, a CRUD.",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/alexcamargos/LearningHTML_CSS_JS"
+    },
+    "homepage": "https://github.com/alexcamargos/LearningHTML_CSS_JS",
+    "author": "Alexsander Lopes Camargos <alcamargos@vivaldi.net> (https://alcamargos.me/)",
+    "keywords": [
+        "HTML",
+        "sass",
+        "JavaScript",
+        "The Odin Project"
+    ],
+    "license": "MIT",
+    "scripts": {
+        "build": "node-sass source/assent/sass/skeleton.scss source/assent/sass/skeleton.css --output-style compressed"
+    },
+    
+    "devDependencies": {
+        "node-sass": "^7.0.3",
+        "nodemon": "^2.0.20",
+        "skeleton-sass-official": "^4.0.0"
+    }
+}
