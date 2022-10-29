@@ -1,0 +1,18 @@
+// 1. core config and core config overrides
+@import "config";
+
+// 2. import theme dependencies
+@import "../../node_modules/normalize-scss/sass/normalize/import-now";
+
+// 3. import default theme variables
+@import "../../node_modules/skeleton-sass-official/src/themes/fresh/vars";
+
+// 4. import default theme overrides
+@import "themes/vars";
+
+// 5. import default theme styles
+@import "../../node_modules/skeleton-sass-official/src/themes/fresh/include_components"; // renamed from base in version 3.1
+@import "../../node_modules/skeleton-sass-official/src/themes/fresh/grid"; // renamed from skeleton in version 3.1
+
+// 6. import extras to be used in skeleton.scss
+// @import "my/extra/_component.scss";

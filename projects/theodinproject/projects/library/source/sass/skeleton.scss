@@ -1,0 +1,121 @@
+@import "loader";
+
+// Add custom styles here
+
+// Delete button
+.btn_delete {
+    border: none;
+    background-color: $read;
+    color: $white;
+}
+
+.btn_delete:hover {
+    background-color: $read-dark;
+    color: $read-lightest;
+}
+
+// Confirm button
+.btn_confirm {
+    border: none;
+    background-color: $green;
+    color: $blue-lightest;
+}
+
+.btn_confirm:hover {
+    background-color: $green-dark;
+    color: $blue-lightest;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding-top: 42px;
+    padding-bottom: 84px;
+    z-index: 100;
+}
+
+header > picture > img {
+    width: 72px;
+}
+
+main {
+    margin-top: 150px;
+}
+
+main .library {
+    display: grid;
+    grid-area: main;
+    grid-template-columns: repeat(4, 1fr);
+    grid-row-gap: 40px;
+    grid-auto-flow: row;
+    justify-content: space-around;
+    justify-items: center;
+    margin: 40px 40px;
+}
+
+main .library picture {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+}
+
+main .library picture img {
+    width: 120px;
+}
+
+main .library .add-book {
+    display: grid;
+    justify-items: center;
+    background-color: $green-lightest;
+    box-shadow: 0 0 2px 4px $blue-dark;
+    border-radius: 1rem;
+    width: 220px;
+    height: 280px;
+    transform: scale(0.666);
+    transition: all 0.666s ease-in-out;
+}
+
+main .library .add-book:hover {
+    transform: scale(0.888);
+}
+
+main #information {
+    display: flex;
+    flex-direction: column;
+    gap: $gap;
+}
+
+main .storage-options {
+    padding-top: 150px;
+}
+
+// Dialog Styles
+#add_book_dialog picture img {
+    width: 42px;
+}
+
+#add_book_dialog .element,
+#add_book_dialog .title {
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: $gap;
+    width: 100%;
+}
+
+#add_book_dialog .element:last-child {
+    width: auto;
+}
+
+#add_book_dialog .element label {
+    font-size: 1.66rem;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 100;
+}
