@@ -38,22 +38,21 @@
         <link rel="manifest" href="assets/img/favicon/site.webmanifest" />
         <!-- END: Favicon -->
 
-        <link rel="stylesheet" href="assets/css/main.css" />
+        <link rel="stylesheet" href="assets/css/skeleton.min.css" />
     </head>
     <body>
         <!-- START: Container -->
-        <div id="container">
+        <div id="container" class="container">
             <!-- START: Header -->
             <header>
-                <div id="container">
-                    <picture>
-                        <img
-                            src="assets/img/favicon/android-chrome-192x192.png"
-                            alt="My Library"
-                        />
-                    </picture>
-                    <h1>My Library</h1>
-                </div>
+                <picture class="two columns">
+                    <img
+                        src="assets/img/favicon/android-chrome-192x192.png"
+                        alt="My Library"
+                    />
+                </picture>
+
+                <h1 class="ten columns">My Library</h1>
             </header>
             <!-- END: Header -->
 
@@ -61,41 +60,208 @@
             <main>
                 <div id="container">
                     <!-- START: Book List -->
-                    <div class="book-list"></div>
+                    <div id="book-list" class="eight columns">
+                        <div class="library">
+                            <div class="add-book">
+                                <picture>
+                                    <img
+                                        src="assets/img/icons/add-book.svg"
+                                        alt="Add Book"
+                                    />
+                                </picture>
+                            </div>
+                        </div>
+                    </div>
                     <!-- END: Book List -->
 
                     <!-- START: Books Information -->
-                    <div class="information">
-                        <h1>Information</h1>
+                    <div id="information" class="four columns">
+                        <h2>Information</h2>
 
-                        <span>Total Books:</span>
+                        <p>Total Books: <span id="total-books"></span></p>
+                        <p>Read books: <span id="read-books"></span></p>
+                        <p>Total Pages: <span id="total-pages"></span></p>
+                        <p>
+                            Total Pages Read:
+                            <span id="total-pages-read"></span>
+                        </p>
 
-                        <span>Read books:</span>
-                        <span>Total Pages</span>
-                        <span>Total Pages Read:</span>
+                        <!-- START: Storage Options -->
+                        <div class="storage-options">
+                            <h2>Storage Options</h2>
+                            <button class="btn_delete">
+                                Delete Local Information
+                            </button>
+                        </div>
+                        <!-- END: Storage Options -->
                     </div>
                     <!-- END: Books Information -->
-
-                    <!-- START: Storage Options -->
-                    <div class="storage-options">
-                        <button>Delete Local Information</button>
-                    </div>
-                    <!-- END: Storage Options -->
                 </div>
             </main>
             <!-- END: Main -->
 
+            <!-- START: Dialog For Add Book -->
+            <dialog id="add_book_dialog">
+                <!-- START: Dialog Container -->
+                <div class="row">
+                    <!-- START: Dialog Title -->
+                    <div class="title">
+                        <picture>
+                            <img
+                                src="assets/img/icons/add-book.svg"
+                                alt="Add Book"
+                            />
+                        </picture>
+                        <h4>New Book</h4>
+                    </div>
+                    <!-- END: Dialog Title -->
+
+                    <!-- START: Book Details -->
+                    <div class="content">
+                        <!-- Start: Book Title -->
+                        <div class="element">
+                            <!-- LABEL -->
+                            <label class="title" for="book-title">
+                                Title
+                            </label>
+                            <!-- INPUT -->
+                            <input
+                                class="input"
+                                type="text"
+                                id="book-title"
+                                required=""
+                            />
+                        </div>
+                        <!-- End: Book Title -->
+
+                        <!-- Start: Book Author -->
+                        <div class="element">
+                            <!-- LABEL -->
+                            <label class="title" for="book-author">
+                                Author
+                            </label>
+                            <!-- INPUT -->
+                            <input
+                                class="input"
+                                type="text"
+                                id="book-author"
+                                required=""
+                            />
+                        </div>
+                        <!-- End: Book Author -->
+
+                        <!-- Start: Book Release year -->
+                        <div class="element">
+                            <!-- LABEL -->
+                            <label class="title" for="book-release-year">
+                                Release year
+                            </label>
+                            <!-- INPUT -->
+                            <input
+                                class="input number"
+                                type="text"
+                                id="book-release-year"
+                                required=""
+                            />
+                        </div>
+                        <!-- End: Book Release year -->
+
+                        <!-- Start: Book Total Pages -->
+                        <div class="element">
+                            <!-- LABEL -->
+                            <label class="title" for="book-total-pages">
+                                Total pages
+                            </label>
+                            <!-- INPUT -->
+                            <input
+                                class="input number"
+                                type="text"
+                                id="book-total-pages"
+                                required=""
+                            />
+                        </div>
+                        <!-- End: Book Total Pages -->
+
+                        <!-- Start: Book Pages Read -->
+                        <div class="element">
+                            <!-- LABEL -->
+                            <label class="title" for="book-pages-read">
+                                Pages Read
+                            </label>
+                            <!-- INPUT -->
+                            <input
+                                class="input number"
+                                type="text"
+                                id="book-pages-read"
+                                required=""
+                            />
+                        </div>
+                        <!-- End: Book Pages Read -->
+
+                        <!-- Start: Book Read Status -->
+                        <div class="element">
+                            <!-- LABEL -->
+                            <label class="title" for="book-read">
+                                Book Read:
+                            </label>
+                            <!-- INPUT -->
+                            <input
+                                class="input check"
+                                type="checkbox"
+                                id="book-read"
+                            />
+                        </div>
+                        <!-- End: Book Read Status -->
+                    </div>
+                    <!-- END: Book Details -->
+
+                    <!-- START: Dialog Buttons -->
+                    <div class="container">
+                        <button class="btn_delete">Cancel</button>
+                        <button class="btn_confirm">Add</button>
+                    </div>
+                    <!-- END: Dialog Buttons -->
+                </div>
+                <!-- END: Dialog Container -->
+            </dialog>
+            <!-- END: Dialog For Add Book -->
+
             <!-- START: Footer -->
-            <footer>
+            <footer class="row">
+                <!-- START: Footer Container -->
                 <div id="container">
-                    <div class="copyrigth">
+                    <!-- START: Copyright -->
+                    <div id="copyrigth">
                         <span
                             >Criado com &#10084;&#65039; usando HTML, CSS e
                             Javascript.</span
                         >
-                        <span>&copy; 2022 - Alexsander Lopes Camargos</span>
+                        <span
+                            >&copy; 2022 -
+                            <a
+                                href="https://github.com/alexcamargos"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Alexsander Lopes Camargos
+                            </a>
+                        </span>
                     </div>
+                    <!-- END: Copyright -->
 
+                    <!-- START: Copyright Skeleton -->
+                    <div class="skeleton">
+                        The clean and beautiful layout is thanks to
+                        <a
+                            href="https://getskeleton.com/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            >Skeleton</a
+                        >
+                    </div>
+                    <!-- END: Copyright Skeleton -->
+
+                    <!-- START: Copyright The Odin Project -->
                     <div class="odin-project">
                         <span>
                             This project is part of the
@@ -116,7 +282,9 @@
                             </a>
                         </span>
                     </div>
+                    <!-- END: Copyright The Odin Project -->
                 </div>
+                <!-- END: Footer Container -->
             </footer>
             <!-- END: Footer -->
         </div>
