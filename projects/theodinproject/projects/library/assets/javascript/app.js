@@ -10,3 +10,16 @@
 //
 // License: MIT
 // -------------------------------------------------------------------------------------------------
+
+
+var dialog = document.getElementById("add_book_dialog");
+
+function showDialog() {
+    dialog.show();
+    dialog.classList.add("dialog-scale");
+}
+
+function closeDialog() {
+    dialog.close();
+    dialog.classList.remove("dialog-scale");
+}

@@ -62,7 +62,7 @@
                     <!-- START: Book List -->
                     <div id="book-list" class="eight columns">
                         <div class="library">
-                            <div class="add-book">
+                            <div class="add-book" onclick="showDialog()">
                                 <picture>
                                     <img
                                         src="assets/img/icons/add-book.svg"
@@ -103,7 +103,7 @@
             <!-- START: Dialog For Add Book -->
             <dialog id="add_book_dialog">
                 <!-- START: Dialog Container -->
-                <div class="row">
+                <div class="container">
                     <!-- START: Dialog Title -->
                     <div class="title">
                         <picture>
@@ -216,9 +216,17 @@
                     <!-- END: Book Details -->
 
                     <!-- START: Dialog Buttons -->
-                    <div class="container">
-                        <button class="btn_delete">Cancel</button>
-                        <button class="btn_confirm">Add</button>
+                    <div class="container dialog-options">
+                        <button
+                            id="btn-cancel"
+                            class="btn_delete"
+                            onclick="closeDialog()"
+                        >
+                            Cancel
+                        </button>
+                        <button id="btn_confirm" class="btn_confirm">
+                            Add
+                        </button>
                     </div>
                     <!-- END: Dialog Buttons -->
                 </div>

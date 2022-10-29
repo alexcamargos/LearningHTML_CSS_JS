@@ -92,6 +92,20 @@ main .storage-options {
 }
 
 // Dialog Styles
+#add_book_dialog {
+    width: 450px;
+    background-color: $green-lightest;
+    z-index: 1000;
+    visibility: hidden;
+    transform: scale(0.1);
+    transition: transform 300ms ease-in-out;
+}
+
+#add_book_dialog.dialog-scale {
+    visibility: visible;
+    transform: scale(1);
+}
+
 #add_book_dialog picture img {
     width: 42px;
 }
@@ -111,6 +125,13 @@ main .storage-options {
 
 #add_book_dialog .element label {
     font-size: 1.66rem;
+}
+
+#add_book_dialog .dialog-options {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    margin-top: 1rem;
 }
 
 footer {
