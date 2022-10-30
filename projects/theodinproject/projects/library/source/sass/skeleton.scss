@@ -7,11 +7,11 @@
     border: none;
     background-color: $read;
     color: $white;
-}
 
-.btn_delete:hover {
-    background-color: $read-dark;
-    color: $read-lightest;
+    &:hover {
+        background-color: $read-dark;
+        color: $read-lightest;
+    }
 }
 
 // Confirm button
@@ -19,91 +19,186 @@
     border: none;
     background-color: $green;
     color: $blue-lightest;
+
+    &:hover {
+        background-color: $green-dark;
+        color: $blue-lightest;
+    }
 }
 
-.btn_confirm:hover {
-    background-color: $green-dark;
+// Edit button
+.btn_edit {
+    border: none;
+    background-color: $blue;
     color: $blue-lightest;
+
+    &:hover {
+        background-color: $blue-dark;
+        color: $blue-lightest;
+    }
 }
 
 header {
+    display: flex;
+    gap: calc($gap * 10);
     position: fixed;
     top: 0;
     width: 100%;
-    padding-top: 42px;
-    padding-bottom: 84px;
+    padding: 1rem 50px 0;
+    margin-bottom: 1rem;
     z-index: 100;
+    background-color: $white;
+
+    picture {
+        img {
+            width: 72px;
+        }
+    }
 }
 
-header > picture > img {
-    width: 72px;
+#main-container {
+    main {
+        display: flex;
+        justify-content: space-between;
+        margin: 150px auto 0;
+        padding: 0 50px;
+
+        @media screen and (max-width: 900px) {
+            flex-direction: column-reverse;
+        }
+
+        // Library Container
+        .library {
+            display: grid;
+            grid-area: main;
+            grid-template-columns: repeat(5, 1fr);
+            grid-auto-flow: row;
+            grid-row-gap: 10px;
+            justify-content: space-around;
+            justify-items: center;
+            padding: 10px;
+
+            @media screen and (max-width: 1800px) {
+                grid-template-columns: repeat(4, 1fr);
+            }
+
+            @media screen and (max-width: 1500px) {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            @media screen and (max-width: 1200px) {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            @media screen and (max-width: 900px) {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            @media screen and (max-width: 620px) {
+                grid-template-columns: repeat(1, 1fr);
+            }
+
+            picture {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                align-content: center;
+
+                img {
+                    width: 120px;
+                }
+            }
+            // Add new book and Display book
+            .add-book,
+            .book-card {
+                display: grid;
+                justify-content: center;
+                justify-items: start;
+                background-color: $green-lightest;
+                box-shadow: 0 0 2px 4px $blue-dark;
+                border-radius: 1rem;
+                width: 240px;
+                height: 260px;
+                padding: 10px;
+                transform: scale(0.666);
+                transition: all 0.666s ease-in-out;
+            }
+
+            .add-book:hover,
+            .book-card {
+                transform: scale(0.888);
+            }
+            .book-card-header,
+            .book-card-body {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+
+                h5 {
+                    margin: 0;
+                    padding-bottom: 8px;
+                }
+            }
+
+            .book-card-footer {
+                display: flex;
+                align-items: flex-end;
+                justify-content: space-between;
+                gap: 10px;
+            }
+        }
+
+        // Information Section
+        #information {
+            display: flex;
+            flex-direction: column;
+            gap: $gap;
+
+            p {
+                @media screen and (max-width: 900px) {
+                    margin-bottom: 8px;
+                }
+            }
+
+            .storage-options {
+                padding-top: 150px;
+
+                @media screen and (max-width: 900px) {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    padding-top: 10px;
+                }
+            }
+        }
+    }
 }
 
-main {
-    margin-top: 150px;
-}
-
-main .library {
-    display: grid;
-    grid-area: main;
-    grid-template-columns: repeat(4, 1fr);
-    grid-row-gap: 40px;
-    grid-auto-flow: row;
-    justify-content: space-around;
-    justify-items: center;
-    margin: 40px 40px;
-}
-
-main .library picture {
+footer {
     display: flex;
-    align-items: center;
+    margin: auto;
+    padding: 0 50px;
     justify-content: center;
-    align-content: center;
-}
-
-main .library picture img {
-    width: 120px;
-}
-
-main .library .add-book {
-    display: grid;
-    justify-items: center;
-    background-color: $green-lightest;
-    box-shadow: 0 0 2px 4px $blue-dark;
-    border-radius: 1rem;
-    width: 220px;
-    height: 280px;
-    transform: scale(0.666);
-    transition: all 0.666s ease-in-out;
-}
-
-main .library .add-book:hover {
-    transform: scale(0.888);
-}
-
-main #information {
-    display: flex;
-    flex-direction: column;
-    gap: $gap;
-}
-
-main .storage-options {
-    padding-top: 150px;
+    text-align: center;
 }
 
 // Dialog Styles
 #add_book_dialog {
+    position: fixed;
     width: 450px;
     background-color: $green-lightest;
     z-index: 1000;
     visibility: hidden;
+    top: 50%;
+    left: 50%;
     transform: scale(0.1);
     transition: transform 300ms ease-in-out;
 }
 
 #add_book_dialog.dialog-scale {
     visibility: visible;
-    transform: scale(1);
+
+    transform: translate(-50%, -50%) scale(1) !important;
 }
 
 #add_book_dialog picture img {
@@ -134,9 +229,22 @@ main .storage-options {
     margin-top: 1rem;
 }
 
-footer {
+.overlay {
     position: fixed;
-    bottom: 0;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    visibility: hidden;
+    background-color: $white;
+    opacity: 0.8;
+    z-index: -1;
+    transition: visibility z-index 300ms ease-in-out;
+}
+
+.overlay.active {
+    visibility: visible;
     width: 100%;
-    z-index: 100;
+    height: 100%;
+    z-index: 900;
 }

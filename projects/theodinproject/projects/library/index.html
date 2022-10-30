@@ -41,262 +41,257 @@
         <link rel="stylesheet" href="assets/css/skeleton.min.css" />
     </head>
     <body>
-        <!-- START: Container -->
-        <div id="container" class="container">
-            <!-- START: Header -->
-            <header>
-                <picture class="two columns">
-                    <img
-                        src="assets/img/favicon/android-chrome-192x192.png"
-                        alt="My Library"
-                    />
-                </picture>
+        <!-- START: Header -->
+        <header>
+            <picture class=" ">
+                <img
+                    src="assets/img/favicon/android-chrome-192x192.png"
+                    alt="My Library"
+                />
+            </picture>
 
-                <h1 class="ten columns">My Library</h1>
-            </header>
-            <!-- END: Header -->
+            <h1 class=" ">My Library</h1>
+        </header>
+        <!-- END: Header -->
 
+        <!-- START: Main Container -->
+        <div id="main-container">
             <!-- START: Main -->
             <main>
-                <div id="container">
-                    <!-- START: Book List -->
-                    <div id="book-list" class="eight columns">
-                        <div class="library">
-                            <div class="add-book" onclick="showDialog()">
-                                <picture>
-                                    <img
-                                        src="assets/img/icons/add-book.svg"
-                                        alt="Add Book"
-                                    />
-                                </picture>
-                            </div>
-                        </div>
+                <!-- START: Book List -->
+                <div id="book-list">
+                    <div id="books-library" class="library">
+                        <!-- Populated by JavaScript -->
                     </div>
-                    <!-- END: Book List -->
-
-                    <!-- START: Books Information -->
-                    <div id="information" class="four columns">
-                        <h2>Information</h2>
-
-                        <p>Total Books: <span id="total-books"></span></p>
-                        <p>Read books: <span id="read-books"></span></p>
-                        <p>Total Pages: <span id="total-pages"></span></p>
-                        <p>
-                            Total Pages Read:
-                            <span id="total-pages-read"></span>
-                        </p>
-
-                        <!-- START: Storage Options -->
-                        <div class="storage-options">
-                            <h2>Storage Options</h2>
-                            <button class="btn_delete">
-                                Delete Local Information
-                            </button>
-                        </div>
-                        <!-- END: Storage Options -->
-                    </div>
-                    <!-- END: Books Information -->
                 </div>
+                <!-- END: Book List -->
+
+                <!-- START: Books Information -->
+                <div id="information">
+                    <h4>Information</h4>
+
+                    <p>Total Books: <span id="total-books"></span></p>
+                    <p>Read books: <span id="read-books"></span></p>
+                    <p>Total Pages: <span id="total-pages"></span></p>
+                    <p>
+                        Total Pages Read:
+                        <span id="total-pages-read"></span>
+                    </p>
+
+                    <!-- START: Storage Options -->
+                    <div class="storage-options">
+                        <h4>Storage Options</h4>
+                        <button class="btn_delete">
+                            Delete Local Information
+                        </button>
+                    </div>
+                    <!-- END: Storage Options -->
+                </div>
+                <!-- END: Books Information -->
             </main>
             <!-- END: Main -->
 
-            <!-- START: Dialog For Add Book -->
-            <dialog id="add_book_dialog">
-                <!-- START: Dialog Container -->
-                <div class="container">
-                    <!-- START: Dialog Title -->
-                    <div class="title">
-                        <picture>
-                            <img
-                                src="assets/img/icons/add-book.svg"
-                                alt="Add Book"
-                            />
-                        </picture>
-                        <h4>New Book</h4>
-                    </div>
-                    <!-- END: Dialog Title -->
-
-                    <!-- START: Book Details -->
-                    <div class="content">
-                        <!-- Start: Book Title -->
-                        <div class="element">
-                            <!-- LABEL -->
-                            <label class="title" for="book-title">
-                                Title
-                            </label>
-                            <!-- INPUT -->
-                            <input
-                                class="input"
-                                type="text"
-                                id="book-title"
-                                required=""
-                            />
-                        </div>
-                        <!-- End: Book Title -->
-
-                        <!-- Start: Book Author -->
-                        <div class="element">
-                            <!-- LABEL -->
-                            <label class="title" for="book-author">
-                                Author
-                            </label>
-                            <!-- INPUT -->
-                            <input
-                                class="input"
-                                type="text"
-                                id="book-author"
-                                required=""
-                            />
-                        </div>
-                        <!-- End: Book Author -->
-
-                        <!-- Start: Book Release year -->
-                        <div class="element">
-                            <!-- LABEL -->
-                            <label class="title" for="book-release-year">
-                                Release year
-                            </label>
-                            <!-- INPUT -->
-                            <input
-                                class="input number"
-                                type="text"
-                                id="book-release-year"
-                                required=""
-                            />
-                        </div>
-                        <!-- End: Book Release year -->
-
-                        <!-- Start: Book Total Pages -->
-                        <div class="element">
-                            <!-- LABEL -->
-                            <label class="title" for="book-total-pages">
-                                Total pages
-                            </label>
-                            <!-- INPUT -->
-                            <input
-                                class="input number"
-                                type="text"
-                                id="book-total-pages"
-                                required=""
-                            />
-                        </div>
-                        <!-- End: Book Total Pages -->
-
-                        <!-- Start: Book Pages Read -->
-                        <div class="element">
-                            <!-- LABEL -->
-                            <label class="title" for="book-pages-read">
-                                Pages Read
-                            </label>
-                            <!-- INPUT -->
-                            <input
-                                class="input number"
-                                type="text"
-                                id="book-pages-read"
-                                required=""
-                            />
-                        </div>
-                        <!-- End: Book Pages Read -->
-
-                        <!-- Start: Book Read Status -->
-                        <div class="element">
-                            <!-- LABEL -->
-                            <label class="title" for="book-read">
-                                Book Read:
-                            </label>
-                            <!-- INPUT -->
-                            <input
-                                class="input check"
-                                type="checkbox"
-                                id="book-read"
-                            />
-                        </div>
-                        <!-- End: Book Read Status -->
-                    </div>
-                    <!-- END: Book Details -->
-
-                    <!-- START: Dialog Buttons -->
-                    <div class="container dialog-options">
-                        <button
-                            id="btn-cancel"
-                            class="btn_delete"
-                            onclick="closeDialog()"
-                        >
-                            Cancel
-                        </button>
-                        <button id="btn_confirm" class="btn_confirm">
-                            Add
-                        </button>
-                    </div>
-                    <!-- END: Dialog Buttons -->
-                </div>
-                <!-- END: Dialog Container -->
-            </dialog>
-            <!-- END: Dialog For Add Book -->
-
             <!-- START: Footer -->
-            <footer class="row">
+            <footer>
                 <!-- START: Footer Container -->
-                <div id="container">
-                    <!-- START: Copyright -->
-                    <div id="copyrigth">
-                        <span
-                            >Criado com &#10084;&#65039; usando HTML, CSS e
-                            Javascript.</span
-                        >
-                        <span
-                            >&copy; 2022 -
+                <div id="container u-full-width">
+                    <div class="twelve columns">
+                        <!-- START: Copyright Skeleton -->
+                        <div class="skeleton">
+                            The clean and beautiful layout is thanks to
                             <a
-                                href="https://github.com/alexcamargos"
+                                href="https://getskeleton.com/"
                                 target="_blank"
                                 rel="noopener noreferrer"
+                                >Skeleton</a
                             >
-                                Alexsander Lopes Camargos
-                            </a>
-                        </span>
-                    </div>
-                    <!-- END: Copyright -->
+                        </div>
+                        <!-- END: Copyright Skeleton -->
 
-                    <!-- START: Copyright Skeleton -->
-                    <div class="skeleton">
-                        The clean and beautiful layout is thanks to
-                        <a
-                            href="https://getskeleton.com/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            >Skeleton</a
-                        >
-                    </div>
-                    <!-- END: Copyright Skeleton -->
+                        <!-- START: Copyright The Odin Project -->
+                        <div class="odin-project">
+                            <span>
+                                This project is part of the
+                                <a
+                                    href="https://www.theodinproject.com/paths/full-stack-javascript?"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    Full Stack JavaScript Path
+                                </a>
+                                an initiative of
+                                <a
+                                    href="https://www.theodinproject.com/paths/full-stack-javascript?"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    The Odin Project
+                                </a>
+                            </span>
+                        </div>
+                        <!-- END: Copyright The Odin Project -->
 
-                    <!-- START: Copyright The Odin Project -->
-                    <div class="odin-project">
-                        <span>
-                            This project is part of the
-                            <a
-                                href="https://www.theodinproject.com/paths/full-stack-javascript?"
-                                target="_blank"
-                                rel="noopener noreferrer"
+                        <!-- START: Copyright -->
+                        <div id="copyrigth">
+                            <span
+                                >Criado com &#10084;&#65039; usando HTML, CSS e
+                                Javascript.</span
                             >
-                                Full Stack JavaScript Path
-                            </a>
-                            an initiative of
-                            <a
-                                href="https://www.theodinproject.com/paths/full-stack-javascript?"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                The Odin Project
-                            </a>
-                        </span>
+                            <span
+                                >&copy; 2022 -
+                                <a
+                                    href="https://github.com/alexcamargos"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    Alexsander Lopes Camargos
+                                </a>
+                            </span>
+                        </div>
+                        <!-- END: Copyright -->
                     </div>
-                    <!-- END: Copyright The Odin Project -->
                 </div>
                 <!-- END: Footer Container -->
             </footer>
             <!-- END: Footer -->
         </div>
-        <!-- END: Container -->
+        <!-- END: Main Container -->
+
+        <!-- START: Dialog For Add Book -->
+        <dialog id="add_book_dialog">
+            <!-- START: Dialog Container -->
+            <div class="container">
+                <!-- START: Dialog Title -->
+                <div class="title">
+                    <picture>
+                        <img
+                            src="assets/img/icons/add-book.svg"
+                            alt="Add Book"
+                        />
+                    </picture>
+                    <h4>New Book</h4>
+                </div>
+                <!-- END: Dialog Title -->
+
+                <!-- START: Book Details -->
+                <div class="content">
+                    <!-- Start: Book Title -->
+                    <div class="element">
+                        <!-- LABEL -->
+                        <label class="title" for="book-title"> Title </label>
+                        <!-- INPUT -->
+                        <input
+                            class="input"
+                            type="text"
+                            id="book-title"
+                            required=""
+                        />
+                    </div>
+                    <!-- End: Book Title -->
+
+                    <!-- Start: Book Author -->
+                    <div class="element">
+                        <!-- LABEL -->
+                        <label class="title" for="book-author"> Author </label>
+                        <!-- INPUT -->
+                        <input
+                            class="input"
+                            type="text"
+                            id="book-author"
+                            required=""
+                        />
+                    </div>
+                    <!-- End: Book Author -->
+
+                    <!-- Start: Book Release year -->
+                    <div class="element">
+                        <!-- LABEL -->
+                        <label class="title" for="book-release-year">
+                            Release year
+                        </label>
+                        <!-- INPUT -->
+                        <input
+                            class="input number"
+                            type="number"
+                            id="book-release-year"
+                            required=""
+                        />
+                    </div>
+                    <!-- End: Book Release year -->
+
+                    <!-- Start: Book Total Pages -->
+                    <div class="element">
+                        <!-- LABEL -->
+                        <label class="title" for="book-total-pages">
+                            Total pages
+                        </label>
+                        <!-- INPUT -->
+                        <input
+                            class="input number"
+                            type="number"
+                            id="book-total-pages"
+                            required=""
+                        />
+                    </div>
+                    <!-- End: Book Total Pages -->
+
+                    <!-- Start: Book Pages Read -->
+                    <div class="element">
+                        <!-- LABEL -->
+                        <label class="title" for="book-pages-read">
+                            Pages Read
+                        </label>
+                        <!-- INPUT -->
+                        <input
+                            class="input number"
+                            type="number"
+                            id="book-pages-read"
+                            required=""
+                        />
+                    </div>
+                    <!-- End: Book Pages Read -->
+
+                    <!-- Start: Book Read Status -->
+                    <div class="element">
+                        <!-- LABEL -->
+                        <label class="title" for="book-read">
+                            Book Read:
+                        </label>
+                        <!-- INPUT -->
+                        <input
+                            class="input check"
+                            type="checkbox"
+                            id="book-read"
+                        />
+                    </div>
+                    <!-- End: Book Read Status -->
+                </div>
+                <!-- END: Book Details -->
+
+                <!-- START: Dialog Buttons -->
+                <div class="container dialog-options">
+                    <button
+                        id="btn-cancel"
+                        class="btn_delete"
+                        onclick="closeDialog()"
+                    >
+                        Cancel
+                    </button>
+                    <button
+                        id="btn_confirm"
+                        class="btn_confirm"
+                        onclick="addBookToLibrary()"
+                    >
+                        Add
+                    </button>
+                </div>
+                <!-- END: Dialog Buttons -->
+            </div>
+            <!-- END: Dialog Container -->
+        </dialog>
+        <!-- END: Dialog For Add Book -->
+
+        <div id="overlay" class="overlay"></div>
 
         <script src="assets/javascript/app.js"></script>
     </body>
