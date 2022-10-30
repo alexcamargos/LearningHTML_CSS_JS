@@ -1,9 +1,9 @@
 // -------------------------------------------------------------------------------------------------
 // Name: app.js
-// Version: 0.0.1
+// Version: 0.0.8
 //
-// Summary: alexcamargos.github.io
-//          My Personal Portfolio.
+// Summary: Full Stack JavaScript Path
+//          Project: Library
 //
 // Author: Alexsander Lopes Camargos
 // Author-email: alcamargos@vivaldi.net
@@ -11,88 +11,8 @@
 // License: MIT
 // -------------------------------------------------------------------------------------------------
 
-// Identify the book to be edited.
-var bookID = 0;
-
-class Book {
-    // Book has a title, author, release year, total pages, pages read and a read status.
-    // The read status is a boolean value that can be changed by the user.
-    constructor(title, author, release, pages, pagesRead = 0, read = false) {
-        this.id = bookID;
-        this.title = title;
-        this.author = author;
-        this.release = release;
-        this.pages = pages;
-        this.pagesRead = pagesRead;
-        this.read = read;
-        bookID++;
-    }
-}
-
-class Library {
-    // Library has a list of books.
-    // The library has a method to add a book to the library.
-    // The library has a method to remove a book from the library.
-    // The library has a method to check if a book is in the library.
-    // The library has a method to get a book from the library.
-    // The library has a method to get all books from the library.
-    constructor() {
-        // Create a new library.
-        this.books = [];
-    }
-
-    addBook(newBook) {
-        // Add a book to the library.
-        this.books.push(newBook);
-    }
-
-    removeBook(title) {
-        // Remove a book from the library.
-        this.books = this.books.filter((book) => book.title !== title);
-    }
-
-    updateBook(updateBook) {
-        // Update a book in the library.
-        this.books = this.books.map((book) =>
-            book.title === updateBook.title ? updateBook : book
-        );
-    }
-
-    isInLibrary(book) {
-        // Check if a book is in the library.
-        return this.books.some((book) => book.title === book.title);
-    }
-
-    getBook(title) {
-        // Get a book from the library.
-        return this.books.find((book) => book.title === title);
-    }
-
-    getBooks() {
-        // Get all books from the library.
-        return this.books;
-    }
-
-    length() {
-        // Get the number of books in the library.
-        return this.books.length;
-    }
-
-    getTotalPages() {
-        // return the sum of all pages in each book in the library.
-        return this.books.reduce((total, book) => total + book.pages, 0);
-    }
-
-    getTotalPagesRead() {
-        // Get the total number of pages read in the library.
-        return this.books.reduce((total, book) => total + book.pagesRead, 0);
-    }
-
-    getTotalReadBooks() {
-        // Get the total number of read books in the library.
-        return this.books.filter((book) => book.read === true).length;
-    }
-}
+import { Book } from './models/books.js';
+import { Library } from './models/library.js';
 
 // Create a new library.
 var myLibrary = new Library();
@@ -161,19 +81,19 @@ function populateLibrary() {
 var dialog = document.getElementById('add_book_dialog');
 var overlay = document.getElementById('overlay');
 
-function showDialog() {
+window.showDialog = function () {
     // Show the dialog.
     dialog.show();
     dialog.classList.add('dialog-scale');
     overlay.classList.add('active');
-}
+};
 
-function closeDialog() {
+window.closeDialog = function () {
     // Hide the dialog.
     dialog.close();
     dialog.classList.remove('dialog-scale');
     overlay.classList.remove('active');
-}
+};
 
 // Add new book to the library.
 function render() {
@@ -232,7 +152,7 @@ function render() {
     });
 }
 
-function addBookToLibrary() {
+window.addBookToLibrary = function () {
     // Add a new book to the library.
     let title = document.getElementById('book-title').value;
     let author = document.getElementById('book-author').value;
@@ -247,7 +167,7 @@ function addBookToLibrary() {
 
     closeDialog();
     render();
-}
+};
 
 // On page load, populate the library with the default data.
 window.addEventListener('load', () => {
