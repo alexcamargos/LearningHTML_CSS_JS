@@ -23,14 +23,18 @@ class Library {
         this.books = [];
     }
 
-    addBook(newBook) {
+    addBook(addBook) {
         // Add a book to the library.
-        this.books.push(newBook);
+        if (!this.isInLibrary(addBook)) {
+            this.books.push(addBook);
+        } else {
+            return false;
+        }
     }
 
-    removeBook(title) {
+    removeBook(bookTitle) {
         // Remove a book from the library.
-        this.books = this.books.filter((book) => book.title !== title);
+        this.books = this.books.filter((book) => book.title !== bookTitle);
     }
 
     updateBook(updateBook) {
@@ -40,14 +44,17 @@ class Library {
         );
     }
 
-    isInLibrary(book) {
+    isInLibrary(newBook) {
         // Check if a book is in the library.
-        return this.books.some((book) => book.title === book.title);
+        return this.books.some(
+            (book) =>
+                book.title === newBook.title && book.author === newBook.author
+        );
     }
 
-    getBook(title) {
+    getBook(bookTitle) {
         // Get a book from the library.
-        return this.books.find((book) => book.title === title);
+        return this.books.find((book) => book.title === bookTitle);
     }
 
     getBooks() {
@@ -61,7 +68,7 @@ class Library {
     }
 
     getTotalPages() {
-        // return the sum of all pages in each book in the library.
+        // Return the sum of all pages for each book in the library.
         return this.books.reduce((total, book) => total + book.pages, 0);
     }
 
