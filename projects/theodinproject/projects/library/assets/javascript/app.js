@@ -11,42 +11,10 @@
 // License: MIT
 // -------------------------------------------------------------------------------------------------
 
-import { Book, convertJSONToBook } from './models/books.js';
-import { myLibrary, populateLibrary } from './utils/test_data.js';
+import { Book } from './models/books.js';
+import { localStorage, checkLocalStorage } from './models/localstorage.js';
+import { myLibrary } from './utils/test_data.js';
 import { getDialogValues, setDialogValues } from './utils/dialog.js';
-
-class LocalStorage {
-    // LocalStorage has a method to save the library in the local storage.
-    // LocalStorage has a method to get the library from the local storage.
-    // LocalStorage has a method to clear the library from the local storage.
-    static saveLibrary() {
-        // Save the library in the local storage.
-        localStorage.setItem('myLibrary', JSON.stringify(myLibrary));
-    }
-
-    static getLibrary() {
-        // Get the library from the local storage.
-        return JSON.parse(localStorage.getItem('myLibrary'));
-    }
-
-    static clearLibrary() {
-        // Clear the library from the local storage.
-        localStorage.removeItem('myLibrary');
-    }
-}
-
-function checkLocalStorage() {
-    // Check if myLibrary is saved in the local storage.
-    let myLibraryInLocalStorage = JSON.parse(localStorage.getItem('myLibrary'));
-
-    if (myLibraryInLocalStorage) {
-        myLibraryInLocalStorage.books.forEach((book) => {
-            myLibrary.addBook(convertJSONToBook(book));
-        });
-    } else {
-        populateLibrary();
-    }
-}
 
 // Show/Hide the dialog to add/edit a new book.
 var dialog = document.getElementById('add_book_dialog');
@@ -123,6 +91,12 @@ function render() {
     });
 }
 
+window.clearLibrary = function () {
+    // Clear the local storage.
+    localStorage.clearLibrary();
+    render();
+};
+
 window.addBookToLibrary = function () {
     // Add a new book to the library.
 
@@ -141,6 +115,8 @@ window.addBookToLibrary = function () {
     );
 
     myLibrary.addBook(book);
+
+    localStorage.saveLibrary(myLibrary);
 
     closeDialog();
     render();
@@ -161,11 +137,16 @@ function updateBookInLibrary(book) {
 document.addEventListener('click', (element) => {
     // If the user clicks on the delete button, the book is removed from the library.
     if (element.target && element.target.id == 'btn-delete') {
+        // Get the book title.
         let title =
             element.target.parentNode.parentNode.children[0].children[0]
                 .innerHTML;
+        // Remove the "Title: " string from the title.
         title = title.split(':')[1].trim();
+
+        // Remove the book from the library.
         myLibrary.removeBook(title);
+        localStorage.saveLibrary(myLibrary);
 
         render();
     }
@@ -176,6 +157,7 @@ document.addEventListener('click', (element) => {
         let title =
             element.target.parentNode.parentNode.children[0].children[0]
                 .innerHTML;
+        // Remove the "Title: " string from the title.
         title = title.split(':')[1].trim();
         // Get the book from the library.
         let bookData = myLibrary.getBook(title);
@@ -200,6 +182,7 @@ document.addEventListener('click', (element) => {
             newBookData.read
         );
         updateBookInLibrary(newBook);
+        localStorage.saveLibrary(myLibrary);
 
         render();
     }

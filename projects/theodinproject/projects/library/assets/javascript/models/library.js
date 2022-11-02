@@ -11,6 +11,8 @@
 // License: MIT
 // -------------------------------------------------------------------------------------------------
 
+import {localStorage} from './localstorage.js';
+
 class Library {
     // Library has a list of books.
     // The library has a method to add a book to the library.
