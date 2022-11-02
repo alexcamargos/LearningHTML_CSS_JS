@@ -1,6 +1,6 @@
 // -------------------------------------------------------------------------------------------------
 // Name: app.js
-// Version: 0.0.8
+// Version: 0.0.12
 //
 // Summary: Full Stack JavaScript Path
 //          Project: Library
@@ -14,6 +14,7 @@
 import { Book } from './models/books.js';
 import { localStorage, checkLocalStorage } from './models/localstorage.js';
 import { myLibrary } from './utils/test_data.js';
+import { render } from './render.js';
 import { getDialogValues, setDialogValues } from './utils/dialog.js';
 
 // Show/Hide the dialog to add/edit a new book.
@@ -21,75 +22,18 @@ var dialog = document.getElementById('add_book_dialog');
 var overlay = document.getElementById('overlay');
 
 window.showDialog = function () {
-    // Show the dialog.
+    // Show the dialog and overlay.
     dialog.show();
     dialog.classList.add('dialog-scale');
     overlay.classList.add('active');
 };
 
 window.closeDialog = function () {
-    // Hide the dialog.
+    // Hide the dialog and overlay.
     dialog.close();
     dialog.classList.remove('dialog-scale');
     overlay.classList.remove('active');
 };
-
-// Add new book to the library.
-function render() {
-    let bookList = document.getElementById('books-library');
-    bookList.innerHTML = '';
-
-    let totalBooks = document.getElementById('total-books');
-    totalBooks.innerHTML = `${myLibrary.length()}`;
-
-    let totalPages = document.getElementById('total-pages');
-    totalPages.innerHTML = `${myLibrary.getTotalPages()}`;
-
-    let totalPagesRead = document.getElementById('total-pages-read');
-    totalPagesRead.innerHTML = `${myLibrary.getTotalPagesRead()}`;
-
-    let totalReadBooks = document.getElementById('read-books');
-    totalReadBooks.innerHTML = `${myLibrary.getTotalReadBooks()}`;
-
-    let addBook = document.createElement('div');
-    addBook.classList.add('add-book');
-
-    // When the user clicks on the add book button, the dialog is shown.
-    addBook.addEventListener('click', showDialog);
-    addBook.innerHTML = `
-            <picture>
-                <img
-                    src="assets/img/icons/add-book.svg"
-                    alt="Add Book"
-                />
-            </picture>
-        `;
-
-    // For each book in the library, create a div with the book's information.
-    myLibrary.getBooks().forEach((book) => {
-        let bookCard = document.createElement('div');
-        bookCard.classList.add('book-card');
-        bookCard.innerHTML = `
-                <div class="book-card-header">
-                    <h5>Title: ${book.title}</h5>
-                    <span>Author: ${book.author}</span>
-                </div>
-                <div class="book-card-body">
-                    <span>Release Year: ${book.release}</span>
-                    <span>Total Pages: ${book.pages}</span>
-                    <span>Pages Read: ${book.pagesRead}</span>
-                    <span>Read: ${book.read ? 'Read' : 'Not Read'}</span>
-                </div>
-
-                <div class="book-card-footer">
-                    <button id="btn-edit" class="btn_edit">Edit</button>
-                    <button id="btn-delete" class="btn_delete">Delete</button>
-                </div>
-            `;
-        bookList.appendChild(bookCard);
-        bookList.appendChild(addBook);
-    });
-}
 
 window.clearLibrary = function () {
     // Clear the local storage.
@@ -115,7 +59,6 @@ window.addBookToLibrary = function () {
     );
 
     myLibrary.addBook(book);
-
     localStorage.saveLibrary(myLibrary);
 
     closeDialog();
@@ -127,11 +70,6 @@ window.addEventListener('load', () => {
     checkLocalStorage();
     render();
 });
-
-// Update the book in the library.
-function updateBookInLibrary(book) {
-    myLibrary.updateBook(book);
-}
 
 // Delete/Edit a book from the library.
 document.addEventListener('click', (element) => {
@@ -181,7 +119,9 @@ document.addEventListener('click', (element) => {
             newBookData.pagesRead,
             newBookData.read
         );
-        updateBookInLibrary(newBook);
+
+        // Update the book in the library.
+        myLibrary.updateBook(newBook);
         localStorage.saveLibrary(myLibrary);
 
         render();
