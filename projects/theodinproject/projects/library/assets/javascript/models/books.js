@@ -11,21 +11,32 @@
 // License: MIT
 // -------------------------------------------------------------------------------------------------
 
-var bookID = 0;
-
 class Book {
     // Book has a title, author, release year, total pages, pages read and a read status.
     // The read status is a boolean value that can be changed by the user.
-    constructor(title, author, release, pages, pagesRead = 0, read = false) {
-        this.id = bookID;
+    constructor(id, title, author, release, pages, pagesRead = 0, read = false) {
+        this.id = id;
         this.title = title;
         this.author = author;
         this.release = release;
         this.pages = pages;
         this.pagesRead = pagesRead;
         this.read = read;
-        bookID++;
     }
 }
 
-export { Book };
+// Convert the JSON object to a Book object.
+const convertJSONToBook = (book) => {
+    return new Book(
+        book.id,
+        book.title,
+        book.author,
+        book.release,
+        book.pages,
+        book.pagesRead,
+        book.read
+    );
+};
+
+
+export { Book, convertJSONToBook };

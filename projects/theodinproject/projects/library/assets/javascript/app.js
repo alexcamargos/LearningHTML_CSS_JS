@@ -11,9 +11,42 @@
 // License: MIT
 // -------------------------------------------------------------------------------------------------
 
-import { Book } from './models/books.js';
-import { populateLibrary } from './utils/test_data.js';
-import { myLibrary } from './utils/test_data.js';
+import { Book, convertJSONToBook } from './models/books.js';
+import { myLibrary, populateLibrary } from './utils/test_data.js';
+import { getDialogValues, setDialogValues } from './utils/dialog.js';
+
+class LocalStorage {
+    // LocalStorage has a method to save the library in the local storage.
+    // LocalStorage has a method to get the library from the local storage.
+    // LocalStorage has a method to clear the library from the local storage.
+    static saveLibrary() {
+        // Save the library in the local storage.
+        localStorage.setItem('myLibrary', JSON.stringify(myLibrary));
+    }
+
+    static getLibrary() {
+        // Get the library from the local storage.
+        return JSON.parse(localStorage.getItem('myLibrary'));
+    }
+
+    static clearLibrary() {
+        // Clear the library from the local storage.
+        localStorage.removeItem('myLibrary');
+    }
+}
+
+function checkLocalStorage() {
+    // Check if myLibrary is saved in the local storage.
+    let myLibraryInLocalStorage = JSON.parse(localStorage.getItem('myLibrary'));
+
+    if (myLibraryInLocalStorage) {
+        myLibraryInLocalStorage.books.forEach((book) => {
+            myLibrary.addBook(convertJSONToBook(book));
+        });
+    } else {
+        populateLibrary();
+    }
+}
 
 // Show/Hide the dialog to add/edit a new book.
 var dialog = document.getElementById('add_book_dialog');
@@ -92,15 +125,21 @@ function render() {
 
 window.addBookToLibrary = function () {
     // Add a new book to the library.
-    let title = document.getElementById('book-title').value;
-    let author = document.getElementById('book-author').value;
-    let release = parseInt(document.getElementById('book-release-year').value);
-    let pages = parseInt(document.getElementById('book-total-pages').value);
-    let pagesRead = parseInt(document.getElementById('book-pages-read').value);
-    let read = document.getElementById('book-read').checked;
+
+    // Get the values from the dialog.
+    let newBookData = getDialogValues();
 
     // Create a new book.
-    let book = new Book(title, author, release, pages, pagesRead, read);
+    let book = new Book(
+        myLibrary.length() + 1,
+        newBookData.title,
+        newBookData.author,
+        newBookData.release,
+        newBookData.pages,
+        newBookData.pagesRead,
+        newBookData.read
+    );
+
     myLibrary.addBook(book);
 
     closeDialog();
@@ -109,7 +148,7 @@ window.addBookToLibrary = function () {
 
 // On page load, populate the library with the default data.
 window.addEventListener('load', () => {
-    populateLibrary();
+    checkLocalStorage();
     render();
 });
 
@@ -139,29 +178,27 @@ document.addEventListener('click', (element) => {
                 .innerHTML;
         title = title.split(':')[1].trim();
         // Get the book from the library.
-        let book = myLibrary.getBook(title);
+        let bookData = myLibrary.getBook(title);
 
         // Populate the dialog with the book's information.
-        document.getElementById('book-title').value = book.title;
-        document.getElementById('book-author').value = book.author;
-        document.getElementById('book-release-year').value = book.release;
-        document.getElementById('book-total-pages').value = book.pages;
-        document.getElementById('book-pages-read').value = book.pagesRead;
-        document.getElementById('book-read').checked = book.read;
+        setDialogValues(bookData);
         showDialog();
 
         // When the user clicks on the save button,
         // the old book is removed from the library and a new one is added.
-        myLibrary.removeBook(book.title);
+        myLibrary.removeBook(bookData.title);
 
         // Create a new book with the new information.
-        title = document.getElementById('book-title').value;
-        author = document.getElementById('book-author').value;
-        release = parseInt(document.getElementById('book-release-year').value);
-        pages = parseInt(document.getElementById('book-total-pages').value);
-        pagesRead = parseInt(document.getElementById('book-pages-read').value);
-        read = document.getElementById('book-read').checked;
-        newBook = new Book(title, author, release, pages, pagesRead, read);
+        let newBookData = getDialogValues();
+        let newBook = new Book(
+            myLibrary.length() + 1,
+            newBookData.title,
+            newBookData.author,
+            newBookData.release,
+            newBookData.pages,
+            newBookData.pagesRead,
+            newBookData.read
+        );
         updateBookInLibrary(newBook);
 
         render();

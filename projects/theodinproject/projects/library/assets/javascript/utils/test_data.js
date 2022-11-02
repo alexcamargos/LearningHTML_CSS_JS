@@ -74,6 +74,8 @@ function populateLibrary() {
         );
 
         myLibrary.addBook(book);
+
+        localStorage.setItem('myLibrary', JSON.stringify(myLibrary));
     }
 }
 
