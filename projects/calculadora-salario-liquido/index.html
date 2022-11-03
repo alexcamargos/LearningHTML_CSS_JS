@@ -105,25 +105,26 @@
                             <div
                                 class="container-inputs grid grid-cols-3 gap-4"
                             >
+                                <!-- Salário Bruto -->
                                 <div class="inputs input-salario input-salb">
                                     <p>Salário bruto</p>
                                     <div class="input-field">
                                         <input
                                             placeholder="R$"
-                                            id="salario"
+                                            id="salario-bruto"
                                             type="text"
                                             inputmode="numeric"
                                             value="1212"
                                         />
                                     </div>
                                 </div>
-
+                                <!-- Número de Dependents -->
                                 <div class="inputs input-salario">
                                     <p>Dependentes</p>
                                     <div class="input-field quantity">
                                         <input
                                             type="number"
-                                            id="dependentes"
+                                            id="numero-dependentes"
                                             value="0"
                                             min="0"
                                         />
@@ -137,13 +138,13 @@
                                         </div>
                                     </div>
                                 </div>
-
+                                <!-- Pensão Alimentícia -->
                                 <div class="inputs input-salario input-pensao">
                                     <p>Pensão alimentícia</p>
                                     <div class="input-field">
                                         <input
                                             placeholder="R$"
-                                            id="pensao"
+                                            id="valor-pensao"
                                             type="text"
                                             inputmode="numeric"
                                             value="0"
@@ -154,24 +155,25 @@
                                 <div
                                     class="inputs input-salario input-previdencia"
                                 >
+                                    <!-- Previdência Privada -->
                                     <p>Previdência privada</p>
                                     <div class="input-field">
                                         <input
                                             placeholder="R$"
-                                            id="previdencia"
+                                            id="previdencia-privada"
                                             type="text"
                                             inputmode="numeric"
                                             value="0"
                                         />
                                     </div>
                                 </div>
-
+                                <!-- Outros Valores -->
                                 <div class="inputs input-salario input-outros">
                                     <p>Outros descontos*</p>
                                     <div class="input-field">
                                         <input
                                             placeholder="R$"
-                                            id="outros"
+                                            id="outros-valores"
                                             type="text"
                                             inputmode="numeric"
                                             value="0"
@@ -179,8 +181,10 @@
                                     </div>
                                 </div>
 
-                                <div class="inputs input-salario div-btn-calc text-center">
-                                    <p>­</p>
+                                <div
+                                    class="inputs input-salario div-btn-calc text-center"
+                                >
+                                    <p></p>
                                     <div class="input-field cursor-pointer">
                                         <span
                                             id="btn-calcular"
@@ -203,6 +207,86 @@
                                     </div>
                                 </div>
                             </div>
+
+                            <section class="result">
+                                <div class="container">
+                                    <div class="header">
+                                        <span>Cálculo Salário Líquido</span>
+                                    </div>
+
+                                    <div class="body">
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <th>Evento</th>
+                                                    <th>Proventos</th>
+                                                    <th>Descontos</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="bodyTable">
+                                                <tr>
+                                                    <td>Salário Bruto</td>
+                                                    <td
+                                                        id="resultado-salario-bruto"
+                                                    ></td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Pensão alimentícia</td>
+                                                    <td></td>
+                                                    <td
+                                                        id="resultado-pensão-alimenticia"
+                                                    ></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Previdência privada</td>
+                                                    <td></td>
+                                                    <td
+                                                        id="resultado-previdencia-privada"
+                                                    ></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Outros descontos</td>
+                                                    <td></td>
+                                                    <td
+                                                        id="resultado-outros-descontos"
+                                                    ></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>INSS**</td>
+                                                    <td></td>
+                                                    <td
+                                                        id="resultado-deducao-inss"
+                                                    ></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>IRRF**</td>
+                                                    <td></td>
+                                                    <td
+                                                        id="resultado-deducao-irrf"
+                                                    ></td>
+                                                </tr>
+                                            </tbody>
+                                            <tfoot id="footTable">
+                                                <tr>
+                                                    <td>Totais</td>
+                                                    <td
+                                                        id="total-salario-bruto"
+                                                    ></td>
+                                                    <td id="total-deducao"></td>
+                                                </tr>
+                                            </tfoot>
+                                        </table>
+                                    </div>
+
+                                    <div class="footer">
+                                        <p>
+                                            Salário liquido =
+                                            <span id="salario-liquido"></span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </section>
                         </div>
                     </div>
                 </main>
@@ -230,7 +314,14 @@
             referrerpolicy="no-referrer"
         ></script>
 
-        <!-- if scripts is required add. -->
-        <script src="assets/javascript/my_scripts.js"></script>
+        <!--  * AutoNumeric.js v4.6.0 -->
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/autonumeric/4.6.0/autoNumeric.min.js"
+            integrity="sha512-6j+LxzZ7EO1Kr7H5yfJ8VYCVZufCBMNFhSMMzb2JRhlwQ/Ri7Zv8VfJ7YI//cg9H5uXT2lQpb14YMvqUAdGlcg=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        ></script>
+        <script src="assets/js/autonumeric.js"></script>
+        <script src="assets/js/app.js"></script>
     </body>
 </html>
