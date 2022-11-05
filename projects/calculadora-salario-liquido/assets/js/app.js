@@ -84,11 +84,13 @@ const tabelaDependentes = {
 function calculaDeducaoINSS(salario) {
     // Calcula a dedução do INSS.
     let deducaoINSS = 0;
+    let aliquotaINSS = 0;
 
     // Verifica a faixa do salário de contribuição.
     if (salario <= tabelaINSS.faixa01.salario) {
         // Faixa 01: Salário de contribuição até R$ 1.212,00.
         deducaoINSS = parseFloat(salario * tabelaINSS.faixa01.aliquota);
+        aliquotaINSS = parseFloat(tabelaINSS.faixa01.aliquota * 100);
     } else if (
         salario > tabelaINSS.faixa01.salario &&
         salario <= tabelaINSS.faixa02.salario
@@ -98,6 +100,7 @@ function calculaDeducaoINSS(salario) {
             salario * tabelaINSS.faixa02.aliquota -
                 tabelaINSS.faixa02.parcela_deduzir
         );
+        aliquotaINSS = parseFloat(tabelaINSS.faixa02.aliquota * 100);
     } else if (
         salario > tabelaINSS.faixa02.salario &&
         salario <= tabelaINSS.faixa03.salario
@@ -107,6 +110,7 @@ function calculaDeducaoINSS(salario) {
             salario * tabelaINSS.faixa03.aliquota -
                 tabelaINSS.faixa03.parcela_deduzir
         );
+        aliquotaINSS = parseFloat(tabelaINSS.faixa03.aliquota * 100);
     } else if (
         salario > tabelaINSS.faixa03.salario &&
         salario <= tabelaINSS.faixa04.salario
@@ -116,13 +120,18 @@ function calculaDeducaoINSS(salario) {
             salario * tabelaINSS.faixa04.aliquota -
                 tabelaINSS.faixa04.parcela_deduzir
         );
+        aliquotaINSS = parseFloat(tabelaINSS.faixa04.aliquota * 100);
     } else {
         // Faixa 05: Salário de contribuição acima de R$ 7.087,22.
         deducaoINSS = parseFloat(tabelaINSS.faixa05.parcela_deduzir);
+        aliquotaINSS = false;
     }
 
-    // Retorna a dedução do INSS, arredondada para duas casas decimais.
-    return deducaoINSS;
+    // Retorna a dedução do INSS e a alíquota aplicada, arredondada para duas casas decimais.
+    return {
+        valor: deducaoINSS,
+        aliquotaINSS: aliquotaINSS,
+    };
 }
 
 function calculoDependentes(dependentes) {
@@ -136,11 +145,13 @@ function calculoDependentes(dependentes) {
 function calculaDeducaoIRPF(salario) {
     // Calcula a dedução do IRRF.
     let deducaoIRRF = 0;
+    let aliquotaIRRF = 0;
 
     // Verifica a faixa do salário de contribuição.
     if (salario <= tabelaIRRF.faixa01.salario) {
         // Faixa 01: Salário de contribuição até R$ 1.903,98.
         deducaoIRRF = parseFloat(salario * tabelaIRRF.faixa01.aliquota);
+        aliquotaIRRF = parseFloat(tabelaIRRF.faixa01.aliquota * 100);
     } else if (
         salario > tabelaIRRF.faixa01.salario &&
         salario <= tabelaIRRF.faixa02.salario
@@ -150,6 +161,7 @@ function calculaDeducaoIRPF(salario) {
             salario * tabelaIRRF.faixa02.aliquota -
                 tabelaIRRF.faixa02.parcela_deduzir
         );
+        aliquotaIRRF = parseFloat(tabelaIRRF.faixa02.aliquota * 100);
     } else if (
         salario > tabelaIRRF.faixa02.salario &&
         salario <= tabelaIRRF.faixa03.salario
@@ -159,6 +171,7 @@ function calculaDeducaoIRPF(salario) {
             salario * tabelaIRRF.faixa03.aliquota -
                 tabelaIRRF.faixa03.parcela_deduzir
         );
+        aliquotaIRRF = parseFloat(tabelaIRRF.faixa03.aliquota * 100);
     } else if (
         salario > tabelaIRRF.faixa03.salario &&
         salario <= tabelaIRRF.faixa04.salario
@@ -168,16 +181,21 @@ function calculaDeducaoIRPF(salario) {
             salario * tabelaIRRF.faixa04.aliquota -
                 tabelaIRRF.faixa04.parcela_deduzir
         );
+        aliquotaIRRF = parseFloat(tabelaIRRF.faixa04.aliquota * 100);
     } else {
         // Faixa 05: Salário de contribuição acima de R$ 4.664,68.
         deducaoIRRF = parseFloat(
             salario * tabelaIRRF.faixa05.aliquota -
                 tabelaIRRF.faixa05.parcela_deduzir
         );
+        aliquotaIRRF = parseFloat(tabelaIRRF.faixa05.aliquota * 100);
     }
 
-    // Retorna a dedução do IRRF, arredondada para duas casas decimais.
-    return deducaoIRRF;
+    // Retorna a dedução e a alíquota do IRRF, arredondada para duas casas decimais.
+    return {
+        valor: deducaoIRRF,
+        aliquotaIRRF: aliquotaIRRF,
+    };
 }
 
 function calculadoraDeducoes(
@@ -196,7 +214,7 @@ function calculadoraDeducoes(
     //  Salário base para cálculo do IRRF.
     let salarioBaseIRRF =
         salario -
-        deducaoINSS -
+        deducaoINSS.valor -
         deducaoDependentes -
         pensaoAlimenticia -
         previdenciaPrivada;
@@ -205,7 +223,13 @@ function calculadoraDeducoes(
     let deducaoIRRF = calculaDeducaoIRPF(salarioBaseIRRF);
 
     // Calcula o valor total deduzido.
-    let valorTotalDeduzido = parseFloat(deducaoINSS + deducaoIRRF + pensaoAlimenticia + previdenciaPrivada + outrosDescontos);
+    let valorTotalDeduzido = parseFloat(
+        deducaoINSS.valor +
+            deducaoIRRF.valor +
+            pensaoAlimenticia +
+            previdenciaPrivada +
+            outrosDescontos
+    );
 
     // Calcula o salário líquido.
     let salarioLiquido = parseFloat(salario - valorTotalDeduzido);
@@ -213,8 +237,10 @@ function calculadoraDeducoes(
     // Retorna o salário líquido, arredondado para duas casas decimais.
     return {
         salarioLiquido: salarioLiquido,
-        deducaoINSS: deducaoINSS,
-        deducaoIRRF: deducaoIRRF,
+        deducaoINSS: deducaoINSS.valor,
+        alicotaINSS: deducaoINSS.aliquotaINSS,
+        deducaoIRRF: deducaoIRRF.valor,
+        aliquotaIRRF: deducaoIRRF.aliquotaIRRF,
         pensaoAlimenticia: pensaoAlimenticia,
         previdenciaPrivada: previdenciaPrivada,
         outrosDescontos: outrosDescontos,
@@ -224,7 +250,7 @@ function calculadoraDeducoes(
 
 function showElement(element) {
     // Mostra um elemento.
-    element.style.display = "block";
+    element.style.display = 'block';
 }
 
 function getData() {
@@ -301,6 +327,19 @@ function getData() {
     document.getElementById(
         'salario-liquido'
     ).innerHTML = `R$ ${deducoes.salarioLiquido.toFixed(2)}`;
+
+    // If deducoes.valor === 828.39 mostra a mensagem
+    if (deducoes.alicotaINSS) {
+        document.getElementById(
+            'alicota-inss'
+        ).innerHTML = `${deducoes.alicotaINSS.toFixed(1)}%`;
+    } else {
+        document.getElementById('alicota-inss').innerHTML = `R$ 828,39`;
+    }
+
+    document.getElementById(
+        'alicota-irrf'
+    ).innerHTML = `R$ ${deducoes.aliquotaIRRF.toFixed(1)}%`;
 
     showElement(document.getElementById('resultado'));
     showElement(document.getElementById('alicotas'));
