@@ -89,6 +89,13 @@ function formatValueToMoney(value) {
     });
 }
 
+function parseStringToFloat(value) {
+    // Converte uma string para float.
+    return parseFloat(
+        value.replace('R$ ', '').replace(/[.]/g, '').replace(',', '.')
+    );
+}
+
 function calculaDeducaoINSS(salario) {
     // Calcula a dedução do INSS.
     let deducaoINSS = 0;
@@ -263,40 +270,20 @@ function showElement(element) {
 
 function getData() {
     // Coletando os valores do formulário.
-    let salarioBruto = parseFloat(
-        document
-            .getElementById('salario-bruto')
-            .value.replace('R$ ', '')
-            .replace(/[.]/g, '')
-            .replace(',', '.')
+    let salarioBruto = parseStringToFloat(
+        document.getElementById('salario-bruto').value
     );
-    let dependentes = parseFloat(
-        document
-            .getElementById('numero-dependentes')
-            .value.replace('R$ ', '')
-            .replace(/[.]/g, '')
-            .replace(',', '.')
+    let dependentes = parseStringToFloat(
+        document.getElementById('numero-dependentes').value
     );
-    let pensaoAlimenticia = parseFloat(
-        document
-            .getElementById('valor-pensao')
-            .value.replace('R$ ', '')
-            .replace(/[.]/g, '')
-            .replace(',', '.')
+    let pensaoAlimenticia = parseStringToFloat(
+        document.getElementById('valor-pensao').value
     );
-    let previdenciaPrivada = parseFloat(
-        document
-            .getElementById('previdencia-privada')
-            .value.replace('R$ ', '')
-            .replace(/[.]/g, '')
-            .replace(',', '.')
+    let previdenciaPrivada = parseStringToFloat(
+        document.getElementById('previdencia-privada').value
     );
-    let outrosDescontos = parseFloat(
-        document
-            .getElementById('outros-valores')
-            .value.replace('R$ ', '')
-            .replace(/[.]/g, '')
-            .replace(',', '.')
+    let outrosDescontos = parseStringToFloat(
+        document.getElementById('outros-valores').value
     );
 
     // Calcula o salário líquido.
