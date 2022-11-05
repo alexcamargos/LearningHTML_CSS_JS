@@ -222,6 +222,11 @@ function calculadoraDeducoes(
     };
 }
 
+function showElement(element) {
+    // Mostra um elemento.
+    element.style.display = "block";
+}
+
 function getData() {
     // Coletando os valores do formulário.
     let salarioBruto = parseFloat(
@@ -296,6 +301,9 @@ function getData() {
     document.getElementById(
         'salario-liquido'
     ).innerHTML = `R$ ${deducoes.salarioLiquido.toFixed(2)}`;
+
+    showElement(document.getElementById('resultado'));
+    showElement(document.getElementById('alicotas'));
 }
 
 // Evento de click do botão.

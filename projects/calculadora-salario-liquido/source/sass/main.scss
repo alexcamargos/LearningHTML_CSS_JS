@@ -140,6 +140,9 @@ a:visited {
         }
 
         .resultado {
+            display: none;
+            transition: all 0.3s ease-in-out;
+
             &-box {
                 position: relative;
                 display: block;
@@ -344,11 +347,7 @@ footer {
     }
 
     #alicotas {
-        visibility: hidden;
-
-        &.show {
-            visibility: visible;
-        }
+        display: none;
     }
 
     #copyright {
