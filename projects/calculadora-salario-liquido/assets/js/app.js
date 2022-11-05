@@ -299,4 +299,4 @@ function getData() {
 }
 
 // Evento de click do botão.
-document.getElementById('btn-calcular').addEventListener('click', getData);
+document.getElementById('button-calcular').addEventListener('click', getData);

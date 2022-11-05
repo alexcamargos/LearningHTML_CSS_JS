@@ -1,0 +1,26 @@
+{
+    "name": "calculadora-salario-liquido",
+    "version": "0.0.5",
+    "description": "Sabe o valor do salário bruto e quer saber saber qual o salário líquido que vai cair na conta, após as deduções com Imposto de Renda, INSS, pensão, vale etc? Conheça nossa calculadora",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/alexcamargos/LearningHTML_CSS_JS"
+    },
+    "homepage": "https://github.com/alexcamargos/LearningHTML_CSS_JS",
+    "author": "Alexsander Lopes Camargos <alcamargos@vivaldi.net> (https://alcamargos.me/)",
+    "keywords": [
+        "HTML",
+        "sass",
+        "JavaScript",
+        "INSS",
+        "IRPF",
+        "salario"
+    ],
+    "license": "MIT",
+    "scripts": {
+        "build": "sass source/sass/main.scss:assets/css/main.css --style compressed",
+        "watch": "sass --watch source/sass/main.scss:assets/css/main.css"
+    },
+    "devDependencies": {
+    }
+}

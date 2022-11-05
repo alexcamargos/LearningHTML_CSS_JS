@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
     <head>
         <meta charset="UTF-8" />
         <meta
@@ -39,255 +39,250 @@
             Calculadora de Salário Líquido - Salário bruto x Salário Líquido
         </title>
 
-        <!-- tailwindcss v2.2.19 -->
+        <!-- normalize.css v8.0.1 | github.com/necolas/normalize.css -->
         <link
             rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"
-            integrity="sha512-wnea99uKIC3TJF7v4eKk4Y+lMz2Mklv18+r4na2Gn1abDRPPOeef95xTzdwGD9e6zXJBteMIhZ1+68QC5byJZw=="
+            href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+            integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
             crossorigin="anonymous"
             referrerpolicy="no-referrer"
         />
 
-        <link rel="stylesheet" href="assets/stylesheet/main.css" />
+        <link rel="stylesheet" href="assets/css/main.css" />
     </head>
 
     <body>
-        <div id="main-page" class="font-sans bg-white">
-            <div
-                class="container flex flex-col mx-auto max-w-screen-md m-8 space-y-10"
-            >
-                <header
-                    class="topo flex flex-col justify-center items-center bg-gray-800 border-b-4 border-indigo-600 p-2 drop-shadow-md"
-                >
-                    <div class="container flex place-content-between">
-                        <div class="logo flex-none w-14 h-14">
+        <div id="main-page">
+            <div class="">
+                <header class="">
+                    <div class="container">
+                        <div class="">
                             <img
                                 src="assets/img/calculator.png"
-                                alt="Calculator"
+                                alt="Calculadora de Salário Líquido"
                                 srcset=""
                             />
                         </div>
-                        <div class="title grow place-self-end">
+                        <div class="">
                             <h1 class="text-4xl text-white">
                                 Calculadora de Salário Líquido
                             </h1>
                         </div>
 
-                        <div class="flex-none w-14 h-14">
-                            <img src="assets/img/sal_liquido.png" alt="" />
+                        <div class="">
+                            <img
+                                src="assets/img/sal_liquido.png"
+                                alt="Salário"
+                            />
                         </div>
                     </div>
                 </header>
 
-                <main class="main">
+                <main>
                     <div class="container">
-                        <div
-                            class="sub-container flex flex-col space-y-10 justify-center"
-                        >
-                            <h1 class="text-2xl">
-                                Calculadora de Salário Líquido - Salário bruto x
-                                Salário Líquido
-                            </h1>
-                            <p class="text-center">
-                                Quem é assalariado sabe da diferença relevante
-                                que existe entre o salário bruto, aquele
-                                registrado na carteira de trabalho, e quanto
-                                você recebe na prática. Esta calculadora do
-                                Valor Investe vai te ajudar a saber quanto você
-                                vai receber por mês, após a cobrança do Imposto
-                                de Renda Retido na Fonte, desconto da
-                                contribuição ao INSS, previdência privada,
-                                pensão alimentícia etc. Basta informar o salário
-                                bruto mensal e as demais informações e clicar em
-                                "calcular".
-                            </p>
+                        <h1>
+                            Calculadora de Salário Líquido - Salário bruto x
+                            Salário Líquido
+                        </h1>
+                        <p class="text-center">
+                            Quem é assalariado sabe da diferença relevante que
+                            existe entre o salário bruto, aquele registrado na
+                            carteira de trabalho, e quanto você recebe na
+                            prática. Esta calculadora vai te ajudar a saber
+                            quanto você vai receber por mês, após a cobrança do
+                            Imposto de Renda Retido na Fonte, desconto da
+                            contribuição previdenciária pública e privada,
+                            pensão alimentícia etc. Basta informar o salário
+                            bruto mensal e as demais informações e clicar em
+                            "calcular".
+                        </p>
 
-                            <div
-                                class="container-inputs grid grid-cols-3 gap-4"
-                            >
-                                <!-- Salário Bruto -->
-                                <div class="inputs input-salario input-salb">
-                                    <p>Salário bruto</p>
-                                    <div class="input-field">
-                                        <input
-                                            placeholder="R$"
-                                            id="salario-bruto"
-                                            type="text"
-                                            inputmode="numeric"
-                                            value="1212"
-                                        />
-                                    </div>
+                        <section class="calculadora">
+                            <!-- Salário Bruto -->
+                            <div class="inputs input-salario">
+                                <p>Salário bruto</p>
+                                <div class="input-field">
+                                    <input
+                                        placeholder="R$"
+                                        id="salario-bruto"
+                                        type="text"
+                                        inputmode="numeric"
+                                        value="1212"
+                                    />
                                 </div>
-                                <!-- Número de Dependents -->
-                                <div class="inputs input-salario">
-                                    <p>Dependentes</p>
-                                    <div class="input-field quantity">
-                                        <input
-                                            type="number"
-                                            id="numero-dependentes"
-                                            value="0"
-                                            min="0"
-                                        />
-                                        <div class="quantity-nav">
-                                            <div
-                                                class="quantity-button quantity-up"
-                                            ></div>
-                                            <div
-                                                class="quantity-button quantity-down"
-                                            ></div>
-                                        </div>
-                                    </div>
+                            </div>
+                            <!-- Número de Dependents -->
+                            <div class="inputs input-dependentes">
+                                <p>Dependentes</p>
+                                <div class="input-field quantity">
+                                    <input
+                                        type="number"
+                                        id="numero-dependentes"
+                                        value="0"
+                                        min="0"
+                                    />
                                 </div>
-                                <!-- Pensão Alimentícia -->
-                                <div class="inputs input-salario input-pensao">
-                                    <p>Pensão alimentícia</p>
-                                    <div class="input-field">
-                                        <input
-                                            placeholder="R$"
-                                            id="valor-pensao"
-                                            type="text"
-                                            inputmode="numeric"
-                                            value="0"
-                                        />
-                                    </div>
-                                </div>
-
-                                <div
-                                    class="inputs input-salario input-previdencia"
-                                >
-                                    <!-- Previdência Privada -->
-                                    <p>Previdência privada</p>
-                                    <div class="input-field">
-                                        <input
-                                            placeholder="R$"
-                                            id="previdencia-privada"
-                                            type="text"
-                                            inputmode="numeric"
-                                            value="0"
-                                        />
-                                    </div>
-                                </div>
-                                <!-- Outros Valores -->
-                                <div class="inputs input-salario input-outros">
-                                    <p>Outros descontos*</p>
-                                    <div class="input-field">
-                                        <input
-                                            placeholder="R$"
-                                            id="outros-valores"
-                                            type="text"
-                                            inputmode="numeric"
-                                            value="0"
-                                        />
-                                    </div>
-                                </div>
-
-                                <div
-                                    class="inputs input-salario div-btn-calc text-center"
-                                >
-                                    <p></p>
-                                    <div class="input-field cursor-pointer">
-                                        <span
-                                            id="btn-calcular"
-                                            class="calcular"
-                                        >
-                                            Calcular
-                                            <svg
-                                                id="calcular"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                viewBox="0 0 20 20"
-                                                fill="currentColor"
-                                            >
-                                                <path
-                                                    fill-rule="evenodd"
-                                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 1.414L10.586 9H7a1 1 0 100 2h3.586l-1.293 1.293a1 1 0 101.414 1.414l3-3a1 1 0 000-1.414z"
-                                                    clip-rule="evenodd"
-                                                />
-                                            </svg>
-                                        </span>
-                                    </div>
+                            </div>
+                            <!-- Pensão Alimentícia -->
+                            <div class="inputs input-pensao">
+                                <p>Pensão alimentícia</p>
+                                <div class="input-field">
+                                    <input
+                                        placeholder="R$"
+                                        id="valor-pensao"
+                                        type="text"
+                                        inputmode="numeric"
+                                        value="0"
+                                    />
                                 </div>
                             </div>
 
-                            <section class="result">
-                                <div class="container">
-                                    <div class="header">
-                                        <span>Cálculo Salário Líquido</span>
+                            <div class="inputs input-previdencia-privada">
+                                <!-- Previdência Privada -->
+                                <p>Previdência privada</p>
+                                <div class="input-field">
+                                    <input
+                                        placeholder="R$"
+                                        id="previdencia-privada"
+                                        type="text"
+                                        inputmode="numeric"
+                                        value="0"
+                                    />
+                                </div>
+                            </div>
+                            <!-- Outros Valores -->
+                            <div class="inputs input-outros-valores">
+                                <p>Outros descontos*</p>
+                                <div class="input-field">
+                                    <input
+                                        placeholder="R$"
+                                        id="outros-valores"
+                                        type="text"
+                                        inputmode="numeric"
+                                        value="0"
+                                    />
+                                </div>
+                            </div>
+
+                            <div
+                                class="inputs input-salario div-btn-calc text-center"
+                            >
+                                <div
+                                    id="button-calcular"
+                                    class="button-calcular"
+                                >
+                                    <span> Calcular </span>
+
+                                    <svg
+                                        id="calcular"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 20 20"
+                                        fill="currentColor"
+                                    >
+                                        <path
+                                            fill-rule="evenodd"
+                                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 1.414L10.586 9H7a1 1 0 100 2h3.586l-1.293 1.293a1 1 0 101.414 1.414l3-3a1 1 0 000-1.414z"
+                                            clip-rule="evenodd"
+                                        />
+                                    </svg>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section class="resultado">
+                            <div class="container">
+                                <div class="resultado-box">
+                                    <div class="resultado-disclaimer">
+                                        <p>Resultado</p>
                                     </div>
 
-                                    <div class="body">
-                                        <table>
-                                            <thead>
-                                                <tr>
-                                                    <th>Evento</th>
-                                                    <th>Proventos</th>
-                                                    <th>Descontos</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody id="bodyTable">
-                                                <tr>
-                                                    <td>Salário Bruto</td>
-                                                    <td
-                                                        id="resultado-salario-bruto"
-                                                    ></td>
-                                                    <td></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Pensão alimentícia</td>
-                                                    <td></td>
-                                                    <td
-                                                        id="resultado-pensão-alimenticia"
-                                                    ></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Previdência privada</td>
-                                                    <td></td>
-                                                    <td
-                                                        id="resultado-previdencia-privada"
-                                                    ></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Outros descontos</td>
-                                                    <td></td>
-                                                    <td
-                                                        id="resultado-outros-descontos"
-                                                    ></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>INSS**</td>
-                                                    <td></td>
-                                                    <td
-                                                        id="resultado-deducao-inss"
-                                                    ></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>IRRF**</td>
-                                                    <td></td>
-                                                    <td
-                                                        id="resultado-deducao-irrf"
-                                                    ></td>
-                                                </tr>
-                                            </tbody>
-                                            <tfoot id="footTable">
-                                                <tr>
-                                                    <td>Totais</td>
-                                                    <td
-                                                        id="total-salario-bruto"
-                                                    ></td>
-                                                    <td id="total-deducao"></td>
-                                                </tr>
-                                            </tfoot>
-                                        </table>
-                                    </div>
+                                    <div class="resultado-output">
+                                        <div class="table-title">
+                                            <h2>Cálculo Salário Líquido</h2>
+                                        </div>
 
-                                    <div class="footer">
-                                        <p>
-                                            Salário liquido =
+                                        <div class="table-container">
+                                            <table>
+                                                <thead>
+                                                    <tr>
+                                                        <th>Evento</th>
+                                                        <th>Proventos</th>
+                                                        <th>Descontos</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="bodyTable">
+                                                    <tr>
+                                                        <td>Salário Bruto</td>
+                                                        <td
+                                                            id="resultado-salario-bruto"
+                                                        ></td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            Pensão alimentícia
+                                                        </td>
+                                                        <td></td>
+                                                        <td
+                                                            id="resultado-pensão-alimenticia"
+                                                        ></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            Previdência privada
+                                                        </td>
+                                                        <td></td>
+                                                        <td
+                                                            id="resultado-previdencia-privada"
+                                                        ></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            Outros descontos
+                                                        </td>
+                                                        <td></td>
+                                                        <td
+                                                            id="resultado-outros-descontos"
+                                                        ></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>INSS**</td>
+                                                        <td></td>
+                                                        <td
+                                                            id="resultado-deducao-inss"
+                                                        ></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>IRRF**</td>
+                                                        <td></td>
+                                                        <td
+                                                            id="resultado-deducao-irrf"
+                                                        ></td>
+                                                    </tr>
+                                                </tbody>
+                                                <tfoot id="footTable">
+                                                    <tr>
+                                                        <td>Totais</td>
+                                                        <td
+                                                            id="total-salario-bruto"
+                                                        ></td>
+                                                        <td
+                                                            id="total-deducao"
+                                                        ></td>
+                                                    </tr>
+                                                </tfoot>
+                                            </table>
+                                        </div>
+
+                                        <div class="table-footer">
+                                            <p>Salário liquido</p>
+                                            <span>=</span>
                                             <span id="salario-liquido"></span>
-                                        </p>
+                                        </div>
                                     </div>
                                 </div>
-                            </section>
-                        </div>
+                            </div>
+                        </section>
                     </div>
                 </main>
 
