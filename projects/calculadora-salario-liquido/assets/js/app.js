@@ -81,6 +81,14 @@ const tabelaDependentes = {
     valor: 189.59,
 };
 
+function formatValueToMoney(value) {
+    // Formata um valor monetário.
+    return value.toLocaleString('pt-BR', {
+        style: 'currency',
+        currency: 'BRL',
+    });
+}
+
 function calculaDeducaoINSS(salario) {
     // Calcula a dedução do INSS.
     let deducaoINSS = 0;
@@ -305,28 +313,28 @@ function getData() {
     // Exibe o resultado.
     document.getElementById(
         'resultado-salario-bruto'
-    ).innerHTML = `R$ ${salarioBruto.toFixed(2)}`;
+    ).innerHTML = `${formatValueToMoney(salarioBruto)}`;
     document.getElementById(
         'resultado-pensão-alimenticia'
-    ).innerHTML = `R$ ${pensaoAlimenticia.toFixed(2)}`;
+    ).innerHTML = `${formatValueToMoney(pensaoAlimenticia)}`;
     document.getElementById(
         'resultado-previdencia-privada'
-    ).innerHTML = `R$ ${previdenciaPrivada.toFixed(2)}`;
+    ).innerHTML = `${formatValueToMoney(previdenciaPrivada)}`;
     document.getElementById(
         'resultado-outros-descontos'
-    ).innerHTML = `R$ ${outrosDescontos.toFixed(2)}`;
+    ).innerHTML = `${formatValueToMoney(outrosDescontos)}`;
     document.getElementById(
         'resultado-deducao-inss'
-    ).innerHTML = `R$ ${deducoes.deducaoINSS.toFixed(2)}`;
+    ).innerHTML = `${formatValueToMoney(deducoes.deducaoINSS)}`;
     document.getElementById(
         'resultado-deducao-irrf'
-    ).innerHTML = `R$ ${deducoes.deducaoIRRF.toFixed(2)}`;
-    document.getElementById(
-        'total-deducao'
-    ).innerHTML = `R$ ${deducoes.totalDeduzido.toFixed(2)}`;
+    ).innerHTML = `${formatValueToMoney(deducoes.deducaoIRRF)}`;
+    document.getElementById('total-deducao').innerHTML = `${formatValueToMoney(
+        deducoes.totalDeduzido
+    )}`;
     document.getElementById(
         'salario-liquido'
-    ).innerHTML = `R$ ${deducoes.salarioLiquido.toFixed(2)}`;
+    ).innerHTML = `${formatValueToMoney(deducoes.salarioLiquido)}`;
 
     // If deducoes.valor === 828.39 mostra a mensagem
     if (deducoes.alicotaINSS) {
