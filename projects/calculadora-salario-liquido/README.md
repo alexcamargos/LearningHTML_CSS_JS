@@ -1,16 +1,20 @@
 # Calculadora de Salário Líquido - Salário bruto x Salário Líquido
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/bc7d4d6d-de65-4fe8-8351-b7e8fc3b85f8/deploy-status)](https://app.netlify.com/sites/calculadora-salario-liquido/deploys)
+
 Sabe o valor do salário bruto e quer saber saber qual o salário líquido que vai cair na conta, após as deduções com Imposto de Renda, INSS, pensão, vale etc? Faças as contas usando esta calculadora.
+
+- *Atenção*: essa calculadora pode demonstrar dados inconsistentes. Embora seja perfeitamente utilizável para cálculos trabalhistas, ela não substitui o trabalho feito por um profissional da área.
 
 ## View Project in Execution
 
-You can check this website on this [link](https://#).
+You can check this website on this [link](https://calculadora-salario-liquido.netlify.app).
 
 ## Technologies
 
--   HTML5
--   CSS3
--   jQuery
+- HTML5
+- Sass
+- JavaScript
 
 ## Prerequisites
 
