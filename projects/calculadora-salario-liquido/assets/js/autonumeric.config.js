@@ -1,5 +1,5 @@
 // -------------------------------------------------------------------------------------------------
-// Name: autonumeric.js
+// Name: autonumeric.config.js
 // Version: 0.0.1
 //
 // Summary: Calculadora de Salário Líquido - Salário bruto x Salário Líquido
