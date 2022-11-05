@@ -4,6 +4,18 @@ html {
   font: 16px/1.4 Open Sans, Helvetica, Arial, sans-serif;
 }
 
+a,
+a:visited {
+  color: #4faff3;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+}
+a:hover,
+a:visited:hover {
+  color: #2d6c8c;
+  text-decoration: underline;
+}
+
 #main-page {
   max-width: 1200px;
   padding: 1rem;
@@ -273,6 +285,25 @@ html {
   #main-page main .resultado .table-footer span:nth-child(2) {
     display: inline;
   }
+}
+
+footer {
+  margin-top: 6rem;
+}
+footer h4 {
+  margin-bottom: 0.333rem;
+}
+footer h4:nth-child(5) {
+  margin-top: 2rem;
+}
+footer #alicotas {
+  visibility: hidden;
+}
+footer #alicotas.show {
+  visibility: visible;
+}
+footer #copyright {
+  text-align: center;
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -6,6 +6,18 @@ html {
     font: 16px/1.4 Open Sans, Helvetica, Arial, sans-serif;
 }
 
+a,
+a:visited {
+    color: $blue;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+        color: $blue-darkest;
+        text-decoration: underline;
+    }
+}
+
 #main-page {
     max-width: 1200px;
     padding: 1rem;
@@ -320,3 +332,26 @@ html {
     }
 }
 
+footer {
+    margin-top: 6rem;
+
+    h4 {
+        margin-bottom: 0.333rem;
+
+        &:nth-child(5) {
+            margin-top: 2rem;
+        }
+    }
+
+    #alicotas {
+        visibility: hidden;
+
+        &.show {
+            visibility: visible;
+        }
+    }
+
+    #copyright {
+        text-align: center;
+    }
+}
