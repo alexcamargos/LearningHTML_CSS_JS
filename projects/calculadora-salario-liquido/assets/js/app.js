@@ -268,8 +268,8 @@ function showElement(element) {
     element.style.display = 'block';
 }
 
-function getData() {
-    // Coletando os valores do formulário.
+function getInputInformation() {
+    // Obtém os valores dos campos de entrada.
     let salarioBruto = parseStringToFloat(
         document.getElementById('salario-bruto').value
     );
@@ -286,44 +286,43 @@ function getData() {
         document.getElementById('outros-valores').value
     );
 
-    // Calcula o salário líquido.
-    let deducoes = calculadoraDeducoes(
-        salarioBruto,
-        dependentes,
-        pensaoAlimenticia,
-        previdenciaPrivada,
-        outrosDescontos
-    );
+    return {
+        salarioBruto: salarioBruto,
+        dependentes: dependentes,
+        pensaoAlimenticia: pensaoAlimenticia,
+        previdenciaPrivada: previdenciaPrivada,
+        outrosDescontos: outrosDescontos,
+    };
+}
 
-    // Calcula o valor total a ser deduzido.
-
-    // Exibe o resultado.
-    document.getElementById(
-        'resultado-salario-bruto'
-    ).innerHTML = `${formatValueToMoney(salarioBruto)}`;
-    document.getElementById(
-        'resultado-pensão-alimenticia'
-    ).innerHTML = `${formatValueToMoney(pensaoAlimenticia)}`;
-    document.getElementById(
-        'resultado-previdencia-privada'
-    ).innerHTML = `${formatValueToMoney(previdenciaPrivada)}`;
-    document.getElementById(
-        'resultado-outros-descontos'
-    ).innerHTML = `${formatValueToMoney(outrosDescontos)}`;
-    document.getElementById(
-        'resultado-deducao-inss'
-    ).innerHTML = `${formatValueToMoney(deducoes.deducaoINSS)}`;
-    document.getElementById(
-        'resultado-deducao-irrf'
-    ).innerHTML = `${formatValueToMoney(deducoes.deducaoIRRF)}`;
-    document.getElementById('total-deducao').innerHTML = `${formatValueToMoney(
-        deducoes.totalDeduzido
+function processingInnerHtml(elementID, value) {
+    // Insere um valor em um elemento.
+    document.getElementById(elementID).innerHTML = `${formatValueToMoney(
+        value
     )}`;
-    document.getElementById(
-        'salario-liquido'
-    ).innerHTML = `${formatValueToMoney(deducoes.salarioLiquido)}`;
+}
 
-    // If deducoes.valor === 828.39 mostra a mensagem
+function showResults(information, deducoes) {
+    // Mostra os resultados.
+    processingInnerHtml('resultado-salario-bruto', information.salarioBruto);
+    processingInnerHtml(
+        'resultado-pensão-alimenticia',
+        information.pensaoAlimenticia
+    );
+    processingInnerHtml(
+        'resultado-previdencia-privada',
+        information.previdenciaPrivada
+    );
+    processingInnerHtml(
+        'resultado-outros-descontos',
+        information.outrosDescontos
+    );
+    processingInnerHtml('resultado-deducao-inss', deducoes.deducaoINSS);
+    processingInnerHtml('resultado-deducao-irrf', deducoes.deducaoIRRF);
+    processingInnerHtml('total-deducao', deducoes.totalDeduzido);
+    processingInnerHtml('salario-liquido', deducoes.salarioLiquido);
+
+    // Mostra as alíquotas utilizadas nos cálculos.
     if (deducoes.alicotaINSS) {
         document.getElementById(
             'alicota-inss'
@@ -340,5 +339,47 @@ function getData() {
     showElement(document.getElementById('alicotas'));
 }
 
+function processingInformation() {
+    // Processas as informações coletadas sobre o salário bruto.
+
+    // Obtém os valores dos campos de entrada.
+    let information = getInputInformation();
+
+    let deducoes = calculadoraDeducoes(
+        information.salarioBruto,
+        information.dependentes,
+        information.pensaoAlimenticia,
+        information.previdenciaPrivada,
+        information.outrosDescontos
+    );
+
+    // Mostra os resultados.
+    showResults(information, deducoes);
+}
+
+// // Se o valor de salário bruto for maior que zero, calcula o salário líquido.
+// // Caso contrário, exibe uma mensagem de erro.
+// if (salarioBruto > 0) {
+//     // Calcula o salário líquido.
+//     let deducoes = calculadoraDeducoes(
+//         salarioBruto,
+//         dependentes,
+//         pensaoAlimenticia,
+//         previdenciaPrivada,
+//         outrosDescontos
+//     );
+// } else {
+//     // Exibe uma mensagem de erro.
+//     alert('O valor do salário bruto deve ser maior que zero.');
+// }
+
+// Calcula o valor total a ser deduzido.
+
 // Evento de click do botão.
-document.getElementById('button-calcular').addEventListener('click', getData);
+document
+    .getElementById('button-calcular')
+    .addEventListener('click', function () {
+        if (document.getElementById('salario-bruto').value) {
+            processingInformation();
+        }
+    });
