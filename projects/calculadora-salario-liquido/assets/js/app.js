@@ -1,6 +1,6 @@
 // -------------------------------------------------------------------------------------------------
 // Name: app.js
-// Version: 0.0.1
+// Version: 0.10.0
 //
 // Summary: Calculadora de Salário Líquido - Salário bruto x Salário Líquido
 //
@@ -394,11 +394,15 @@ document.getElementById('salario-bruto').addEventListener('blur', function () {
     }
 });
 
-// Evento de click do botão.
+// Se o campo salario-bruto não estiver com a classe error realiza o processamento das informações.
 document
     .getElementById('button-calcular')
     .addEventListener('click', function () {
-        if (document.getElementById('salario-bruto').value) {
+        if (
+            !document
+                .getElementById('salario-bruto')
+                .classList.contains('error')
+        ) {
             processingInformation();
         }
     });
