@@ -10,6 +10,9 @@
 // License: MIT
 // -------------------------------------------------------------------------------------------------
 
+// Valor do salário mínimo para o ano de 2022.
+const salarioMinimo = 1212.0;
+
 // Tabela de alíquotas do INSS para o ano de 2022.
 const tabelaINSS = {
     // Faixa 01: Salário de contribuição até R$ 1.212,00.
@@ -357,23 +360,39 @@ function processingInformation() {
     showResults(information, deducoes);
 }
 
-// // Se o valor de salário bruto for maior que zero, calcula o salário líquido.
-// // Caso contrário, exibe uma mensagem de erro.
-// if (salarioBruto > 0) {
-//     // Calcula o salário líquido.
-//     let deducoes = calculadoraDeducoes(
-//         salarioBruto,
-//         dependentes,
-//         pensaoAlimenticia,
-//         previdenciaPrivada,
-//         outrosDescontos
-//     );
-// } else {
-//     // Exibe uma mensagem de erro.
-//     alert('O valor do salário bruto deve ser maior que zero.');
-// }
+function showErroMessage(message) {
+    // Mostra a mensagem de erro.
+    let element = document.getElementById('error-msg');
+    element.innerHTML = message;
+    showElement(element);
+}
 
-// Calcula o valor total a ser deduzido.
+// Quando o processo de carregamento  terminar, coloca o foco no campo salario-bruto.
+window.onload = function () {
+    document.getElementById('salario-bruto').focus();
+};
+
+// Quando o usuário terminar de informar o valor do salário bruto, o campo é validado.
+document.getElementById('salario-bruto').addEventListener('blur', function () {
+    let salarioBruto = parseStringToFloat(this.value);
+
+    if (salarioBruto < salarioMinimo) {
+        showErroMessage(
+            `O valor informado não pode ser menor que o salário mínimo.
+            (${formatValueToMoney(salarioMinimo)})`
+        );
+
+        // Add the class .error to the input.
+        this.classList.add('error');
+
+        // Add focus to the input.
+        this.focus();
+    } else {
+        // Remove the class .error to the input.
+        this.classList.remove('error');
+        document.getElementById('error-msg').style.display = 'none';
+    }
+});
 
 // Evento de click do botão.
 document
