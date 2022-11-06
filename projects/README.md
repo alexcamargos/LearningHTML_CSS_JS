@@ -11,11 +11,14 @@ Para ser um desenvolvedor front-end é necessário familiarizar-se com lógica d
 **[Very Simple Generic Website](https://github.com/alexcamargos/LearningHTML_CSS_JS/tree/master/projects/personal-website)**
 : Simple website developed in HTML and CSS in order to exercise the basic concepts of marshalling and web styling.
 
+**[JavaScript Simples Slideshow](https://github.com/alexcamargos/LearningHTML_CSS_JS/tree/master/projects/simplesslideshow)**
+: Apresentação de slides feita com HTML5, CSS3 e JavaScript.
+
 **[Nokia 3310 Snake](https://github.com/alexcamargos/LearningHTML_CSS_JS/tree/master/projects/nokia3310-snake)**
 : A simple clone of the Nokia 3310 Snake developed into a simple grid with HTML5 technology, CSS3 and JavaScript.
 
-**[JavaScript Simples Slideshow](https://github.com/alexcamargos/LearningHTML_CSS_JS/tree/master/projects/simplesslideshow)**
-: Apresentação de slides feita com HTML5, CSS3 e JavaScript.
+**[Calculadora de Salário Líquido](calculadora-salario-liquido)**
+: Sabe o valor do salário bruto e quer saber qual o salário líquido que cairá na conta, após as deduções com Imposto de Renda (IRPF), contribuição previdenciária obrigatória (INSS), pensão, vales, etc.? Faças as contas usando esta calculadora. Faças as contas usando esta calculadora desenvolvida com HTML, JavaScript e Sass.
 
 ### The Odin Project: Full Stack JavaScript Path
 
@@ -36,4 +39,4 @@ Você precisará apenas de um navegador de internet moderno, acessar o projeto e
 
 A grande maioria dos projetos são disponibilizados sob [Licença MIT (The MIT License)](https://mit-license.org), quando algum projeto for disponibilizado sob outra licença esta informação constará no seu respectivo repositório.
 
-Copyright (c) 2021 - **Alexsander Lopes Camargos**
+Copyright (c) 2022 - **Alexsander Lopes Camargos**

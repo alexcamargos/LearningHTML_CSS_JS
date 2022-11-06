@@ -2,7 +2,7 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/bc7d4d6d-de65-4fe8-8351-b7e8fc3b85f8/deploy-status)](https://app.netlify.com/sites/calculadora-salario-liquido/deploys)
 
-Sabe o valor do salário bruto e quer saber saber qual o salário líquido que vai cair na conta, após as deduções com Imposto de Renda, INSS, pensão, vale etc? Faças as contas usando esta calculadora.
+Sabe o valor do salário bruto e quer saber qual o salário líquido que cairá na conta, após as deduções com Imposto de Renda (IRPF), contribuição previdenciária obrigatória (INSS), pensão, vales, etc.? Faças as contas usando esta calculadora.
 
 - *Atenção*: essa calculadora pode demonstrar dados inconsistentes. Embora seja perfeitamente utilizável para cálculos trabalhistas, ela não substitui o trabalho feito por um profissional da área.
 
@@ -15,6 +15,8 @@ You can check this website on this [link](https://calculadora-salario-liquido.ne
 - HTML5
 - Sass
 - JavaScript
+
+![Calculadora de Salário Líquido - Salário bruto x Salário Líquido](source/screen/calculadora_salario_liquido.jpg)
 
 ## Prerequisites
 
