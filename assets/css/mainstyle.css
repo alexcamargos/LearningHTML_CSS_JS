@@ -5,7 +5,7 @@
 # Version: 0.5
 #
 # Summary: Recriando a página inicial do Instagram usando Flex Container.
-#          O Flex Container é a tag que envolve os itens flex, ao indicar display: flex, 
+#          O Flex Container é a tag que envolve os itens flex, ao indicar display: flex,
 #          essa tag passa a ser um Flex Container.
 #
 # Author: Alexsander Lopes Camargos
@@ -16,30 +16,50 @@
 # -------------------------------------------------------------------------------------------------
 */
 
-
-@import url('https://fonts.googleapis.com/css2?family=Lora:wght@500;700&family=Roboto:wght@300;400;500&display=swap');
-
+@import url('https://fonts.cdnfonts.com/css/caros-soft?styles=51649,51653,51651,51650');
 
 /* *************** BASE STYLES *************** */
 :root {
     /* colors */
+    --text-color: rgba(0, 0, 0, 0.87);
+    --primary: #0d509b;
+    --primaryLight: #5dacfc;
+    --secondary: #f8b249;
+    --secondaryLight: #ffaa25;
+    --darkBlue: #024c9c;
+    --alternativeBlue: #004178;
+    --lightBlue: #cbddfe;
+    --green: #4faf98;
+    --grayLight: #d3d3d3;
+    --lightGreen: #a3d2b1;
+    --white: #fff;
+    --whiteLight: #ddd;
+    --offWhite: #f1efe3;
+    --beige: #ede1c2;
+    --gray: silver;
+    --danger: #fe6240;
+
     --background-color: #1d252c;
-    --title-color: #026fff;
-    --text-color: #000;
-    --focus-text-color: #fff;
+    --title-color: var(--alternativeBlue);
+    --focus-text-color: var(--white);
 
     /* fonts */
-    --title-font: 'Roboto', serif;
-    --text-font: 'Lora', serif;
+    --font: 'Caros Soft Regular', trebuc, 'Trebuchet MS', 'Lucida Sans Unicode',
+        'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 
-    --font-big-size: 32px;
-    --font-medium-size: 24px;
-    --font-small-size: 18px;
+    --font-big-size: 2rem;
+    --font-medium-size: 1.5rem;
+    --font-small-size: 1rem;
 }
 
 body {
-    font-family: var(--text-font);
-    background-color: var(--focus-text-color);
+    font-family: var(--font);
+    color: var(--text-color);
+    background: radial-gradient(
+        50% 50% at 33% 43%,
+        var(--white) 44.27%,
+        var(--offWhite) 100%
+    );
 }
 
 h1,
@@ -48,7 +68,8 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: var(--title-font);
+    font-family: var(--font);
+    font-weight: 700;
 }
 
 h1 {
@@ -64,18 +85,49 @@ h3 {
 }
 
 .text-blue {
-    color: var(--title-color);
+    color: var(--darkBlue);
 }
 
+.title {
+    color: var(--title-color);
+    text-transform: uppercase;
+    padding-bottom: 10px;
+    border-bottom: 4px solid var(--darkBlue);
+    font-weight: 700;
+}
+
+.button {
+    background-color: var(--darkBlue);
+    border: none;
+    padding: 0.75rem 1.25rem;
+    color: rgb(255, 255, 255);
+    text-transform: uppercase;
+    font-family: 'Caros Soft Bold';
+    font-size: 14px;
+    font-weight: 800;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.button:hover {
+    background-color: var(--alternativeBlue);
+    color: var(--whiteLight);
+}
+
+.button > a {
+    color: var(--white);
+    text-decoration: none;
+}
 
 /* Styling for this page is organized from top to bottom of what is shown on the page. */
 
-
 /* *************** HEADER STYLES *************** */
 #header {
-    background-color: var(--background-color);
-    color: var(--focus-text-color);
-    padding: 0 32px;
+    background-color: transparent;
+    color: var(--alternativeBlue);
+    padding: 2.5rem;
+    margin: 4rem auto;
+    max-width: 1440px;
 }
 
 #header .header-content {
@@ -98,8 +150,6 @@ h3 {
     display: flex;
     gap: 50px;
     list-style: none;
-    font-family: var(--title-font);
-    color: var(--focus-text-color);
 }
 
 #header .header-content #menu ol li {
@@ -107,11 +157,9 @@ h3 {
 }
 
 #header .header-content #menu ol li a {
-    color: var(--focus-text-color);
     text-decoration: none;
-    padding: 0px 10px;
-    font-size: 20px;
-    font-weight: 700;
+    padding: 0px 0.6rem;
+    font-size: 1.15rem;
     transition: 0.5s;
 }
 
@@ -120,11 +168,10 @@ h3 {
     border-bottom: 3px solid var(--title-color);
 }
 
-
 /* *************** FULL PAGE WRAPPER STYLES *************** */
 #wrapper {
     position: relative;
-    margin: 0 auto;
+    margin: 4rem auto;
     max-width: 1440px;
     min-width: 256px;
     padding: 0 50px;
@@ -136,6 +183,11 @@ h3 {
     display: flex;
     flex-direction: column;
     padding-bottom: 50px;
+}
+
+#main #about h1,
+h2 {
+    font-weight: 400;
 }
 
 #main #about .about-content {
@@ -158,9 +210,8 @@ h3 {
 
 #main #about .about-content .frontend-definition p {
     font-size: 16px;
-    line-height: 24px
+    line-height: 24px;
 }
-
 
 /* *************** SECTION PROJECTS STYLES *************** */
 #main #projects {
@@ -172,13 +223,6 @@ h3 {
     flex-direction: column;
     justify-content: center;
     gap: 20px;
-}
-
-#main #projects h2 {
-    color: var(--title-color);
-    text-transform: uppercase;
-    padding-bottom: 10px;
-    border-bottom: 4px solid var(--background-color);
 }
 
 #main #projects .project {
@@ -271,19 +315,24 @@ h3 {
     font-family: var(--text-font);
 }
 
-
 /* *************** SECTION CONTACTS STYLES *************** */
 #main #contacts {
-    height: 150px;
     padding-bottom: 50px;
 }
 
-#main #contacts h2 {
-    color: var(--title-color);
-    text-transform: uppercase;
-    padding-top: 20px;
-    padding-bottom: 10px;
-    border-bottom: 4px solid var(--background-color);
+#main #contacts .contacts-content {
+    display: flex;
+    flex-direction: row;
+    align-content: space-around;
+    align-items: center;
+    gap: 2rem;
+}
+
+#main #contacts .contacts-content .left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
 }
 
 /* *************** SOCIAL MEDIA LINKS STYLES *************** */
@@ -298,6 +347,7 @@ h3 {
     display: inline-block;
     width: 64px;
     height: 64px;
+    padding-bottom: 1rem;
     background-size: 64px 64px;
     background-repeat: no-repeat;
     transition: 0.8s;
@@ -305,36 +355,35 @@ h3 {
 
 #main .social-media-link:hover {
     padding-bottom: 5px;
-    border-bottom: 3.5px solid var(--text-color);
+    border-bottom: 3.5px solid var(--alternativeBlue);
 }
 
 #main .social-media-link.github {
-    background-image: url("/assets/img/social/github.svg");
+    background-image: url('/assets/img/social/github.svg');
 }
 
 #main .social-media-link.linkedin {
-    background-image: url("/assets/img/social/linkedin.svg");
+    background-image: url('/assets/img/social/linkedin.svg');
 }
 
 #main .social-media-link.twitter {
-    background-image: url("/assets/img/social/twitter.svg");
+    background-image: url('/assets/img/social/twitter.svg');
 }
 
-
 #main .social-media-link.facebook {
-    background-image: url("/assets/img/social/facebook.svg");
+    background-image: url('/assets/img/social/facebook.svg');
 }
 
 #main .social-media-link.instagram {
-    background-image: url("/assets/img/social/instagram.svg");
+    background-image: url('/assets/img/social/instagram.svg');
 }
-
 
 /* *************** FOOTER STYLES *************** */
 #footer {
-    background-color: var(--background-color);
-    color: var(--focus-text-color);
-    padding-top: 50px;
+    background-color: var(--darkBlue);
+    color: var(--whiteLight);
+    padding: 2.5rem;
+    border-top: 10px solid rgb(79, 175, 152);
 }
 
 #footer .footer-content {
@@ -345,6 +394,15 @@ h3 {
     align-content: center;
 }
 
+#footer .footer-content a {
+    color: var(--whiteLight);
+    text-decoration: none;
+    transition: 0.5s;
+}
+
+#footer .footer-content a:hover {
+    text-decoration: underline;
+}
 
 /* *************** MEDIA QUERIES *************** */
 @media (max-width: 1000px) {
@@ -370,7 +428,6 @@ h3 {
     }
 }
 
-
 @media (max-width: 960px) {
     #main #about .hello {
         display: flex;
@@ -379,11 +436,13 @@ h3 {
         justify-content: center;
         align-content: center;
     }
+
+    #main #contacts .contacts-content {
+        flex-direction: column;
+    }
 }
 
-
 @media (max-width: 730px) {
-
     #header .header-content #menu ol {
         gap: 20px;
     }
@@ -391,9 +450,7 @@ h3 {
     #main #about .about-content {
         flex-direction: column;
     }
-
 }
-
 
 @media (max-width: 650px) {
     :root {
@@ -410,29 +467,27 @@ h3 {
     #wrapper {
         min-width: auto;
     }
-
+    /*
     #main #contacts {
         height: 650px;
-    }
+    } */
 
     #main .social-media {
         display: flex;
-        gap: 20px;
-        flex-direction: column;
         align-items: center;
+        gap: 20px;
     }
 
     #main .social-media-link {
-        width: 100px;
-        height: 100px;
-        background-size: 100px 100px;
+        width: 48px;
+        height: 48px;
+        background-size: 48px 48px;
     }
 
     #main #projects .project-item .project-links-itens {
-    flex-direction: column;
+        flex-direction: column;
     }
 }
-
 
 @media (max-width: 450px) {
     :root {
@@ -453,7 +508,6 @@ h3 {
         width: 240px;
     }
 }
-
 
 @media (max-width: 400px) {
     #header .header-content img {
@@ -483,13 +537,11 @@ h3 {
     }
 }
 
-
 @media (max-width: 400px) {
-
     #main #projects .project-item .project-links-itens img {
         display: none;
     }
-    
+
     #main #projects .project-item .project-image-wrapper {
         display: none;
     }
@@ -505,19 +557,17 @@ h3 {
     #main .social-media-link {
         color: var(--text-color);
         font-size: var(--font-big-size);
-        font-family: var(--title-font);
         width: auto;
         height: auto;
         background-size: auto;
     }
-
 
     #main .social-media-link.github {
         background-image: none;
     }
 
     #main .social-media-link.github::before {
-        content: "GitHub";
+        content: 'GitHub';
     }
 
     #main .social-media-link.linkedin {
@@ -525,16 +575,15 @@ h3 {
     }
 
     #main .social-media-link.linkedin::before {
-        content: "LinkedIn";
+        content: 'LinkedIn';
     }
-
 
     #main .social-media-link.twitter {
         background-image: none;
     }
 
     #main .social-media-link.twitter::before {
-        content: "Twitter";
+        content: 'Twitter';
     }
 
     #main .social-media-link.facebook {
@@ -542,7 +591,7 @@ h3 {
     }
 
     #main .social-media-link.facebook::before {
-        content: "Facebook";
+        content: 'Facebook';
     }
 
     #main .social-media-link.instagram {
@@ -550,6 +599,6 @@ h3 {
     }
 
     #main .social-media-link.instagram::before {
-        content: "Instagram";
+        content: 'Instagram';
     }
 }
