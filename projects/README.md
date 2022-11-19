@@ -8,7 +8,7 @@ Para ser um desenvolvedor front-end é necessário familiarizar-se com lógica d
 
 ## Projetos
 
-**[Very Simple Generic Website](https://github.com/alexcamargos/LearningHTML_CSS_JS/tree/master/projects/personal-website)**
+**[Very Simple Generic Website](personal-website)**
 : Simple website developed in HTML and CSS in order to exercise the basic concepts of marshalling and web styling.
 
 **[JavaScript Simples Slideshow](https://github.com/alexcamargos/LearningHTML_CSS_JS/tree/master/projects/simplesslideshow)**
@@ -19,6 +19,21 @@ Para ser um desenvolvedor front-end é necessário familiarizar-se com lógica d
 
 **[Calculadora de Salário Líquido](calculadora-salario-liquido)**
 : Sabe o valor do salário bruto e quer saber qual o salário líquido que cairá na conta, após as deduções com Imposto de Renda (IRPF), contribuição previdenciária obrigatória (INSS), pensão, vales, etc.? Faças as contas usando esta calculadora. Faças as contas usando esta calculadora desenvolvida com HTML, JavaScript e Sass.
+
+**[NLW/Together - Origin #6: Beauty Salon Landing Page](nlw-together_06)**
+: Site corporativo de um salão de beleza fictício, situado na cidade de São Paulo, desenvolvido durante o evento NLW/Together - Origin #6, ocorrido de 20 a 28 de junho de 2021, ofertado pela Rocketseat utilizando as tecnologias HTML5, CSS3 e JavaScript.
+
+**[Tailwind CSS Portfolio](tailwind-portfolio)**
+: A portfolio developed with Tailwind CSS.
+
+**[Yet Another Random Password Generator - YARPG](random-password-generator)**
+: A simple random password generator developed with HTML5 technology, CSS3 and JavaScript.
+
+**[Rock Ride Cycles Landing Page](rock-ride-cycles)**
+: A landing page designed to train the concept of parallax background image.
+
+**[Clone do Spotify com HTML & CSS](my_spotify)**
+: Clone do Spotify com HTML & CSS.
 
 ### The Odin Project: Full Stack JavaScript Path
 
