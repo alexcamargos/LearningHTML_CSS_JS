@@ -215,6 +215,16 @@ h2 {
     line-height: 24px;
 }
 
+/* *************** SECTION PROJECTS STYLES *************** */
+#main .all-projects {
+    margin: 2rem;
+    text-align: center;
+}
+
+#main .all-projects a {
+    text-decoration: none;
+}
+
 /* *************** SECTION CONTACTS STYLES *************** */
 #main #contacts {
     padding-bottom: 50px;
