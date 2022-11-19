@@ -1,16 +1,21 @@
 # IMERSÃO DEV_
-# AULA 1: VARIÁVEIS, OPERAÇÕES E MÉDIA
+
+## AULA 1: VARIÁVEIS, OPERAÇÕES E MÉDIA
+
 Nesta primeira aula da Imersão Dev, vamos criar uma calculadora de média e aprender o que são variáveis e como realizar operações! O código da aula inicial para você acompanhar está aqui: [CodePen](https://codepen.io/imersao-dev/pen/38cf7906dcec352d8dbd0f8c4c7c1b10)
 
 ## View Project in Execution
+
 You can check this website on this [link](https://#).
 
 ## Technologies
+
 - HTML5
 - CSS3
 - JavaScript
 
 ## Prerequisites
+
 You need a modern browser, just clone the repository, open the index.html
 and edit it as you like. After edit share with me your version. :happy:
 
