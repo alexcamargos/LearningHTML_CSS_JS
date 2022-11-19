@@ -1,24 +1,25 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap");
 
 :root {
-    --color1: #FEEE02;
+    --color1: #feee02;
     --color2: #242424;
     --color3: #101010;
     --color5: #000000;
 
-
     --background-color: #101010;
-
-
     --border-color: #707070;
+
     --text-color: #fff;
+
+    --image1: url("../img/backgrounds/image-1.jpg");
+    --image2: url("../img/backgrounds/image-2.jpg");
+    --image3: url("../img/backgrounds/image-3.jpg");
 }
 
 body {
     background: var(--color2) 0% 0% no-repeat padding-box fixed;
     opacity: 0.55;
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
     color: var(--text-color);
 }
 
@@ -40,7 +41,6 @@ a:hover {
 .border-bottom {
     border-bottom: 1px solid var(--border-color);
 }
-
 
 #page-header {
     display: flex;
@@ -77,17 +77,17 @@ a:hover {
 }
 
 .hero-bg:nth-child(1) {
-    background-image: url('/asserts/img/backgrounds/image-1.jpg');
+    background-image: var(--image1);
 }
 
 .hero-bg:nth-child(2) {
     animation-delay: 20s;
-    background-image: url('/asserts/img/backgrounds/image-2.jpg');
+    background-image: var(--image2);
 }
 
 .hero-bg:nth-child(3) {
     animation-delay: 40s;
-    background-image: url('/asserts/img/backgrounds/image-3.jpg');
+    background-image: var(--image3);
 }
 
 @keyframes backgroundSlideShow {
@@ -114,7 +114,6 @@ a:hover {
     }
 }
 
-
 #main-content-wrapper {
     padding: 0 200px;
 }
@@ -138,7 +137,6 @@ a:hover {
     -webkit-backdrop-filter: blur(18px);
 }
 
-
 #main-content-wrapper #hero .destination-content,
 .departing-content {
     display: grid;
@@ -146,7 +144,6 @@ a:hover {
     gap: 10px;
     padding: 20px;
 }
-
 
 .destination,
 .arrival,
@@ -161,7 +158,6 @@ a:hover {
 .search {
     margin: auto;
 }
-
 
 .title {
     font-weight: 700;
@@ -178,7 +174,7 @@ a:hover {
 }
 
 .btn {
-    background: #FEEE02 0% 0% no-repeat padding-box;
+    background: #feee02 0% 0% no-repeat padding-box;
     border-radius: 4px;
     text-align: center;
     font-weight: 500;
@@ -191,7 +187,7 @@ a:hover {
 
 .btn:hover {
     background: var(--background-color) 0% 0% no-repeat padding-box;
-    color: var(--color1)
+    color: var(--color1);
 }
 
 #popular-destinations h1 {
@@ -239,7 +235,6 @@ a:hover {
     vertical-align: middle;
     padding: 5px 20px;
 }
-
 
 #popular-destinations table tr:not(:first-child) {
     font-weight: 300;
